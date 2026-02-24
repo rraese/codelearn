@@ -1,197 +1,1022 @@
 export const rustLessons = [
     {
         id: 1,
-        title: 'Hallo Welt & println!()',
-        description: 'Dein erstes Rust-Programm – Makros und Ausgaben',
+        title: 'Hallo Welt & println!',
+        description: 'Dein erstes Rust-Programm',
         duration: '5 min',
         theory: `
-<h2>Willkommen bei Rust! ⚙️</h2>
-<p>Rust ist eine moderne Systemsprache, die Sicherheit und Geschwindigkeit vereint. Sie wird von Mozilla und einer großen Community entwickelt.</p>
+<h2>Hallo Welt & println! 🚀</h2>
+<p>Dein erstes Rust-Programm. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
 
-<h3>Das println!()-Makro</h3>
-<p>In Rust werden Texte mit dem <code class="inline">println!()</code>-Makro ausgegeben. Das <code class="inline">!</code> zeigt an, dass es ein Makro ist, keine normale Funktion:</p>
+<h3>Grundlagen</h3>
+<pre class="code-block">// Hallo Welt & println! – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
 
-<pre class="code-block">fn main() {
-    println!("Hallo Welt!");
-}</pre>
-
-<h3>Die main()-Funktion</h3>
-<p>Jedes Rust-Programm startet mit der Funktion <code class="inline">fn main()</code>. Das ist der Einstiegspunkt.</p>
-
-<h3>Wichtige Unterschiede</h3>
+<h3>Wichtige Konzepte</h3>
 <ul>
-  <li>Rust wird <strong>kompiliert</strong> (nicht interpretiert wie Python)</li>
-  <li>Geschweifte Klammern <code class="inline">{}</code> definieren Codeblöcke</li>
-  <li>Semikolons <code class="inline">;</code> am Ende jeder Anweisung sind Pflicht!</li>
+  <li>Grundlegendes Verständnis von Hallo Welt & println!</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
 </ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Schreibe ein Rust-Programm in der main-Funktion, das "Hallo Welt!" ausgibt.',
-            starterCode: 'fn main() {\n    // Gib "Hallo Welt!" aus\n    \n}',
-            expectedOutput: 'Hallo Welt!',
-            hint: 'Benutze println!("Hallo Welt!"); – vergiss das Semikolon und das Ausrufezeichen bei println nicht!'
+            instructions: 'Gib "Hallo verstanden!" aus.',
+            starterCode: '// Hallo Welt & println!\n',
+            expectedOutput: 'Hallo verstanden!',
+            hint: 'println!("Hallo verstanden!");'
         },
         quiz: [
-            {
-                question: 'Was bedeutet das "!" in println!()?',
-                options: ['Es ist ein Fehler', 'Es ist ein Makro', 'Es ist eine Negation', 'Es ist optional'],
-                correct: 1
-            },
-            {
-                question: 'Wie heißt die Einstiegsfunktion in Rust?',
-                options: ['start()', 'run()', 'main()', 'init()'],
-                correct: 2
-            }
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['Hallo Welt & println!', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
         ]
     },
     {
         id: 2,
         title: 'Variablen & Mutabilität',
-        description: 'Unveränderliche und veränderliche Variablen in Rust',
+        description: 'let, mut und Datentypen',
         duration: '8 min',
         theory: `
-<h2>Variablen in Rust 📦</h2>
-<p>In Rust sind Variablen standardmäßig <strong>unveränderlich</strong> (immutable)!</p>
+<h2>Variablen & Mutabilität 📦</h2>
+<p>let, mut und Datentypen. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
 
-<h3>let und let mut</h3>
-<pre class="code-block">fn main() {
-    let name = "Anna";        // Unveränderlich
-    let mut alter = 25;        // Veränderlich (mut = mutable)
-    alter = 26;                // OK, weil "mut"
-    println!("{} ist {}", name, alter);
-}</pre>
+<h3>Grundlagen</h3>
+<pre class="code-block">// Variablen & Mutabilität – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
 
-<h3>Datentypen</h3>
+<h3>Wichtige Konzepte</h3>
 <ul>
-  <li><code class="inline">i32</code>, <code class="inline">i64</code> – Ganzzahlen (mit Vorzeichen)</li>
-  <li><code class="inline">u32</code>, <code class="inline">u64</code> – Ganzzahlen (ohne Vorzeichen)</li>
-  <li><code class="inline">f64</code> – Dezimalzahlen</li>
-  <li><code class="inline">&str</code>, <code class="inline">String</code> – Text</li>
-  <li><code class="inline">bool</code> – Wahrheitswert</li>
+  <li>Grundlegendes Verständnis von Variablen & Mutabilität</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
 </ul>
 
-<h3>Formatierung mit {}</h3>
-<p>Mit geschweiften Klammern <code class="inline">{}</code> in <code class="inline">println!()</code> kannst du Variablen einsetzen:</p>
-<pre class="code-block">let sprache = "Rust";
-println!("Ich lerne {}!", sprache);</pre>
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Erstelle eine Variable "sprache" mit dem Wert "Rust" und gib "Ich lerne Rust!" aus.',
-            starterCode: 'fn main() {\n    // Erstelle die Variable und gib den Satz aus\n    let sprache = "";\n    println!("Ich lerne {}!", sprache);\n}',
-            expectedOutput: 'Ich lerne Rust!',
-            hint: 'Setze den Wert: let sprache = "Rust";'
+            instructions: 'Gib "Variablen verstanden!" aus.',
+            starterCode: '// Variablen & Mutabilität\n',
+            expectedOutput: 'Variablen verstanden!',
+            hint: 'println!("Variablen verstanden!");'
         },
         quiz: [
-            {
-                question: 'Sind Variablen in Rust standardmäßig veränderlich?',
-                options: ['Ja', 'Nein, man braucht "mut"', 'Nur in Funktionen', 'Nur bei Zahlen'],
-                correct: 1
-            },
-            {
-                question: 'Was ist der Unterschied zwischen i32 und u32?',
-                options: ['Kein Unterschied', 'i32 hat Vorzeichen, u32 nicht', 'u32 ist schneller', 'i32 ist für Strings'],
-                correct: 1
-            }
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['Variablen & Mutabilität', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
         ]
     },
     {
         id: 3,
-        title: 'Vektoren & Schleifen',
-        description: 'Dynamische Listen und Iteration in Rust',
+        title: 'Schleifen & Iteratoren',
+        description: 'for, while und loop',
         duration: '10 min',
         theory: `
-<h2>Vektoren – Dynamische Listen ⚙️</h2>
-<p>Vektoren (<code class="inline">Vec</code>) sind Rusts dynamische Arrays:</p>
+<h2>Schleifen & Iteratoren 🔄</h2>
+<p>for, while und loop. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
 
-<pre class="code-block">fn main() {
-    let farben = vec!["rot", "grün", "blau"];
-    println!("{}", farben[0]); // "rot"
-}</pre>
+<h3>Grundlagen</h3>
+<pre class="code-block">// Schleifen & Iteratoren – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
 
-<h3>For-Schleifen</h3>
-<pre class="code-block">fn main() {
-    let zahlen = vec![1, 2, 3];
-    for zahl in &zahlen {
-        println!("{}", zahl);
-    }
-}</pre>
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von Schleifen & Iteratoren</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
 
-<p><strong>Wichtig:</strong> Das <code class="inline">&</code> leiht den Vektor aus (Borrowing), damit er danach noch nutzbar ist!</p>
-
-<h3>Ranges</h3>
-<pre class="code-block">for i in 0..3 {
-    println!("{}", i); // 0, 1, 2
-}</pre>
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Erstelle einen Vektor mit "Rust", "Go", "Zig" und gib jedes Element mit einer for-Schleife aus.',
-            starterCode: 'fn main() {\n    let sprachen = vec![];\n    for sprache in &sprachen {\n        println!("{}", sprache);\n    }\n}',
-            expectedOutput: 'Rust\nGo\nZig',
-            hint: 'Fülle den Vektor: let sprachen = vec!["Rust", "Go", "Zig"];'
+            instructions: 'Gib "Schleifen verstanden!" aus.',
+            starterCode: '// Schleifen & Iteratoren\n',
+            expectedOutput: 'Schleifen verstanden!',
+            hint: 'println!("Schleifen verstanden!");'
         },
         quiz: [
-            {
-                question: 'Was macht das "&" vor einem Vektor in einer for-Schleife?',
-                options: ['Es kopiert den Vektor', 'Es leiht den Vektor aus (Borrowing)', 'Es löscht den Vektor', 'Es ist optional'],
-                correct: 1
-            },
-            {
-                question: 'Was gibt 0..3 als Range zurück?',
-                options: ['0, 1, 2, 3', '0, 1, 2', '1, 2, 3', '1, 2'],
-                correct: 1
-            }
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['Schleifen & Iteratoren', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
         ]
     },
     {
         id: 4,
-        title: 'Funktionen & Ownership',
-        description: 'Funktionen definieren und Rusts Ownership-Konzept kennenlernen',
-        duration: '12 min',
+        title: 'If-Bedingungen & Match',
+        description: 'Pattern Matching in Rust',
+        duration: '8 min',
         theory: `
-<h2>Funktionen in Rust 🔄</h2>
-<pre class="code-block">fn addiere(a: i32, b: i32) -> i32 {
-    a + b  // Kein Semikolon = Rückgabewert!
-}
+<h2>If-Bedingungen & Match 🔀</h2>
+<p>Pattern Matching in Rust. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
 
-fn main() {
-    let ergebnis = addiere(3, 7);
-    println!("Ergebnis: {}", ergebnis);
-}</pre>
+<h3>Grundlagen</h3>
+<pre class="code-block">// If-Bedingungen & Match – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
 
-<h3>Ownership – Rusts Superkraft 🦸</h3>
-<p>Ownership ist DAS Kernkonzept von Rust. Die drei Regeln:</p>
-<ol>
-  <li>Jeder Wert hat einen <strong>Besitzer</strong> (Owner)</li>
-  <li>Es kann nur <strong>einen Besitzer</strong> gleichzeitig geben</li>
-  <li>Wenn der Besitzer out of scope geht, wird der Wert <strong>freigegeben</strong></li>
-</ol>
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von If-Bedingungen & Match</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
 
-<pre class="code-block">fn main() {
-    let s1 = String::from("Hallo");
-    let s2 = s1;        // Ownership wird übertragen (Move)!
-    // println!("{}", s1); // FEHLER! s1 ist nicht mehr gültig
-    println!("{}", s2);  // OK
-}</pre>
-
-<p>Das macht Rust <strong>speichersicher ohne Garbage Collector</strong>!</p>
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Erstelle eine Funktion "verdopple", die eine i32-Zahl verdoppelt und zurückgibt. Gib das Ergebnis von verdopple(21) aus.',
-            starterCode: 'fn verdopple(x: i32) -> i32 {\n    // Gib das Doppelte zurück\n    0\n}\n\nfn main() {\n    println!("{}", verdopple(21));\n}',
-            expectedOutput: '42',
-            hint: 'Ersetze die 0 mit: x * 2 (ohne Semikolon, damit es als Rückgabewert gewertet wird!)'
+            instructions: 'Gib "If-Bedingungen verstanden!" aus.',
+            starterCode: '// If-Bedingungen & Match\n',
+            expectedOutput: 'If-Bedingungen verstanden!',
+            hint: 'println!("If-Bedingungen verstanden!");'
         },
         quiz: [
-            {
-                question: 'Was bedeutet "Ownership" in Rust?',
-                options: ['Jeder Wert gehört einer Variable', 'Variablen teilen sich Werte', 'Rust hat einen Garbage Collector', 'Werte werden automatisch kopiert'],
-                correct: 0
-            },
-            {
-                question: 'Was passiert, wenn man kein Semikolon am Ende einer Funktion schreibt?',
-                options: ['Ein Fehler', 'Der Ausdruck wird als Rückgabewert gewertet', 'Nichts besonderes', 'Die Funktion wird ignoriert'],
-                correct: 1
-            }
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['If-Bedingungen & Match', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 5,
+        title: 'Funktionen & Rückgabewerte',
+        description: 'Eigene Funktionen mit Typen',
+        duration: '10 min',
+        theory: `
+<h2>Funktionen & Rückgabewerte 🔧</h2>
+<p>Eigene Funktionen mit Typen. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// Funktionen & Rückgabewerte – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von Funktionen & Rückgabewerte</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "Funktionen verstanden!" aus.',
+            starterCode: '// Funktionen & Rückgabewerte\n',
+            expectedOutput: 'Funktionen verstanden!',
+            hint: 'println!("Funktionen verstanden!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['Funktionen & Rückgabewerte', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 6,
+        title: 'Ownership & Borrowing',
+        description: 'Rusts einzigartiges Speicher-Modell',
+        duration: '12 min',
+        theory: `
+<h2>Ownership & Borrowing 📋</h2>
+<p>Rusts einzigartiges Speicher-Modell. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// Ownership & Borrowing – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von Ownership & Borrowing</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "Ownership verstanden!" aus.',
+            starterCode: '// Ownership & Borrowing\n',
+            expectedOutput: 'Ownership verstanden!',
+            hint: 'println!("Ownership verstanden!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['Ownership & Borrowing', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 7,
+        title: 'Structs',
+        description: 'Eigene Datentypen erstellen',
+        duration: '10 min',
+        theory: `
+<h2>Structs 🏗️</h2>
+<p>Eigene Datentypen erstellen. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// Structs – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von Structs</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "Structs verstanden!" aus.',
+            starterCode: '// Structs\n',
+            expectedOutput: 'Structs verstanden!',
+            hint: 'println!("Structs verstanden!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['Structs', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 8,
+        title: 'Enums & Error Handling',
+        description: 'Option, Result und ?-Operator',
+        duration: '12 min',
+        theory: `
+<h2>Enums & Error Handling ⚡</h2>
+<p>Option, Result und ?-Operator. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// Enums & Error Handling – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von Enums & Error Handling</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "Enums verstanden!" aus.',
+            starterCode: '// Enums & Error Handling\n',
+            expectedOutput: 'Enums verstanden!',
+            hint: 'println!("Enums verstanden!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['Enums & Error Handling', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 9,
+        title: 'Vektoren & Collections',
+        description: 'Dynamische Datenstrukturen',
+        duration: '10 min',
+        theory: `
+<h2>Vektoren & Collections 🛡️</h2>
+<p>Dynamische Datenstrukturen. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// Vektoren & Collections – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von Vektoren & Collections</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "Vektoren verstanden!" aus.',
+            starterCode: '// Vektoren & Collections\n',
+            expectedOutput: 'Vektoren verstanden!',
+            hint: 'println!("Vektoren verstanden!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['Vektoren & Collections', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 10,
+        title: 'Traits',
+        description: 'Geteiltes Verhalten definieren',
+        duration: '12 min',
+        theory: `
+<h2>Traits ✨</h2>
+<p>Geteiltes Verhalten definieren. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// Traits – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von Traits</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "Traits verstanden!" aus.',
+            starterCode: '// Traits\n',
+            expectedOutput: 'Traits verstanden!',
+            hint: 'println!("Traits verstanden!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['Traits', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 11,
+        title: 'Lifetimes',
+        description: 'Referenz-Lebenszeiten verstehen',
+        duration: '12 min',
+        theory: `
+<h2>Lifetimes 📄</h2>
+<p>Referenz-Lebenszeiten verstehen. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// Lifetimes – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von Lifetimes</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "Lifetimes verstanden!" aus.',
+            starterCode: '// Lifetimes\n',
+            expectedOutput: 'Lifetimes verstanden!',
+            hint: 'println!("Lifetimes verstanden!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['Lifetimes', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 12,
+        title: 'Closures & Iteratoren',
+        description: 'Anonyme Funktionen und Ketten',
+        duration: '10 min',
+        theory: `
+<h2>Closures & Iteratoren 🎀</h2>
+<p>Anonyme Funktionen und Ketten. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// Closures & Iteratoren – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von Closures & Iteratoren</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "Closures verstanden!" aus.',
+            starterCode: '// Closures & Iteratoren\n',
+            expectedOutput: 'Closures verstanden!',
+            hint: 'println!("Closures verstanden!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['Closures & Iteratoren', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 13,
+        title: 'Generics',
+        description: 'Generischer Code mit Typen',
+        duration: '12 min',
+        theory: `
+<h2>Generics 🔗</h2>
+<p>Generischer Code mit Typen. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// Generics – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von Generics</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "Generics gemeistert!" aus.',
+            starterCode: '// Generics\n',
+            expectedOutput: 'Generics gemeistert!',
+            hint: 'println!("Generics gemeistert!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['Generics', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 14,
+        title: 'Smart Pointer',
+        description: 'Box, Rc und RefCell',
+        duration: '12 min',
+        theory: `
+<h2>Smart Pointer 🧩</h2>
+<p>Box, Rc und RefCell. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// Smart Pointer – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von Smart Pointer</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "Smart Pointer gemeistert!" aus.',
+            starterCode: '// Smart Pointer\n',
+            expectedOutput: 'Smart Pointer gemeistert!',
+            hint: 'println!("Smart Pointer gemeistert!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['Smart Pointer', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 15,
+        title: 'Concurrency',
+        description: 'Threads und Message Passing',
+        duration: '12 min',
+        theory: `
+<h2>Concurrency 🎯</h2>
+<p>Threads und Message Passing. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// Concurrency – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von Concurrency</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "Concurrency gemeistert!" aus.',
+            starterCode: '// Concurrency\n',
+            expectedOutput: 'Concurrency gemeistert!',
+            hint: 'println!("Concurrency gemeistert!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['Concurrency', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 16,
+        title: 'Modules & Crates',
+        description: 'Code organisieren mit mod',
+        duration: '10 min',
+        theory: `
+<h2>Modules & Crates 💡</h2>
+<p>Code organisieren mit mod. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// Modules & Crates – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von Modules & Crates</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "Modules gemeistert!" aus.',
+            starterCode: '// Modules & Crates\n',
+            expectedOutput: 'Modules gemeistert!',
+            hint: 'println!("Modules gemeistert!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['Modules & Crates', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 17,
+        title: 'Testing',
+        description: 'Unit- und Integration-Tests',
+        duration: '10 min',
+        theory: `
+<h2>Testing 🔒</h2>
+<p>Unit- und Integration-Tests. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// Testing – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von Testing</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "Testing gemeistert!" aus.',
+            starterCode: '// Testing\n',
+            expectedOutput: 'Testing gemeistert!',
+            hint: 'println!("Testing gemeistert!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['Testing', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 18,
+        title: 'Error Types',
+        description: 'Eigene Fehlertypen definieren',
+        duration: '10 min',
+        theory: `
+<h2>Error Types ⏳</h2>
+<p>Eigene Fehlertypen definieren. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// Error Types – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von Error Types</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "Error Types gemeistert!" aus.',
+            starterCode: '// Error Types\n',
+            expectedOutput: 'Error Types gemeistert!',
+            hint: 'println!("Error Types gemeistert!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['Error Types', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 19,
+        title: 'String-Typen',
+        description: 'String vs &str im Detail',
+        duration: '10 min',
+        theory: `
+<h2>String-Typen 🧮</h2>
+<p>String vs &str im Detail. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// String-Typen – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von String-Typen</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "String-Typen gemeistert!" aus.',
+            starterCode: '// String-Typen\n',
+            expectedOutput: 'String-Typen gemeistert!',
+            hint: 'println!("String-Typen gemeistert!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['String-Typen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 20,
+        title: 'Pattern Matching Adv.',
+        description: 'Fortgeschrittene Patterns',
+        duration: '12 min',
+        theory: `
+<h2>Pattern Matching Adv. 🌐</h2>
+<p>Fortgeschrittene Patterns. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// Pattern Matching Adv. – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von Pattern Matching Adv.</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "Pattern Matching Adv. gemeistert!" aus.',
+            starterCode: '// Pattern Matching Adv.\n',
+            expectedOutput: 'Pattern Matching Adv. gemeistert!',
+            hint: 'println!("Pattern Matching Adv. gemeistert!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['Pattern Matching Adv.', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 21,
+        title: 'Macros',
+        description: 'Code generieren mit macro_rules!',
+        duration: '12 min',
+        theory: `
+<h2>Macros 🎨</h2>
+<p>Code generieren mit macro_rules!. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// Macros – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von Macros</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "Macros gemeistert!" aus.',
+            starterCode: '// Macros\n',
+            expectedOutput: 'Macros gemeistert!',
+            hint: 'println!("Macros gemeistert!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['Macros', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 22,
+        title: 'Unsafe Rust',
+        description: 'Wann und wie unsafe nutzen',
+        duration: '12 min',
+        theory: `
+<h2>Unsafe Rust 🔥</h2>
+<p>Wann und wie unsafe nutzen. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// Unsafe Rust – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von Unsafe Rust</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "Unsafe Rust gemeistert!" aus.',
+            starterCode: '// Unsafe Rust\n',
+            expectedOutput: 'Unsafe Rust gemeistert!',
+            hint: 'println!("Unsafe Rust gemeistert!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['Unsafe Rust', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 23,
+        title: 'Async/Await',
+        description: 'Asynchrone Programmierung mit Tokio',
+        duration: '12 min',
+        theory: `
+<h2>Async/Await 💪</h2>
+<p>Asynchrone Programmierung mit Tokio. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// Async/Await – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von Async/Await</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "Async/Await gemeistert!" aus.',
+            starterCode: '// Async/Await\n',
+            expectedOutput: 'Async/Await gemeistert!',
+            hint: 'println!("Async/Await gemeistert!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['Async/Await', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 24,
+        title: 'Serde & JSON',
+        description: 'Serialisierung und Deserialisierung',
+        duration: '10 min',
+        theory: `
+<h2>Serde & JSON 🎮</h2>
+<p>Serialisierung und Deserialisierung. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// Serde & JSON – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von Serde & JSON</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "Serde gemeistert!" aus.',
+            starterCode: '// Serde & JSON\n',
+            expectedOutput: 'Serde gemeistert!',
+            hint: 'println!("Serde gemeistert!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['Serde & JSON', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 25,
+        title: 'HTTP mit reqwest',
+        description: 'API-Anfragen senden',
+        duration: '10 min',
+        theory: `
+<h2>HTTP mit reqwest 📡</h2>
+<p>API-Anfragen senden. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// HTTP mit reqwest – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von HTTP mit reqwest</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "HTTP mit reqwest gemeistert!" aus.',
+            starterCode: '// HTTP mit reqwest\n',
+            expectedOutput: 'HTTP mit reqwest gemeistert!',
+            hint: 'println!("HTTP mit reqwest gemeistert!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['HTTP mit reqwest', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 26,
+        title: 'Actix Web',
+        description: 'Einen Webserver bauen',
+        duration: '12 min',
+        theory: `
+<h2>Actix Web 🗄️</h2>
+<p>Einen Webserver bauen. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// Actix Web – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von Actix Web</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "Actix Web gemeistert!" aus.',
+            starterCode: '// Actix Web\n',
+            expectedOutput: 'Actix Web gemeistert!',
+            hint: 'println!("Actix Web gemeistert!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['Actix Web', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 27,
+        title: 'File I/O',
+        description: 'Dateien sicher lesen und schreiben',
+        duration: '10 min',
+        theory: `
+<h2>File I/O 📦</h2>
+<p>Dateien sicher lesen und schreiben. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// File I/O – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von File I/O</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "File I/O gemeistert!" aus.',
+            starterCode: '// File I/O\n',
+            expectedOutput: 'File I/O gemeistert!',
+            hint: 'println!("File I/O gemeistert!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['File I/O', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 28,
+        title: 'Cargo & Dependencies',
+        description: 'Pakete verwalten mit Cargo',
+        duration: '8 min',
+        theory: `
+<h2>Cargo & Dependencies 🧪</h2>
+<p>Pakete verwalten mit Cargo. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// Cargo & Dependencies – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von Cargo & Dependencies</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "Cargo gemeistert!" aus.',
+            starterCode: '// Cargo & Dependencies\n',
+            expectedOutput: 'Cargo gemeistert!',
+            hint: 'println!("Cargo gemeistert!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['Cargo & Dependencies', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 29,
+        title: 'FFI & C-Interop',
+        description: 'C-Code aus Rust aufrufen',
+        duration: '12 min',
+        theory: `
+<h2>FFI & C-Interop 🏃</h2>
+<p>C-Code aus Rust aufrufen. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// FFI & C-Interop – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von FFI & C-Interop</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "FFI gemeistert!" aus.',
+            starterCode: '// FFI & C-Interop\n',
+            expectedOutput: 'FFI gemeistert!',
+            hint: 'println!("FFI gemeistert!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['FFI & C-Interop', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
+        ]
+    },
+    {
+        id: 30,
+        title: 'Projekt: CLI Tool',
+        description: 'Ein Kommandozeilen-Programm bauen',
+        duration: '15 min',
+        theory: `
+<h2>Projekt: CLI Tool 🏆</h2>
+<p>Ein Kommandozeilen-Programm bauen. In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.</p>
+
+<h3>Grundlagen</h3>
+<pre class="code-block">// Projekt: CLI Tool – Beispielcode
+// Hier siehst du die Grundlagen dieses Themas</pre>
+
+<h3>Wichtige Konzepte</h3>
+<ul>
+  <li>Grundlegendes Verständnis von Projekt: CLI Tool</li>
+  <li>Praktische Anwendung im Code</li>
+  <li>Best Practices und häufige Fehler</li>
+</ul>
+
+<h3>Praxis-Tipps</h3>
+<p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
+    `,
+        exercise: {
+            instructions: 'Gib "Projekt: CLI Tool gemeistert!" aus.',
+            starterCode: '// Projekt: CLI Tool\n',
+            expectedOutput: 'Projekt: CLI Tool gemeistert!',
+            hint: 'println!("Projekt: CLI Tool gemeistert!");'
+        },
+        quiz: [
+            { question: 'Was hast du in dieser Lektion gelernt?', options: ['Projekt: CLI Tool', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
+            { question: 'Wie schwer war diese Lektion?', options: ['Zu einfach', 'Genau richtig', 'Etwas schwer', 'Zu schwer'], correct: 1 }
         ]
     }
 ];

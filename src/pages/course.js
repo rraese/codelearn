@@ -2,41 +2,50 @@ import { getLanguage } from '../data/languages.js';
 import { pythonLessons } from '../data/lessons/python.js';
 import { javascriptLessons } from '../data/lessons/javascript.js';
 import { rustLessons } from '../data/lessons/rust.js';
+import { goLessons } from '../data/lessons/go.js';
+import { typescriptLessons } from '../data/lessons/typescript.js';
+import { cppLessons } from '../data/lessons/cpp.js';
+import { javaLessons } from '../data/lessons/java.js';
+import { csharpLessons } from '../data/lessons/csharp.js';
+import { swiftLessons } from '../data/lessons/swift.js';
+import { kotlinLessons } from '../data/lessons/kotlin.js';
+import { phpLessons } from '../data/lessons/php.js';
+import { rubyLessons } from '../data/lessons/ruby.js';
 import { isLessonComplete, getCompletedCount } from '../progress.js';
+import { isLessonAccessible, isProLesson } from '../lib/tiers.js';
+import { renderNavbar, bindNavbar } from '../components/navbar.js';
 
 const lessonData = {
-    python: pythonLessons,
-    javascript: javascriptLessons,
-    rust: rustLessons,
+  python: pythonLessons,
+  javascript: javascriptLessons,
+  rust: rustLessons,
+  go: goLessons,
+  typescript: typescriptLessons,
+  cpp: cppLessons,
+  java: javaLessons,
+  csharp: csharpLessons,
+  swift: swiftLessons,
+  kotlin: kotlinLessons,
+  php: phpLessons,
+  ruby: rubyLessons,
 };
 
 export function renderCourse(container, params) {
-    const langId = params.lang;
-    const lang = getLanguage(langId);
-    const lessons = lessonData[langId];
+  const langId = params.lang;
+  const lang = getLanguage(langId);
+  const lessons = lessonData[langId];
 
-    if (!lang || !lessons) {
-        container.innerHTML = '<div class="container page-content"><h1>Sprache nicht gefunden</h1></div>';
-        return;
-    }
+  if (!lang || !lessons) {
+    container.innerHTML = '<div class="container page-content"><h1>Sprache nicht gefunden</h1></div>';
+    return;
+  }
 
-    const completed = getCompletedCount(langId);
-    const pct = Math.round((completed / lessons.length) * 100);
+  const completed = getCompletedCount(langId);
+  const pct = Math.round((completed / lessons.length) * 100);
 
-    container.innerHTML = `
+  container.innerHTML = `
     <div class="animated-bg"></div>
-    <nav class="navbar">
-      <div class="container">
-        <a href="#/" class="navbar-brand">
-          <span class="logo-icon">🚀</span>
-          <span class="brand-text">CodeLearn</span>
-        </a>
-        <ul class="navbar-nav">
-          <li><a href="#/">Start</a></li>
-          <li><a href="#/course/${langId}" class="active">${lang.name}</a></li>
-        </ul>
-      </div>
-    </nav>
+    ${renderNavbar('courses')}
 
     <main class="page-content page-container">
       <div class="container">
@@ -58,31 +67,43 @@ export function renderCourse(container, params) {
 
         <div class="lessons-list">
           ${lessons.map((lesson, i) => {
-        const done = isLessonComplete(langId, lesson.id);
-        return `
-              <div class="lesson-card slide-up stagger-${Math.min(i + 2, 5)} ${done ? 'completed' : ''}" 
-                   data-lesson="${lesson.id}">
-                <div class="lesson-number">${done ? '✓' : lesson.id}</div>
+    const done = isLessonComplete(langId, lesson.id);
+    const accessible = isLessonAccessible(lesson.id);
+    const pro = isProLesson(lesson.id);
+    return `
+              <div class="lesson-card slide-up stagger-${Math.min(i + 2, 5)} ${done ? 'completed' : ''} ${!accessible ? 'locked' : ''}"
+                   data-lesson="${lesson.id}" data-accessible="${accessible}">
+                <div class="lesson-number">${done ? '✓' : !accessible ? '🔒' : lesson.id}</div>
                 <div class="lesson-info">
-                  <div class="lesson-title">${lesson.title}</div>
+                  <div class="lesson-title">
+                    ${lesson.title}
+                    ${pro ? '<span class="pro-badge">⭐ Pro</span>' : ''}
+                  </div>
                   <div class="lesson-desc">${lesson.description}</div>
                 </div>
                 <div class="lesson-meta">
                   <span>⏱ ${lesson.duration}</span>
                 </div>
-                <div class="lesson-arrow">→</div>
+                <div class="lesson-arrow">${accessible ? '→' : '🔒'}</div>
               </div>
             `;
-    }).join('')}
+  }).join('')}
         </div>
       </div>
     </main>
   `;
 
-    container.querySelectorAll('.lesson-card').forEach(card => {
-        card.addEventListener('click', () => {
-            const lessonId = card.dataset.lesson;
-            window.location.hash = `#/lesson/${langId}/${lessonId}`;
-        });
+  container.querySelectorAll('.lesson-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const lessonId = card.dataset.lesson;
+      const accessible = card.dataset.accessible === 'true';
+      if (accessible) {
+        window.location.hash = `#/lesson/${langId}/${lessonId}`;
+      } else {
+        window.location.hash = '#/pricing';
+      }
     });
+  });
+
+  bindNavbar(container);
 }

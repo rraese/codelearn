@@ -3,31 +3,39 @@ import { getCompletedCount } from '../progress.js';
 import { pythonLessons } from '../data/lessons/python.js';
 import { javascriptLessons } from '../data/lessons/javascript.js';
 import { rustLessons } from '../data/lessons/rust.js';
+import { goLessons } from '../data/lessons/go.js';
+import { typescriptLessons } from '../data/lessons/typescript.js';
+import { cppLessons } from '../data/lessons/cpp.js';
+import { javaLessons } from '../data/lessons/java.js';
+import { csharpLessons } from '../data/lessons/csharp.js';
+import { swiftLessons } from '../data/lessons/swift.js';
+import { kotlinLessons } from '../data/lessons/kotlin.js';
+import { phpLessons } from '../data/lessons/php.js';
+import { rubyLessons } from '../data/lessons/ruby.js';
+import { renderNavbar, bindNavbar } from '../components/navbar.js';
 
 const lessonCounts = {
-    python: pythonLessons.length,
-    javascript: javascriptLessons.length,
-    rust: rustLessons.length,
+  python: pythonLessons.length,
+  javascript: javascriptLessons.length,
+  rust: rustLessons.length,
+  go: goLessons.length,
+  typescript: typescriptLessons.length,
+  cpp: cppLessons.length,
+  java: javaLessons.length,
+  csharp: csharpLessons.length,
+  swift: swiftLessons.length,
+  kotlin: kotlinLessons.length,
+  php: phpLessons.length,
+  ruby: rubyLessons.length,
 };
 
 export function renderHome(container) {
-    const totalLessons = Object.values(lessonCounts).reduce((a, b) => a + b, 0);
-    const totalCompleted = languages.reduce((sum, lang) => sum + getCompletedCount(lang.id), 0);
+  const totalLessons = Object.values(lessonCounts).reduce((a, b) => a + b, 0);
+  const totalCompleted = languages.reduce((sum, lang) => sum + getCompletedCount(lang.id), 0);
 
-    container.innerHTML = `
+  container.innerHTML = `
     <div class="animated-bg"></div>
-    <nav class="navbar">
-      <div class="container">
-        <a href="#/" class="navbar-brand">
-          <span class="logo-icon">🚀</span>
-          <span class="brand-text">CodeLearn</span>
-        </a>
-        <ul class="navbar-nav">
-          <li><a href="#/" class="active">Start</a></li>
-          <li><a href="#/" class="nav-courses">Kurse</a></li>
-        </ul>
-      </div>
-    </nav>
+    ${renderNavbar('home')}
 
     <main class="page-container">
       <section class="hero">
@@ -37,7 +45,7 @@ export function renderHome(container) {
             interaktiv & kostenlos
           </h1>
           <p class="hero-subtitle slide-up stagger-1">
-            Entdecke Python, JavaScript und Rust mit geführten Lektionen, 
+            Entdecke ${languages.length} Sprachen mit geführten Lektionen,
             einem integrierten Code-Editor und interaktiven Quizzes.
           </p>
 
@@ -61,11 +69,11 @@ export function renderHome(container) {
       <section class="container">
         <div class="language-grid">
           ${languages.map((lang, i) => {
-        const count = lessonCounts[lang.id];
-        const completed = getCompletedCount(lang.id);
-        const pct = count > 0 ? Math.round((completed / count) * 100) : 0;
-        return `
-              <div class="language-card slide-up stagger-${i + 2}" 
+    const count = lessonCounts[lang.id] || 0;
+    const completed = getCompletedCount(lang.id);
+    const pct = count > 0 ? Math.round((completed / count) * 100) : 0;
+    return `
+              <div class="language-card slide-up stagger-${Math.min(i + 2, 5)}"
                    data-lang="${lang.id}"
                    style="--card-accent: ${lang.accentColor}; --card-glow: ${lang.glowColor};">
                 <div class="card-icon">${lang.icon}</div>
@@ -81,17 +89,19 @@ export function renderHome(container) {
                 </div>
               </div>
             `;
-    }).join('')}
+  }).join('')}
         </div>
       </section>
     </main>
   `;
 
-    // Bind card clicks
-    container.querySelectorAll('.language-card').forEach(card => {
-        card.addEventListener('click', () => {
-            const langId = card.dataset.lang;
-            window.location.hash = `#/course/${langId}`;
-        });
+  // Bind card clicks
+  container.querySelectorAll('.language-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const langId = card.dataset.lang;
+      window.location.hash = `#/course/${langId}`;
     });
+  });
+
+  bindNavbar(container);
 }

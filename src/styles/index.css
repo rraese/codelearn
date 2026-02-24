@@ -35,6 +35,33 @@
   --rust-primary: #ce422b;
   --rust-secondary: #f74c00;
   --rust-glow: rgba(206, 66, 43, 0.4);
+  --go-primary: #00add8;
+  --go-secondary: #00a29c;
+  --go-glow: rgba(0, 173, 216, 0.4);
+  --ts-primary: #3178c6;
+  --ts-secondary: #235a97;
+  --ts-glow: rgba(49, 120, 198, 0.4);
+  --cpp-primary: #9c33ff;
+  --cpp-secondary: #6d23b6;
+  --cpp-glow: rgba(156, 51, 255, 0.4);
+  --java-primary: #e76f00;
+  --java-secondary: #5382a1;
+  --java-glow: rgba(231, 111, 0, 0.4);
+  --csharp-primary: #9b4dca;
+  --csharp-secondary: #6a1b9a;
+  --csharp-glow: rgba(155, 77, 202, 0.4);
+  --swift-primary: #fa7343;
+  --swift-secondary: #ff2d55;
+  --swift-glow: rgba(250, 115, 67, 0.4);
+  --kotlin-primary: #7f52ff;
+  --kotlin-secondary: #e44857;
+  --kotlin-glow: rgba(127, 82, 255, 0.4);
+  --php-primary: #777bb4;
+  --php-secondary: #4f5b93;
+  --php-glow: rgba(119, 123, 180, 0.4);
+  --ruby-primary: #cc342d;
+  --ruby-secondary: #a82621;
+  --ruby-glow: rgba(204, 52, 45, 0.4);
 
   /* Status */
   --success: #22c55e;
