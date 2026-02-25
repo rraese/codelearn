@@ -1,6 +1,10 @@
 services:
-  codelearn:
+  site4:
     build: .
-    ports:
-      - "3000:80"
     restart: unless-stopped
+    networks:
+      - proxy_net
+
+networks:
+  proxy_net:
+    external: true
