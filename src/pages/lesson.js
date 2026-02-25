@@ -74,7 +74,7 @@ export function renderLesson(container, params) {
   const done = isLessonComplete(langId, lessonId);
   const nextLesson = lessons.find(l => l.id === lessonId + 1);
   const prevLesson = lessons.find(l => l.id === lessonId - 1);
-  const theoryContent = needsTheoryUpgrade(lesson.theory)
+  const theoryContent = shouldUseAdaptiveTheory(langId, lesson.theory)
     ? buildAdaptiveTheory(lesson, langId, lang.name)
     : lesson.theory;
 
@@ -201,8 +201,30 @@ function needsTheoryUpgrade(theoryHtml) {
   if (!theoryHtml) return true;
 
   const lower = theoryHtml.toLowerCase();
-  return lower.includes('in dieser lektion lernst du die wichtigsten konzepte und techniken')
-    && lower.includes('<h3>grundlagen</h3>');
+  const genericSignals = [
+    'in dieser lektion lernst du die wichtigsten konzepte und techniken',
+    '<h3>grundlagen</h3>',
+    '<h3>wichtige konzepte</h3>',
+    '<h3>praxis-tipps</h3>',
+    'beispielcode',
+    'grundlegendes verständnis von',
+  ];
+
+  const hitCount = genericSignals.reduce((count, signal) => {
+    return count + (lower.includes(signal) ? 1 : 0);
+  }, 0);
+
+  return hitCount >= 2;
+}
+
+function shouldUseAdaptiveTheory(langId, theoryHtml) {
+  // Python/JavaScript enthalten bereits gute, handgeschriebene Theorie.
+  if (langId === 'python' || langId === 'javascript') {
+    return needsTheoryUpgrade(theoryHtml);
+  }
+
+  // Für alle anderen Sprachen konsequent die lernorientierte Adaptive-Theorie nutzen.
+  return true;
 }
 
 function inferTopicType(title, description) {
@@ -228,118 +250,218 @@ function inferTopicType(title, description) {
 
 function getTopicExplanation(topic) {
   const texts = {
-    basics: 'Du lernst den kleinsten lauffähigen Ablauf: schreiben, ausführen, Ausgabe prüfen.',
-    variables: 'Du speicherst Werte unter klaren Namen und verwendest sie später gezielt weiter.',
-    loops: 'Du wiederholst einen Arbeitsschritt kontrolliert für mehrere Werte, ohne Copy-Paste.',
-    conditions: 'Du triffst Entscheidungen über Bedingungen und steuerst dadurch den Ablauf.',
-    functions: 'Du kapselst Logik in wiederverwendbare Bausteine mit klaren Ein- und Ausgaben.',
-    collections: 'Du strukturierst mehrere Werte in Listen, Maps, Sets oder ähnlichen Sammlungen.',
-    oop: 'Du modellierst Daten und Verhalten gemeinsam in Klassen/Objekten.',
-    async: 'Du steuerst zeitversetzte Abläufe, ohne den restlichen Code zu blockieren.',
-    errors: 'Du fängst Fehler bewusst ab und definierst einen sauberen Fehlerpfad.',
-    modules: 'Du teilst Code in Einheiten auf und verbindest sie über klare Schnittstellen.',
-    testing: 'Du überprüfst Verhalten reproduzierbar und bekommst sofortiges Feedback.',
-    web: 'Du verarbeitest Ein- und Ausgaben wie in typischen API- und Web-Flows.',
-    data: 'Du lädst, transformierst und validierst Daten strukturiert und nachvollziehbar.',
-    project: 'Du kombinierst mehrere Konzepte zu einem vollständigen End-to-End-Ablauf.',
+    basics: 'Du lernst den kleinsten lauffaehigen Ablauf: schreiben, ausfuehren, pruefen.',
+    variables: 'Du speicherst Werte unter klaren Namen und nutzt sie zuverlaessig weiter.',
+    loops: 'Du wiederholst denselben Schritt fuer mehrere Werte ohne Copy-Paste.',
+    conditions: 'Du steuerst den Ablauf ueber klare Bedingungen und Zweige.',
+    functions: 'Du kapselst Logik in wiederverwendbare Bausteine mit Ein- und Ausgabe.',
+    collections: 'Du verwaltest mehrere Werte strukturiert und greifst gezielt darauf zu.',
+    oop: 'Du modellierst Daten und Verhalten gemeinsam in Typen/Objekten.',
+    async: 'Du koordinierst Ablaeufe, deren Ergebnisse zeitversetzt zurueckkommen.',
+    errors: 'Du behandelst Fehler kontrolliert statt unkontrolliert abzubrechen.',
+    modules: 'Du strukturierst Code in Dateien/Module mit klaren Schnittstellen.',
+    testing: 'Du pruefst Verhalten reproduzierbar und erkennst Fehler frueh.',
+    web: 'Du verarbeitest typische Web/API-Ein- und Ausgaben robust.',
+    data: 'Du laedst, wandelst und validierst Daten nachvollziehbar.',
+    project: 'Du kombinierst mehrere Konzepte zu einem vollstaendigen Ablauf.',
     general: 'Du trainierst sauberes Arbeiten: kleine Schritte, klare Kontrolle, exakte Ausgabe.',
   };
 
   return texts[topic] || texts.general;
 }
 
+function getTopicCoreConcepts(topic) {
+  const concepts = {
+    basics: ['Welche minimale Struktur lauffaehig sein muss.', 'Wie du Ausgabe exakt erzeugst.', 'Wie du Ergebnis und Ziel vergleichst.'],
+    variables: ['Wann du einen Wert speicherst.', 'Wie Namen Lesbarkeit und Fehlerquote beeinflussen.', 'Wie Datentypen das Verhalten aendern.'],
+    loops: ['Wie Datenquelle und Schleifenkopf zusammenhaengen.', 'Welche Aktion pro Durchlauf ausgefuehrt wird.', 'Wie Reihenfolge und Vollstaendigkeit geprueft werden.'],
+    conditions: ['Welche Bedingung fachlich richtig ist.', 'Wie True-/False-Pfad klar getrennt wird.', 'Wie du Kantenfaelle testest.'],
+    functions: ['Welche Eingaben die Funktion braucht.', 'Was die Funktion garantiert zurueckliefert.', 'Wie Aufruf und Rueckgabe zusammenspielen.'],
+    collections: ['Welche Struktur zur Aufgabe passt.', 'Wie Zugriff ueber Index/Key sicher erfolgt.', 'Welche Ausgabe wirklich gefordert ist.'],
+    oop: ['Welche Daten im Objektzustand liegen.', 'Welche Methode welche Verantwortung hat.', 'Wie Instanz und Methodenaufruf zusammenhaengen.'],
+    async: ['Wann ein Ergebnis noch nicht verfuegbar ist.', 'Wo auf ein Ergebnis gewartet werden muss.', 'Warum Reihenfolge bei Ausgaben wichtig ist.'],
+    errors: ['Welche Fehler realistisch auftreten.', 'Wo du Fehler abfaengst.', 'Welche klare Reaktion im Fehlerfall erfolgt.'],
+    modules: ['Welche Teile du auslagerst.', 'Welche Schnittstelle exportiert/importiert wird.', 'Wie Abhaengigkeiten klein bleiben.'],
+    testing: ['Welches Verhalten ein Test absichert.', 'Welche Eingaben kritisch sind.', 'Wie ein Testausfall interpretiert wird.'],
+    web: ['Welche Daten reinkommen und rausgehen.', 'Wie erfolgreiche und fehlerhafte Faelle getrennt werden.', 'Wie Ergebnisdaten exakt ausgegeben werden.'],
+    data: ['Wie Rohdaten eingelesen werden.', 'Welche Transformation noetig ist.', 'Wie du das Ergebnis validierst.'],
+    project: ['Wie Teilziele definiert werden.', 'Wie Teilziele integriert werden.', 'Wie du End-to-End pruefst.'],
+    general: ['Zieltext exakt lesen.', 'Nur relevante Stelle aendern.', 'Nach jedem Run sofort gegenpruefen.'],
+  };
+
+  return concepts[topic] || concepts.general;
+}
+
 function getTopicSteps(topic) {
   const steps = {
-    basics: ['Starter-Code lesen.', 'Eine minimale lauffähige Änderung machen.', 'Ausgabe exakt mit dem Ziel vergleichen.'],
-    variables: ['Wert mit sprechendem Namen speichern.', 'Wert gezielt verändern oder weiterreichen.', 'Endwert ausgeben und prüfen.'],
-    loops: ['Quelle der Werte festlegen.', 'Schleifenkopf korrekt formulieren.', 'Pro Durchlauf genau eine klare Aktion ausführen.'],
-    conditions: ['Bedingung in Klartext formulieren.', 'True- und False-Pfad sauber trennen.', 'Mit realen Werten gegenprüfen.'],
-    functions: ['Signatur festlegen.', 'Logik in der Funktion implementieren.', 'Funktion aufrufen und Rückgabe prüfen.'],
-    collections: ['Passende Datenstruktur wählen.', 'Zugriff über Index/Key korrekt setzen.', 'Ergebnis ohne Nebenwerte ausgeben.'],
-    oop: ['Typ/Klasse definieren.', 'Instanz erzeugen.', 'Methode gezielt aufrufen und Ausgabe prüfen.'],
+    basics: ['Starter-Code lesen.', 'Eine minimale lauffaehige Aenderung machen.', 'Ausgabe exakt mit dem Ziel vergleichen.'],
+    variables: ['Wert mit sprechendem Namen speichern.', 'Wert gezielt veraendern oder weiterreichen.', 'Endwert ausgeben und pruefen.'],
+    loops: ['Quelle der Werte festlegen.', 'Schleifenkopf korrekt formulieren.', 'Pro Durchlauf genau eine klare Aktion ausfuehren.'],
+    conditions: ['Bedingung in Klartext formulieren.', 'True- und False-Pfad sauber trennen.', 'Mit realen Werten gegenpruefen.'],
+    functions: ['Signatur festlegen.', 'Logik in der Funktion implementieren.', 'Funktion aufrufen und Rueckgabe pruefen.'],
+    collections: ['Passende Datenstruktur waehlen.', 'Zugriff ueber Index/Key korrekt setzen.', 'Ergebnis ohne Nebenwerte ausgeben.'],
+    oop: ['Typ/Klasse definieren.', 'Instanz erzeugen.', 'Methode gezielt aufrufen und Ausgabe pruefen.'],
     async: ['Asynchronen Ablauf starten.', 'Auf Ergebnis warten/synchronisieren.', 'Erst danach weiterarbeiten und ausgeben.'],
-    errors: ['Fehlerquelle identifizieren.', 'Schutzblock hinzufügen.', 'Im Fehlerfall eine klare Reaktion ausgeben.'],
-    general: ['Aufgabe präzise lesen.', 'In kleinen Schritten ergänzen.', 'Nach jedem Run gegen die Zielausgabe prüfen.'],
+    errors: ['Fehlerquelle identifizieren.', 'Schutzblock hinzufuegen.', 'Im Fehlerfall eine klare Reaktion ausgeben.'],
+    general: ['Aufgabe praezise lesen.', 'In kleinen Schritten ergaenzen.', 'Nach jedem Run gegen die Zielausgabe pruefen.'],
   };
 
   return steps[topic] || steps.general;
 }
 
+function getTopicSelfCheck(topic) {
+  const checks = {
+    loops: ['Werden alle Elemente wirklich durchlaufen?', 'Wird pro Durchlauf genau ein korrekter Wert ausgegeben?'],
+    conditions: ['Ist die Bedingung fachlich richtig?', 'Gibt es fuer beide Faelle eine klare Reaktion?'],
+    functions: ['Wird die Funktion korrekt aufgerufen?', 'Stimmt der Rueckgabewert und dessen Ausgabe?'],
+    collections: ['Wird auf das richtige Element zugegriffen?', 'Ist die Ausgabe ohne Zusatztext exakt korrekt?'],
+    oop: ['Ist das Objekt korrekt initialisiert?', 'Wird die richtige Methode auf der richtigen Instanz aufgerufen?'],
+    async: ['Findet die Ausgabe erst nach dem Warten statt?', 'Bleibt die Reihenfolge der Ausgaben korrekt?'],
+    errors: ['Wird der relevante Fehler abgefangen?', 'Liefert der Fehlerpfad eine verstaendliche Ausgabe?'],
+    general: ['Stimmt jede Zeile der Ausgabe exakt?', 'Hast du nur den notwendigen Code geaendert?'],
+  };
+
+  return checks[topic] || checks.general;
+}
+
 function getTopicPitfalls(topic) {
   const pitfalls = {
-    basics: ['Ausgabe-Befehl falsch geschrieben.', 'Text nicht exakt übernommen.', 'Zusätzliche Leerzeichen/Zeilen übersehen.'],
+    basics: ['Ausgabe-Befehl falsch geschrieben.', 'Text nicht exakt uebernommen.', 'Zusaetzliche Leerzeichen/Zeilen uebersehen.'],
     variables: ['Falschen Namen verwendet.', 'Zuweisung und Vergleich verwechselt.', 'Falscher Datentyp gespeichert.'],
-    loops: ['Schleife läuft nicht über alle Werte.', 'Falsche Einrückung oder Blockstruktur.', 'Im Schleifenkörper falsche Variable genutzt.'],
-    conditions: ['Bedingung prüft den falschen Wert.', 'Nur ein Zweig implementiert.', 'Operator passt nicht zur Aufgabe.'],
-    functions: ['Rückgabewert fehlt.', 'Falsche Parameterreihenfolge.', 'Funktion wird nie aufgerufen.'],
+    loops: ['Schleife laeuft nicht ueber alle Werte.', 'Falsche Einrueckung oder Blockstruktur.', 'Im Schleifenkoerper falsche Variable genutzt.'],
+    conditions: ['Bedingung prueft den falschen Wert.', 'Nur ein Zweig implementiert.', 'Operator passt nicht zur Aufgabe.'],
+    functions: ['Rueckgabewert fehlt.', 'Falsche Parameterreihenfolge.', 'Funktion wird nie aufgerufen.'],
     collections: ['Index/Key verwechselt.', 'Duplikate oder Reihenfolge nicht bedacht.', 'Falsches Element ausgegeben.'],
-    oop: ['Konstruktor unvollständig.', 'Methode am falschen Objekt aufgerufen.', 'Objektzustand nicht korrekt gesetzt.'],
-    async: ['Ergebnis zu früh verwendet.', 'await/sync-Schritt fehlt.', 'Ausgabereihenfolge ist falsch.'],
+    oop: ['Konstruktor unvollstaendig.', 'Methode am falschen Objekt aufgerufen.', 'Objektzustand nicht korrekt gesetzt.'],
+    async: ['Ergebnis zu frueh verwendet.', 'Warte-/Synchronisationsschritt fehlt.', 'Ausgabereihenfolge ist falsch.'],
     errors: ['Fehler wird nicht abgefangen.', 'Zu breiter Catch verschluckt Ursachen.', 'Fehlerpfad gibt nichts Klarlesbares aus.'],
-    general: ['Zu viele Änderungen auf einmal.', 'Zielausgabe nicht zeilenweise geprüft.', 'Kleine Syntaxfehler übersehen.'],
+    general: ['Zu viele Aenderungen auf einmal.', 'Zielausgabe nicht zeilenweise geprueft.', 'Kleine Syntaxfehler uebersehen.'],
   };
 
   return pitfalls[topic] || pitfalls.general;
 }
 
-function getLanguageHintPattern(langId, topic) {
-  const outputCall = {
-    python: 'print(...)',
-    javascript: 'console.log(...)',
-    typescript: 'console.log(...)',
-    go: 'fmt.Println(...)',
-    rust: 'println!(...)',
-    cpp: 'cout << ... << endl;',
-    java: 'System.out.println(...)',
-    csharp: 'Console.WriteLine(...)',
-    swift: 'print(...)',
-    kotlin: 'println(...)',
-    php: 'echo ...;',
-    ruby: 'puts ...',
-  }[langId] || 'AUSGABE(...)';
+function getLanguageMiniExample(langId, topic) {
+  const examples = {
+    python: {
+      general: 'wert = 5\nprint(wert)',
+      loops: 'werte = [1, 2, 3]\nfor wert in werte:\n    print(wert)',
+      conditions: 'score = 42\nif score >= 50:\n    print("Bestanden")\nelse:\n    print("Noch nicht")',
+      functions: 'def verdoppeln(x):\n    return x * 2\n\nprint(verdoppeln(4))',
+      collections: 'user = {"name": "Ada", "level": 3}\nprint(user["name"])',
+      oop: 'class User:\n    def __init__(self, name):\n        self.name = name\n\nu = User("Ada")\nprint(u.name)',
+      async: 'async def lade():\n    return "ok"\n\n# Ergebnis erst nach await verwenden',
+      errors: 'try:\n    x = 10 / 0\nexcept ZeroDivisionError:\n    print("Fehler abgefangen")',
+    },
+    javascript: {
+      general: 'const wert = 5;\nconsole.log(wert);',
+      loops: 'const werte = [1, 2, 3];\nfor (const wert of werte) {\n  console.log(wert);\n}',
+      conditions: 'const score = 42;\nif (score >= 50) {\n  console.log("Bestanden");\n} else {\n  console.log("Noch nicht");\n}',
+      functions: 'const verdoppeln = (x) => x * 2;\nconsole.log(verdoppeln(4));',
+      collections: 'const user = { name: "Ada", level: 3 };\nconsole.log(user.name);',
+      oop: 'class User {\n  constructor(name) { this.name = name; }\n}\nconsole.log(new User("Ada").name);',
+      async: 'const lade = async () => "ok";\nconst run = async () => {\n  console.log(await lade());\n};\nrun();',
+      errors: 'try {\n  throw new Error("Bumm");\n} catch (e) {\n  console.log("Fehler abgefangen");\n}',
+    },
+    typescript: {
+      general: 'const wert: number = 5;\nconsole.log(wert);',
+      loops: 'const werte: number[] = [1, 2, 3];\nfor (const wert of werte) {\n  console.log(wert);\n}',
+      functions: 'const verdoppeln = (x: number): number => x * 2;\nconsole.log(verdoppeln(4));',
+      conditions: 'const score: number = 42;\nconsole.log(score >= 50 ? "Bestanden" : "Noch nicht");',
+    },
+    go: {
+      general: 'wert := 5\nfmt.Println(wert)',
+      loops: 'werte := []int{1, 2, 3}\nfor _, wert := range werte {\n    fmt.Println(wert)\n}',
+      conditions: 'score := 42\nif score >= 50 {\n    fmt.Println("Bestanden")\n} else {\n    fmt.Println("Noch nicht")\n}',
+      functions: 'func verdoppeln(x int) int {\n    return x * 2\n}\nfmt.Println(verdoppeln(4))',
+      errors: 'if err != nil {\n    fmt.Println("Fehler:", err)\n}',
+    },
+    rust: {
+      general: 'let wert = 5;\nprintln!("{}", wert);',
+      loops: 'let werte = vec![1, 2, 3];\nfor wert in werte {\n    println!("{}", wert);\n}',
+      conditions: 'let score = 42;\nif score >= 50 {\n    println!("Bestanden");\n} else {\n    println!("Noch nicht");\n}',
+      functions: 'fn verdoppeln(x: i32) -> i32 {\n    x * 2\n}\nprintln!("{}", verdoppeln(4));',
+      errors: 'match parse_result {\n    Ok(v) => println!("{}", v),\n    Err(_) => println!("Fehler abgefangen"),\n}',
+    },
+    cpp: {
+      general: 'int wert = 5;\ncout << wert << endl;',
+      loops: 'vector<int> werte = {1, 2, 3};\nfor (int wert : werte) {\n    cout << wert << endl;\n}',
+      conditions: 'int score = 42;\nif (score >= 50) {\n    cout << "Bestanden" << endl;\n} else {\n    cout << "Noch nicht" << endl;\n}',
+      functions: 'int verdoppeln(int x) {\n    return x * 2;\n}\ncout << verdoppeln(4) << endl;',
+    },
+    java: {
+      general: 'int wert = 5;\nSystem.out.println(wert);',
+      loops: 'int[] werte = {1, 2, 3};\nfor (int wert : werte) {\n    System.out.println(wert);\n}',
+      conditions: 'int score = 42;\nif (score >= 50) {\n    System.out.println("Bestanden");\n} else {\n    System.out.println("Noch nicht");\n}',
+      functions: 'static int verdoppeln(int x) {\n    return x * 2;\n}\nSystem.out.println(verdoppeln(4));',
+    },
+    csharp: {
+      general: 'int wert = 5;\nConsole.WriteLine(wert);',
+      loops: 'int[] werte = { 1, 2, 3 };\nforeach (var wert in werte) {\n    Console.WriteLine(wert);\n}',
+      conditions: 'int score = 42;\nConsole.WriteLine(score >= 50 ? "Bestanden" : "Noch nicht");',
+      functions: 'int Verdoppeln(int x) {\n    return x * 2;\n}\nConsole.WriteLine(Verdoppeln(4));',
+    },
+    swift: {
+      general: 'let wert = 5\nprint(wert)',
+      loops: 'let werte = [1, 2, 3]\nfor wert in werte {\n    print(wert)\n}',
+      conditions: 'let score = 42\nif score >= 50 {\n    print("Bestanden")\n} else {\n    print("Noch nicht")\n}',
+      functions: 'func verdoppeln(_ x: Int) -> Int {\n    return x * 2\n}\nprint(verdoppeln(4))',
+    },
+    kotlin: {
+      general: 'val wert = 5\nprintln(wert)',
+      loops: 'val werte = listOf(1, 2, 3)\nfor (wert in werte) {\n    println(wert)\n}',
+      conditions: 'val score = 42\nprintln(if (score >= 50) "Bestanden" else "Noch nicht")',
+      functions: 'fun verdoppeln(x: Int): Int {\n    return x * 2\n}\nprintln(verdoppeln(4))',
+    },
+    php: {
+      general: '$wert = 5;\necho $wert;',
+      loops: '$werte = [1, 2, 3];\nforeach ($werte as $wert) {\n    echo $wert . PHP_EOL;\n}',
+      conditions: '$score = 42;\nif ($score >= 50) {\n    echo "Bestanden";\n} else {\n    echo "Noch nicht";\n}',
+      functions: 'function verdoppeln($x) {\n    return $x * 2;\n}\necho verdoppeln(4);',
+    },
+    ruby: {
+      general: 'wert = 5\nputs wert',
+      loops: 'werte = [1, 2, 3]\nwerte.each do |wert|\n  puts wert\nend',
+      conditions: 'score = 42\nif score >= 50\n  puts "Bestanden"\nelse\n  puts "Noch nicht"\nend',
+      functions: 'def verdoppeln(x)\n  x * 2\nend\nputs verdoppeln(4)',
+    },
+  };
 
-  if (topic === 'loops') {
-    return `// 1) Datenquelle definieren\n// 2) Wiederholung formulieren\n// 3) Pro Durchlauf genau eine Aktion\n${outputCall}`;
-  }
-
-  if (topic === 'conditions') {
-    return `// 1) Bedingung prüfen\n// 2) True-/False-Pfad trennen\n// 3) Nur die geforderte Ausgabe erzeugen`;
-  }
-
-  if (topic === 'functions') {
-    return `// 1) Funktion definieren\n// 2) Ergebnis zurückgeben\n// 3) Funktion aufrufen und Ergebnis ausgeben`;
-  }
-
-  if (topic === 'oop') {
-    return `// 1) Typ/Klasse definieren\n// 2) Objekt erstellen\n// 3) Methode aufrufen und Ergebnis prüfen`;
-  }
-
-  if (topic === 'async') {
-    return `// 1) Asynchronen Aufruf starten\n// 2) Auf Ergebnis warten\n// 3) Erst danach ausgeben`;
-  }
-
-  return `// 1) Wert erzeugen oder lesen\n// 2) Wert verarbeiten\n// 3) Ergebnis gezielt ausgeben\n${outputCall}`;
+  const languageExamples = examples[langId] || examples.javascript;
+  return languageExamples[topic] || languageExamples.general;
 }
 
 function buildAdaptiveTheory(lesson, langId, langName) {
   const topic = inferTopicType(lesson.title, lesson.description);
   const explanation = getTopicExplanation(topic);
+  const concepts = getTopicCoreConcepts(topic);
   const steps = getTopicSteps(topic);
+  const checks = getTopicSelfCheck(topic);
   const pitfalls = getTopicPitfalls(topic);
-  const pattern = getLanguageHintPattern(langId, topic);
+  const miniExample = getLanguageMiniExample(langId, topic);
 
   return `
 <h2>${escapeHtml(lesson.title)}</h2>
-<p><strong>Kurz erklärt:</strong> ${escapeHtml(explanation)}</p>
+<p><strong>Kurz erklaert:</strong> ${escapeHtml(explanation)}</p>
 <p><strong>Ziel dieser Lektion:</strong> ${escapeHtml(lesson.description)}</p>
 
-<h3>So löst du Aufgaben dieses Typs</h3>
+<h3>Was du fachlich verstehen sollst</h3>
+<ul>
+  ${concepts.map(item => `<li>${escapeHtml(item)}</li>`).join('')}
+</ul>
+
+<h3>So loest du Aufgaben dieses Typs</h3>
 <ol>
   ${steps.map(step => `<li>${escapeHtml(step)}</li>`).join('')}
 </ol>
 
-<h3>Denkmuster in ${escapeHtml(langName)} (ohne Aufgabenlösung)</h3>
-<pre class="code-block">${escapeHtml(pattern)}</pre>
+<h3>Mini-Beispiel in ${escapeHtml(langName)} (nicht die Aufgabenloesung)</h3>
+<pre class="code-block">${escapeHtml(miniExample)}</pre>
+
+<h3>Selbst-Check vor dem Run</h3>
+<ul>
+  ${checks.map(item => `<li>${escapeHtml(item)}</li>`).join('')}
+</ul>
 
 <h3>Typische Stolpersteine</h3>
 <ul>
