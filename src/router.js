@@ -4,7 +4,8 @@ export class Router {
     this.routes = routes;
     this.currentPage = null;
     window.addEventListener('hashchange', () => this.navigate());
-    window.addEventListener('load', () => this.navigate());
+    // Navigate immediately – 'load' event has already fired by now
+    this.navigate();
   }
 
   navigate() {
