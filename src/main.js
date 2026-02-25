@@ -35,7 +35,9 @@ const routes = [
   },
 ];
 
-// Initialize auth, then router
-initAuth().then(() => {
-  new Router(routes);
-});
+// Initialize auth, then router (gracefully handle auth failures)
+initAuth()
+  .catch((err) => console.warn('Auth init failed (offline mode):', err))
+  .finally(() => {
+    new Router(routes);
+  });
