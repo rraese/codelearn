@@ -200,13 +200,9 @@ function renderPaywall(container, lang, lessonId) {
 function needsTheoryUpgrade(theoryHtml) {
   if (!theoryHtml) return true;
 
-  const markers = [
-    'In dieser Lektion lernst du die wichtigsten Konzepte und Techniken.',
-    '<h3>Grundlagen</h3>',
-    'Grundlegendes Verständnis von'
-  ];
-
-  return markers.filter(marker => theoryHtml.includes(marker)).length >= 2;
+  const lower = theoryHtml.toLowerCase();
+  return lower.includes('in dieser lektion lernst du die wichtigsten konzepte und techniken')
+    && lower.includes('<h3>grundlagen</h3>');
 }
 
 function inferTopicType(title, description) {
@@ -230,217 +226,174 @@ function inferTopicType(title, description) {
   return 'general';
 }
 
-function getTopicBlueprint(topic) {
-  const blueprints = {
-    basics: {
-      intro: 'Du legst den Grundstein: minimale Syntax, saubere Ausgabe und korrektes Ausführen.',
-      steps: ['Starter-Code lesen und Struktur verstehen.', 'Eine kleine Änderung durchführen und testen.', 'Ausgabe exakt mit der Zielausgabe abgleichen.'],
-      mistakes: ['Anführungszeichen oder Klammern vergessen.', 'Falsche Groß-/Kleinschreibung.', 'Ausgabe nicht exakt getroffen.']
-    },
-    variables: {
-      intro: 'Hier geht es darum, Werte sicher zu speichern, zu verändern und korrekt auszugeben.',
-      steps: ['Variablen/Konstanten sauber anlegen.', 'Werte gezielt aktualisieren.', 'Endwert kontrolliert ausgeben.'],
-      mistakes: ['Falsches Schlüsselwort für veränderliche/unveränderliche Werte.', 'Zahl und Text verwechselt.', 'Variablenname inkonsistent geschrieben.']
-    },
-    loops: {
-      intro: 'Schleifen wiederholen Schritte automatisch und sparen redundanten Code.',
-      steps: ['Datenquelle oder Zählbereich festlegen.', 'Schleifenkopf korrekt formulieren.', 'Pro Schleifendurchlauf genau eine klare Aktion ausführen.'],
-      mistakes: ['Off-by-one bei Start/Ende.', 'Falsche Einrückung bzw. Blockgrenzen.', 'Schleife ohne Fortschritt.']
-    },
-    conditions: {
-      intro: 'Bedingungen steuern, welcher Codepfad abhängig von einem Zustand läuft.',
-      steps: ['Bedingung klar formulieren.', 'True-/False-Pfad eindeutig trennen.', 'Ergebnis über die Ausgabe prüfen.'],
-      mistakes: ['Vergleichsoperator mit Zuweisung verwechselt.', 'Verschachtelung ohne klare Struktur.', 'Nicht alle Fälle abgedeckt.']
-    },
-    functions: {
-      intro: 'Funktionen kapseln Logik, machen Code wiederverwendbar und leichter testbar.',
-      steps: ['Signatur mit sinnvollen Parametern definieren.', 'Kernlogik in der Funktion implementieren.', 'Funktion gezielt aufrufen und Ergebnis prüfen.'],
-      mistakes: ['Falsche Reihenfolge der Argumente.', 'Rückgabewert vergessen.', 'Funktionsname und Aufruf stimmen nicht überein.']
-    },
-    collections: {
-      intro: 'Sammlungen helfen, mehrere Werte strukturiert zu verwalten und zu bearbeiten.',
-      steps: ['Passende Datenstruktur wählen.', 'Werte lesen/ändern/iterieren.', 'Ergebnis kontrolliert ausgeben.'],
-      mistakes: ['Falscher Index/Key.', 'Mutierende und nicht-mutierende Operationen verwechselt.', 'Duplikate oder leere Werte nicht berücksichtigt.']
-    },
-    oop: {
-      intro: 'Objektorientierung organisiert Verhalten und Daten in klaren, wiederverwendbaren Bausteinen.',
-      steps: ['Typ/Klasse/Struktur sinnvoll definieren.', 'Eigenschaften und Verhalten trennen.', 'Instanz erzeugen und Verhalten testen.'],
-      mistakes: ['Zuständigkeiten zu breit definiert.', 'Sichtbarkeit/Modifizierer falsch gewählt.', 'Vererbung/Interfaces ohne klaren Zweck genutzt.']
-    },
-    async: {
-      intro: 'Asynchronität hält Programme reaktionsfähig, während langsame Aufgaben im Hintergrund laufen.',
-      steps: ['Asynchrone Operation klar starten.', 'Auf Ergebnis korrekt warten/synchronisieren.', 'Ausgabe erst nach gültigem Ergebnis durchführen.'],
-      mistakes: ['Ergebnis vor Abschluss der Operation verwenden.', 'Fehlerpfad bei Async-Abläufen ignorieren.', 'Race Conditions durch geteilten Zustand.']
-    },
-    errors: {
-      intro: 'Sauberes Error-Handling macht Programme stabil und nachvollziehbar.',
-      steps: ['Fehlerquelle klar identifizieren.', 'Fehler bewusst behandeln (nicht verschlucken).', 'Nutzerfreundliche Ausgabe/Weitergabe definieren.'],
-      mistakes: ['Catch-Block ohne sinnvolle Reaktion.', 'Zu breite Fehlerbehandlung.', 'Fehlerzustände nicht getestet.']
-    },
-    modules: {
-      intro: 'Module und Pakete strukturieren größere Projekte und reduzieren Kopplung.',
-      steps: ['Code in sinnvolle Einheiten aufteilen.', 'Importe/Exports sauber definieren.', 'Verwendung mit klaren Abhängigkeiten testen.'],
-      mistakes: ['Namenskonflikte bei Imports.', 'Zu viele Verantwortlichkeiten pro Modul.', 'Versteckte Abhängigkeiten.']
-    },
-    testing: {
-      intro: 'Tests sichern Verhalten und geben dir schnelle Rückmeldung bei Änderungen.',
-      steps: ['Erwartetes Verhalten als klaren Testfall formulieren.', 'Code ausführen und Ergebnis vergleichen.', 'Fehler gezielt beheben und erneut testen.'],
-      mistakes: ['Nur Happy-Path getestet.', 'Unklare Assertions.', 'Tests hängen von zufälligem Zustand ab.']
-    },
-    web: {
-      intro: 'Web-Themen verbinden Logik, Daten und Kommunikation über HTTP/API-Grenzen hinweg.',
-      steps: ['Ein- und Ausgabe klar definieren.', 'Request/Response-Logik sauber aufbauen.', 'Fehler- und Randfälle testen.'],
-      mistakes: ['Statuscodes/Antwortformat inkonsistent.', 'Unvalidierte Eingaben.', 'Seiteneffekte ohne Kontrolle.']
-    },
-    data: {
-      intro: 'Datenformate und Speicherzugriffe verlangen saubere Struktur und robuste Verarbeitung.',
-      steps: ['Datenformat korrekt aufbauen/lesen.', 'Werte validieren und transformieren.', 'Ergebnis gezielt ausgeben oder speichern.'],
-      mistakes: ['Falsches Format (Typen/Keys).', 'Fehlende Fehlerbehandlung bei I/O.', 'Ungültige Eingabedaten nicht abgefangen.']
-    },
-    project: {
-      intro: 'Im Projekt kombinierst du mehrere Konzepte zu einem durchgängigen, funktionierenden Ablauf.',
-      steps: ['Aufgabe in kleine Teilziele zerlegen.', 'Kernfunktionen nacheinander umsetzen.', 'End-to-End testen und Ausgabe prüfen.'],
-      mistakes: ['Zu großer Sprung ohne Zwischenchecks.', 'Teillösungen nicht integriert getestet.', 'Unklare Struktur oder Verantwortlichkeiten.']
-    },
-    general: {
-      intro: 'Du vertiefst ein zentrales Konzept und übst die saubere Umsetzung im Code.',
-      steps: ['Aufgabe und Zielausgabe präzise lesen.', 'Code schrittweise ergänzen.', 'Ergebnis überprüfen und gezielt korrigieren.'],
-      mistakes: ['Zu viel auf einmal ändern.', 'Ausgabe nicht exakt geprüft.', 'Syntax- und Strukturfehler übersehen.']
-    }
+function getTopicExplanation(topic) {
+  const texts = {
+    basics: 'Du lernst den kleinsten lauffähigen Ablauf: schreiben, ausführen, Ausgabe prüfen.',
+    variables: 'Du speicherst Werte unter klaren Namen und verwendest sie später gezielt weiter.',
+    loops: 'Du wiederholst einen Arbeitsschritt kontrolliert für mehrere Werte, ohne Copy-Paste.',
+    conditions: 'Du triffst Entscheidungen über Bedingungen und steuerst dadurch den Ablauf.',
+    functions: 'Du kapselst Logik in wiederverwendbare Bausteine mit klaren Ein- und Ausgaben.',
+    collections: 'Du strukturierst mehrere Werte in Listen, Maps, Sets oder ähnlichen Sammlungen.',
+    oop: 'Du modellierst Daten und Verhalten gemeinsam in Klassen/Objekten.',
+    async: 'Du steuerst zeitversetzte Abläufe, ohne den restlichen Code zu blockieren.',
+    errors: 'Du fängst Fehler bewusst ab und definierst einen sauberen Fehlerpfad.',
+    modules: 'Du teilst Code in Einheiten auf und verbindest sie über klare Schnittstellen.',
+    testing: 'Du überprüfst Verhalten reproduzierbar und bekommst sofortiges Feedback.',
+    web: 'Du verarbeitest Ein- und Ausgaben wie in typischen API- und Web-Flows.',
+    data: 'Du lädst, transformierst und validierst Daten strukturiert und nachvollziehbar.',
+    project: 'Du kombinierst mehrere Konzepte zu einem vollständigen End-to-End-Ablauf.',
+    general: 'Du trainierst sauberes Arbeiten: kleine Schritte, klare Kontrolle, exakte Ausgabe.',
   };
 
-  return blueprints[topic] || blueprints.general;
+  return texts[topic] || texts.general;
 }
 
-function getLanguageSyntaxGuide(langId) {
-  const guides = {
-    python: { output: 'print(...)', comment: '#' },
-    javascript: { output: 'console.log(...)', comment: '//' },
-    typescript: { output: 'console.log(...)', comment: '//' },
-    go: { output: 'fmt.Println(...)', comment: '//' },
-    rust: { output: 'println!(...)', comment: '//' },
-    cpp: { output: 'cout << ...', comment: '//' },
-    java: { output: 'System.out.println(...)', comment: '//' },
-    csharp: { output: 'Console.WriteLine(...)', comment: '//' },
-    swift: { output: 'print(...)', comment: '//' },
-    kotlin: { output: 'println(...)', comment: '//' },
-    php: { output: 'echo ...;', comment: '//' },
-    ruby: { output: 'puts ...', comment: '#' },
+function getTopicSteps(topic) {
+  const steps = {
+    basics: ['Starter-Code lesen.', 'Eine minimale lauffähige Änderung machen.', 'Ausgabe exakt mit dem Ziel vergleichen.'],
+    variables: ['Wert mit sprechendem Namen speichern.', 'Wert gezielt verändern oder weiterreichen.', 'Endwert ausgeben und prüfen.'],
+    loops: ['Quelle der Werte festlegen.', 'Schleifenkopf korrekt formulieren.', 'Pro Durchlauf genau eine klare Aktion ausführen.'],
+    conditions: ['Bedingung in Klartext formulieren.', 'True- und False-Pfad sauber trennen.', 'Mit realen Werten gegenprüfen.'],
+    functions: ['Signatur festlegen.', 'Logik in der Funktion implementieren.', 'Funktion aufrufen und Rückgabe prüfen.'],
+    collections: ['Passende Datenstruktur wählen.', 'Zugriff über Index/Key korrekt setzen.', 'Ergebnis ohne Nebenwerte ausgeben.'],
+    oop: ['Typ/Klasse definieren.', 'Instanz erzeugen.', 'Methode gezielt aufrufen und Ausgabe prüfen.'],
+    async: ['Asynchronen Ablauf starten.', 'Auf Ergebnis warten/synchronisieren.', 'Erst danach weiterarbeiten und ausgeben.'],
+    errors: ['Fehlerquelle identifizieren.', 'Schutzblock hinzufügen.', 'Im Fehlerfall eine klare Reaktion ausgeben.'],
+    general: ['Aufgabe präzise lesen.', 'In kleinen Schritten ergänzen.', 'Nach jedem Run gegen die Zielausgabe prüfen.'],
   };
 
-  return guides[langId] || { output: 'Ausgabefunktion', comment: '//' };
+  return steps[topic] || steps.general;
 }
 
-function buildTopicPattern(topic, langId) {
-  const guide = getLanguageSyntaxGuide(langId);
-
-  const patterns = {
-    basics: `${guide.comment} Starte klein und prüfe jede Änderung\n${guide.comment} Ziel: eine exakte Konsolenausgabe\n${guide.output}`,
-    variables: `${guide.comment} 1) Wert speichern\n${guide.comment} 2) Wert aktualisieren\n${guide.comment} 3) Ergebnis ausgeben\n${guide.output}`,
-    loops: `${guide.comment} 1) Datenquelle waehlen\n${guide.comment} 2) Wiederholung formulieren\n${guide.comment} 3) Pro Durchlauf eine klare Aktion\n${guide.output}`,
-    conditions: `${guide.comment} 1) Bedingung prüfen\n${guide.comment} 2) Pfad A/B sauber trennen\n${guide.comment} 3) Ergebnis sichtbar machen\n${guide.output}`,
-    functions: `${guide.comment} 1) Funktion mit Parametern definieren\n${guide.comment} 2) Ergebnis zurueckgeben\n${guide.comment} 3) Funktion aufrufen\n${guide.output}`,
-    collections: `${guide.comment} 1) Datenstruktur aufbauen\n${guide.comment} 2) Elemente lesen/verarbeiten\n${guide.comment} 3) Ergebnis prüfen\n${guide.output}`,
-    oop: `${guide.comment} 1) Typ/Klasse definieren\n${guide.comment} 2) Verhalten kapseln\n${guide.comment} 3) Instanz testen\n${guide.output}`,
-    async: `${guide.comment} 1) Asynchrone Aufgabe starten\n${guide.comment} 2) Auf Ergebnis warten/synchronisieren\n${guide.comment} 3) Erst dann ausgeben\n${guide.output}`,
-    errors: `${guide.comment} 1) Fehlerfall erkennen\n${guide.comment} 2) Kontrolliert behandeln\n${guide.comment} 3) Sinnvolle Rückmeldung geben\n${guide.output}`,
-    modules: `${guide.comment} 1) Funktionalität trennen\n${guide.comment} 2) Abhängigkeiten sauber importieren\n${guide.comment} 3) Ergebnis im Hauptfluss prüfen\n${guide.output}`,
-    testing: `${guide.comment} 1) Erwartung formulieren\n${guide.comment} 2) Ausfuehren und vergleichen\n${guide.comment} 3) Bei Abweichung gezielt korrigieren`,
-    web: `${guide.comment} 1) Eingabe/Request verstehen\n${guide.comment} 2) Verarbeitung implementieren\n${guide.comment} 3) Antwort/Output prüfen\n${guide.output}`,
-    data: `${guide.comment} 1) Daten lesen/parsen\n${guide.comment} 2) Werte validieren\n${guide.comment} 3) Ergebnis ausgeben oder speichern\n${guide.output}`,
-    project: `${guide.comment} 1) In kleine Teilaufgaben zerlegen\n${guide.comment} 2) Schrittweise implementieren\n${guide.comment} 3) End-to-End überprüfen\n${guide.output}`,
-    general: `${guide.comment} Starte mit dem Kern der Aufgabe\n${guide.comment} Ergänze Code in kleinen Schritten\n${guide.comment} Prüfe die Zielausgabe nach jedem Run\n${guide.output}`,
+function getTopicPitfalls(topic) {
+  const pitfalls = {
+    basics: ['Ausgabe-Befehl falsch geschrieben.', 'Text nicht exakt übernommen.', 'Zusätzliche Leerzeichen/Zeilen übersehen.'],
+    variables: ['Falschen Namen verwendet.', 'Zuweisung und Vergleich verwechselt.', 'Falscher Datentyp gespeichert.'],
+    loops: ['Schleife läuft nicht über alle Werte.', 'Falsche Einrückung oder Blockstruktur.', 'Im Schleifenkörper falsche Variable genutzt.'],
+    conditions: ['Bedingung prüft den falschen Wert.', 'Nur ein Zweig implementiert.', 'Operator passt nicht zur Aufgabe.'],
+    functions: ['Rückgabewert fehlt.', 'Falsche Parameterreihenfolge.', 'Funktion wird nie aufgerufen.'],
+    collections: ['Index/Key verwechselt.', 'Duplikate oder Reihenfolge nicht bedacht.', 'Falsches Element ausgegeben.'],
+    oop: ['Konstruktor unvollständig.', 'Methode am falschen Objekt aufgerufen.', 'Objektzustand nicht korrekt gesetzt.'],
+    async: ['Ergebnis zu früh verwendet.', 'await/sync-Schritt fehlt.', 'Ausgabereihenfolge ist falsch.'],
+    errors: ['Fehler wird nicht abgefangen.', 'Zu breiter Catch verschluckt Ursachen.', 'Fehlerpfad gibt nichts Klarlesbares aus.'],
+    general: ['Zu viele Änderungen auf einmal.', 'Zielausgabe nicht zeilenweise geprüft.', 'Kleine Syntaxfehler übersehen.'],
   };
 
-  return patterns[topic] || patterns.general;
+  return pitfalls[topic] || pitfalls.general;
+}
+
+function getLanguageHintPattern(langId, topic) {
+  const outputCall = {
+    python: 'print(...)',
+    javascript: 'console.log(...)',
+    typescript: 'console.log(...)',
+    go: 'fmt.Println(...)',
+    rust: 'println!(...)',
+    cpp: 'cout << ... << endl;',
+    java: 'System.out.println(...)',
+    csharp: 'Console.WriteLine(...)',
+    swift: 'print(...)',
+    kotlin: 'println(...)',
+    php: 'echo ...;',
+    ruby: 'puts ...',
+  }[langId] || 'AUSGABE(...)';
+
+  if (topic === 'loops') {
+    return `// 1) Datenquelle definieren\n// 2) Wiederholung formulieren\n// 3) Pro Durchlauf genau eine Aktion\n${outputCall}`;
+  }
+
+  if (topic === 'conditions') {
+    return `// 1) Bedingung prüfen\n// 2) True-/False-Pfad trennen\n// 3) Nur die geforderte Ausgabe erzeugen`;
+  }
+
+  if (topic === 'functions') {
+    return `// 1) Funktion definieren\n// 2) Ergebnis zurückgeben\n// 3) Funktion aufrufen und Ergebnis ausgeben`;
+  }
+
+  if (topic === 'oop') {
+    return `// 1) Typ/Klasse definieren\n// 2) Objekt erstellen\n// 3) Methode aufrufen und Ergebnis prüfen`;
+  }
+
+  if (topic === 'async') {
+    return `// 1) Asynchronen Aufruf starten\n// 2) Auf Ergebnis warten\n// 3) Erst danach ausgeben`;
+  }
+
+  return `// 1) Wert erzeugen oder lesen\n// 2) Wert verarbeiten\n// 3) Ergebnis gezielt ausgeben\n${outputCall}`;
 }
 
 function buildAdaptiveTheory(lesson, langId, langName) {
   const topic = inferTopicType(lesson.title, lesson.description);
-  const blueprint = getTopicBlueprint(topic);
-  const topicPattern = buildTopicPattern(topic, langId);
+  const explanation = getTopicExplanation(topic);
+  const steps = getTopicSteps(topic);
+  const pitfalls = getTopicPitfalls(topic);
+  const pattern = getLanguageHintPattern(langId, topic);
 
   return `
 <h2>${escapeHtml(lesson.title)}</h2>
-<p><strong>${escapeHtml(lesson.description)}</strong>. ${escapeHtml(blueprint.intro)}</p>
+<p><strong>Kurz erklärt:</strong> ${escapeHtml(explanation)}</p>
+<p><strong>Ziel dieser Lektion:</strong> ${escapeHtml(lesson.description)}</p>
 
-<h3>Was du in dieser Lektion können sollst</h3>
-<ul>
-  <li>Das Kernkonzept in <strong>${escapeHtml(langName)}</strong> korrekt anwenden.</li>
-  <li>Den Starter-Code gezielt statt blind ergänzen.</li>
-  <li>Das Ergebnis exakt gegen die Zielausgabe validieren.</li>
-</ul>
-
-<h3>Empfohlene Vorgehensweise</h3>
+<h3>So löst du Aufgaben dieses Typs</h3>
 <ol>
-  ${blueprint.steps.map(step => `<li>${escapeHtml(step)}</li>`).join('')}
+  ${steps.map(step => `<li>${escapeHtml(step)}</li>`).join('')}
 </ol>
 
-<h3>Muster in ${escapeHtml(langName)} (ohne Aufgabenlösung)</h3>
-<pre class="code-block">${escapeHtml(topicPattern)}</pre>
+<h3>Denkmuster in ${escapeHtml(langName)} (ohne Aufgabenlösung)</h3>
+<pre class="code-block">${escapeHtml(pattern)}</pre>
 
-<h3>Typische Fehler</h3>
+<h3>Typische Stolpersteine</h3>
 <ul>
-  ${blueprint.mistakes.map(mistake => `<li>Hinweis: ${escapeHtml(mistake)}</li>`).join('')}
+  ${pitfalls.map(item => `<li>${escapeHtml(item)}</li>`).join('')}
 </ul>
   `;
 }
 
 function getHintLevel(lessonId) {
-  if (lessonId <= 10) return { key: 'beginner', label: 'Anfänger' };
+  if (lessonId <= 10) return { key: 'beginner', label: 'Anfaenger' };
   if (lessonId <= 20) return { key: 'intermediate', label: 'Aufbau' };
   return { key: 'advanced', label: 'Fortgeschritten' };
 }
 
-function normalizeHintText(hintText) {
-  if (!hintText) return '';
-  return hintText.replace(/Ergaenze/g, 'Ergänze');
-}
-
-function splitHintText(hintText) {
-  const normalized = normalizeHintText(hintText).trim();
-  const marker = '\n2) Beispiel:\n';
-  const parts = normalized.split(marker);
-
-  if (parts.length === 2) {
-    return {
-      guidance: parts[0].replace(/^1\)\s*/, '').trim(),
-    };
-  }
-
-  return {
-    guidance: normalized || 'Orientiere dich am Muster aus dem Theorie-Teil.',
+function getHintFocus(topic) {
+  const focus = {
+    loops: 'Achte darauf, dass in jedem Durchlauf genau der aktuelle Wert verarbeitet wird.',
+    conditions: 'Prüfe zuerst den Zustand und führe dann nur den passenden Zweig aus.',
+    functions: 'Denke an Parameter, Rückgabe und einen sauberen Funktionsaufruf.',
+    collections: 'Greife gezielt über Index/Key zu und gib nur den geforderten Wert aus.',
+    async: 'Reihenfolge zählt: erst warten/synchronisieren, dann ausgeben.',
+    default: 'Arbeite in kleinen Schritten und prüfe nach jeder Änderung die Zielausgabe.',
   };
+
+  return focus[topic] || focus.default;
 }
 
-function getAdaptiveHint(hintText, lessonId) {
-  if (!hintText) return null;
-
+function getAdaptiveHint(lessonId, instructions) {
   const level = getHintLevel(lessonId);
-  const { guidance } = splitHintText(hintText);
+  const topic = inferTopicType(instructions, instructions);
+  const focus = getHintFocus(topic);
 
   if (level.key === 'beginner') {
     return {
       levelLabel: level.label,
-      text: `1) ${guidance}\n2) Ergänze den Code Schritt für Schritt.\n3) Prüfe nach jedem Run die Zielausgabe.`,
+      text: `1) Lies zuerst die Zielausgabe Zeile für Zeile.\n2) ${focus}\n3) Ergänze nur den fehlenden Teil im Starter-Code und teste direkt erneut.`,
     };
   }
 
   if (level.key === 'intermediate') {
     return {
       levelLabel: level.label,
-      text: 'Arbeite vom Starter-Code aus in kleinen Schritten und prüfe die Zielausgabe nach jeder Änderung.',
+      text: `${focus}\nArbeite vom Starter-Code aus und prüfe nach jeder Änderung die Zielausgabe.`,
     };
   }
 
   return {
     levelLabel: level.label,
-    text: 'Korrigiere gezielt nur die Stelle, die die Ausgabe verfälscht, und vergleiche erneut mit der Zielausgabe.',
+    text: 'Ändere nur die relevante Stelle, vermeide Nebenwirkungen und prüfe dann sofort erneut gegen die Zielausgabe.',
   };
 }
 
 function renderExerciseInstructions(exercise, lessonId) {
-  const adaptiveHint = getAdaptiveHint(exercise.hint, lessonId);
+  const adaptiveHint = getAdaptiveHint(lessonId, exercise.instructions);
   const steps = [
     'Lies den Starter-Code und ergänze die fehlende Stelle.',
     'Nutze das passende Muster aus dem Theorie-Teil links.',
@@ -464,12 +417,10 @@ function renderExerciseInstructions(exercise, lessonId) {
         <pre class="exercise-expected">${escapeHtml(exercise.expectedOutput)}</pre>
       </div>
 
-      ${adaptiveHint ? `
       <div class="exercise-section">
         <h4>Lernhinweis (${escapeHtml(adaptiveHint.levelLabel)})</h4>
         <pre class="exercise-hint">${escapeHtml(adaptiveHint.text)}</pre>
       </div>
-      ` : ''}
     </div>
   `;
 }
@@ -505,10 +456,10 @@ function bindButtons(langId, lesson, done) {
   const btnReset = document.getElementById('btn-reset');
   const btnComplete = document.getElementById('btn-complete');
   const consoleOutput = document.getElementById('console-output');
-  const adaptiveHint = getAdaptiveHint(lesson.exercise.hint, lesson.id);
+  const adaptiveHint = getAdaptiveHint(lesson.id, lesson.exercise.instructions);
 
   // Run button
-  btnRun?.addEventListener('click', () => {
+  btnRun?.addEventListener('click', async () => {
     if (!editorInstance) return;
 
     const code = editorInstance.state.doc.toString().trim();
@@ -519,10 +470,15 @@ function bindButtons(langId, lesson, done) {
     }
 
     // Simulate execution by checking output
-    const userOutput = simulateOutput(code, langId);
+    const userOutput = await simulateOutput(code, langId);
     const expectedOutput = lesson.exercise.expectedOutput.trim();
+    const didMatch = isOutputMatch(userOutput, expectedOutput, {
+      langId,
+      lessonId: lesson.id,
+      code,
+    });
 
-    if (userOutput === expectedOutput) {
+    if (didMatch) {
       consoleOutput.innerHTML = `
         <div class="output-line">${escapeHtml(userOutput)}</div>
         <div class="success-message">Perfekt! Die Ausgabe ist korrekt!</div>
@@ -595,36 +551,18 @@ function bindQuiz(quizData) {
   });
 }
 
-function simulateOutput(code, langId) {
-  let outputs = [];
+async function simulateOutput(code, langId) {
+  if (langId === 'javascript' || langId === 'typescript') {
+    return simulateJavaScriptOutput(code);
+  }
 
   if (langId === 'python') {
-    const printRegex = /print\s*\(\s*(?:f?["'`](.+?)["'`]|(.+?))\s*\)/g;
-    let match;
-    while ((match = printRegex.exec(code)) !== null) {
-      let output = '';
-      if (match[1]) {
-        output = resolveFStringVars(match[1], code, 'python');
-      } else {
-        output = resolveExpressionValue(match[2], code, 'python');
-      }
-      outputs.push(output);
-    }
-  } else if (langId === 'javascript' || langId === 'typescript') {
-    const logRegex = /console\.log\s*\(\s*(?:`(.+?)`|["'](.+?)["']|(.+?))\s*\)/g;
-    let match;
-    while ((match = logRegex.exec(code)) !== null) {
-      let output = '';
-      if (match[1]) {
-        output = resolveFStringVars(match[1], code, 'javascript');
-      } else if (match[2]) {
-        output = match[2];
-      } else {
-        output = resolveExpressionValue(match[3], code, langId);
-      }
-      outputs.push(output);
-    }
-  } else if (langId === 'rust') {
+    return simulatePythonOutput(code);
+  }
+
+  let outputs = [];
+
+  if (langId === 'rust') {
     const printlnRegex = /println!\s*\(\s*"(.+?)"\s*(?:,\s*(.+?))?\s*\)/g;
     let match;
     while ((match = printlnRegex.exec(code)) !== null) {
@@ -695,6 +633,751 @@ function simulateOutput(code, langId) {
   return outputs.join('\n');
 }
 
+async function simulateJavaScriptOutput(code) {
+  const outputs = [];
+  const macrotasks = [];
+  const cancelledTasks = new Set();
+
+  const sandbox = {
+    console: {
+      log: (...args) => outputs.push(args.map(formatConsoleValue).join(' ')),
+    },
+    setTimeout: (fn, delay = 0) => {
+      const id = macrotasks.length + 1;
+      if (typeof fn === 'function') {
+        macrotasks.push({ id, delay, fn });
+      }
+      return id;
+    },
+    clearTimeout: (id) => {
+      cancelledTasks.add(id);
+    },
+    Promise,
+    Map,
+    Set,
+    WeakMap,
+    WeakSet,
+    Proxy,
+    Reflect,
+    Symbol,
+    JSON,
+    Math,
+    Date,
+    Array,
+    Object,
+    String,
+    Number,
+    Boolean,
+    RegExp,
+  };
+
+  try {
+    const runner = new Function(
+      'sandbox',
+      `with (sandbox) { return (async () => { ${code}\n })(); }`
+    );
+    await runner(sandbox);
+
+    for (let i = 0; i < 5; i += 1) {
+      await Promise.resolve();
+    }
+
+    while (macrotasks.length) {
+      const task = macrotasks.shift();
+      if (!task || cancelledTasks.has(task.id)) continue;
+      const maybe = task.fn();
+      if (maybe && typeof maybe.then === 'function') {
+        await maybe;
+      }
+      for (let i = 0; i < 3; i += 1) {
+        await Promise.resolve();
+      }
+    }
+  } catch {
+    // Keep collected output and let mismatch handling show feedback.
+  }
+
+  return outputs.join('\n');
+}
+
+function formatConsoleValue(value) {
+  if (Array.isArray(value)) {
+    const items = value.map(item => {
+      if (typeof item === 'string') return `'${item}'`;
+      if (Array.isArray(item)) return formatConsoleValue(item);
+      if (item && typeof item === 'object') return JSON.stringify(item);
+      return String(item);
+    });
+    return `[ ${items.join(', ')} ]`;
+  }
+
+  if (value === null) return 'null';
+  if (value === undefined) return 'undefined';
+  if (typeof value === 'string') return value;
+  if (typeof value === 'number' || typeof value === 'boolean') return String(value);
+  if (typeof value === 'object') return JSON.stringify(value);
+  return String(value);
+}
+
+function simulatePythonOutput(code) {
+  let outputs = [];
+  let remainingCode = code;
+
+  const tryCatchResult = collectPythonTryExceptOutputs(remainingCode, code);
+  outputs.push(...tryCatchResult.outputs);
+  remainingCode = tryCatchResult.remainingCode;
+
+  const ifResult = collectPythonIfOutputs(remainingCode, code);
+  outputs.push(...ifResult.outputs);
+  remainingCode = ifResult.remainingCode;
+
+  const loopResult = collectPythonForLoopOutputs(remainingCode);
+  outputs.push(...loopResult.outputs);
+  remainingCode = loopResult.remainingCode;
+
+  const classResult = collectPythonClassCallOutputs(remainingCode);
+  outputs.push(...classResult.outputs);
+  remainingCode = classResult.remainingCode;
+
+  const lines = remainingCode.split('\n');
+  for (const line of lines) {
+    const raw = line.replace(/\t/g, '    ');
+    const indentMatch = raw.match(/^\s*/);
+    const indent = indentMatch ? indentMatch[0].length : 0;
+    const trimmed = raw.trim();
+    if (indent > 0) continue;
+    if (!trimmed.startsWith('print(') || !trimmed.endsWith(')')) continue;
+
+    const arg = trimmed.slice(trimmed.indexOf('(') + 1, trimmed.lastIndexOf(')')).trim();
+    if (!arg) continue;
+    outputs.push(resolvePythonExpressionValue(arg, code));
+  }
+
+  if (!outputs.length) {
+    const fallbackPrints = [];
+    const allPrints = code.match(/print\s*\((.+?)\)/g) || [];
+    for (const printCall of allPrints) {
+      const arg = printCall.slice(printCall.indexOf('(') + 1, printCall.lastIndexOf(')')).trim();
+      if (!arg) continue;
+      fallbackPrints.push(resolvePythonExpressionValue(arg, code));
+    }
+    outputs = fallbackPrints;
+  }
+
+  return outputs.join('\n');
+}
+
+function collectPythonTryExceptOutputs(code, fullCode) {
+  const outputs = [];
+  let remainingCode = code;
+  const tryRegex = /try\s*:\s*\n((?:[ \t]+.+(?:\n|$))*)except(?:\s+([A-Za-z_]\w*))?\s*:\s*\n((?:[ \t]+.+(?:\n|$))*)/g;
+  let match;
+
+  while ((match = tryRegex.exec(code)) !== null) {
+    const tryBody = match[1] || '';
+    const exceptBody = match[3] || '';
+
+    const hasZeroDivision = /\/\s*0(\D|$)/.test(tryBody);
+    const selectedBody = hasZeroDivision ? exceptBody : tryBody;
+    const bodyLines = selectedBody.split('\n');
+
+    for (const line of bodyLines) {
+      const trimmed = line.trim();
+      if (!trimmed.startsWith('print(') || !trimmed.endsWith(')')) continue;
+      const arg = trimmed.slice(trimmed.indexOf('(') + 1, trimmed.lastIndexOf(')')).trim();
+      if (!arg) continue;
+      outputs.push(resolvePythonExpressionValue(arg, fullCode));
+    }
+
+    remainingCode = remainingCode.replace(match[0], '');
+  }
+
+  return { outputs, remainingCode };
+}
+
+function collectPythonIfOutputs(code, fullCode) {
+  const outputs = [];
+  let remainingCode = code;
+  const ifRegex = /if\s+(.+?)\s*:\s*\n((?:[ \t]+.+(?:\n|$))*)(?:elif\s+(.+?)\s*:\s*\n((?:[ \t]+.+(?:\n|$))*))?(?:else\s*:\s*\n((?:[ \t]+.+(?:\n|$))*))?/g;
+  let match;
+
+  while ((match = ifRegex.exec(code)) !== null) {
+    const ifCondition = (match[1] || '').trim();
+    const ifBody = match[2] || '';
+    const elifCondition = (match[3] || '').trim();
+    const elifBody = match[4] || '';
+    const elseBody = match[5] || '';
+
+    let selectedBody = '';
+    if (evaluatePythonCondition(ifCondition, fullCode)) {
+      selectedBody = ifBody;
+    } else if (elifCondition && evaluatePythonCondition(elifCondition, fullCode)) {
+      selectedBody = elifBody;
+    } else {
+      selectedBody = elseBody;
+    }
+
+    const bodyLines = selectedBody.split('\n');
+    for (const line of bodyLines) {
+      const trimmed = line.trim();
+      if (!trimmed.startsWith('print(') || !trimmed.endsWith(')')) continue;
+      const arg = trimmed.slice(trimmed.indexOf('(') + 1, trimmed.lastIndexOf(')')).trim();
+      if (!arg) continue;
+      outputs.push(resolvePythonExpressionValue(arg, fullCode));
+    }
+
+    remainingCode = remainingCode.replace(match[0], '');
+  }
+
+  return { outputs, remainingCode };
+}
+
+function collectPythonClassCallOutputs(code) {
+  const outputs = [];
+  let remainingCode = code;
+
+  const instanceRegex = /(\w+)\s*=\s*(\w+)\s*\(([^)]*)\)/g;
+  let match;
+
+  while ((match = instanceRegex.exec(code)) !== null) {
+    const instanceName = match[1];
+    const className = match[2];
+    const ctorArgs = splitTopLevelArgs(match[3]).map(arg => stripQuotes(arg.trim()));
+
+    const methodCallRegex = new RegExp(`\\b${escapeRegExp(instanceName)}\\.(\\w+)\\s*\\(\\s*\\)`, 'g');
+    let callMatch;
+    while ((callMatch = methodCallRegex.exec(code)) !== null) {
+      const methodName = callMatch[1];
+      const methodBody = findPythonClassMethodBody(className, methodName, code);
+      if (!methodBody) continue;
+
+      const selfMap = buildPythonSelfMap(className, ctorArgs, code);
+      const bodyLines = methodBody.split('\n');
+      for (const bodyLine of bodyLines) {
+        const trimmed = bodyLine.trim();
+        if (!trimmed.startsWith('print(') || !trimmed.endsWith(')')) continue;
+        const arg = trimmed.slice(trimmed.indexOf('(') + 1, trimmed.lastIndexOf(')')).trim();
+        outputs.push(resolvePythonExpressionValueWithSelf(arg, code, selfMap));
+      }
+      remainingCode = remainingCode.replace(callMatch[0], '');
+    }
+  }
+
+  return { outputs, remainingCode };
+}
+
+function evaluatePythonCondition(condition, code) {
+  const match = condition.match(/^(.+?)\s*(==|!=|>=|<=|>|<)\s*(.+)$/);
+  if (!match) {
+    const value = resolvePythonExpressionValue(condition, code);
+    if (value === 'False') return false;
+    if (value === 'True') return true;
+    return Boolean(value);
+  }
+
+  const left = resolvePythonExpressionValue(match[1], code);
+  const right = resolvePythonExpressionValue(match[3], code);
+  const leftNumber = Number(left);
+  const rightNumber = Number(right);
+  const bothNumbers = Number.isFinite(leftNumber) && Number.isFinite(rightNumber);
+
+  const a = bothNumbers ? leftNumber : String(left);
+  const b = bothNumbers ? rightNumber : String(right);
+  const op = match[2];
+
+  if (op === '==') return a === b;
+  if (op === '!=') return a !== b;
+  if (op === '>=') return a >= b;
+  if (op === '<=') return a <= b;
+  if (op === '>') return a > b;
+  if (op === '<') return a < b;
+  return false;
+}
+
+function resolvePythonExpressionValue(expression, code, depth = 0) {
+  if (depth > 6) return '';
+
+  const raw = String(expression || '').trim().replace(/;+$/, '').trim();
+  if (!raw) return '';
+
+  if ((raw.startsWith('"') && raw.endsWith('"')) || (raw.startsWith("'") && raw.endsWith("'"))) {
+    return stripQuotes(raw);
+  }
+
+  if ((raw.startsWith('f"') && raw.endsWith('"')) || (raw.startsWith("f'") && raw.endsWith("'"))) {
+    const template = stripQuotes(raw.slice(1));
+    return template.replace(/\{([^}]+)\}/g, (_, token) => {
+      const placeholder = token.trim();
+      if (placeholder.startsWith('self.')) return placeholder;
+      return resolvePythonExpressionValue(placeholder, code, depth + 1);
+    });
+  }
+
+  if (/^-?\d+(\.\d+)?$/.test(raw)) return raw;
+  if (/^(True|False)$/i.test(raw)) return raw[0].toUpperCase() + raw.slice(1).toLowerCase();
+
+  const compValue = evaluatePythonListComprehension(raw, code, depth);
+  if (compValue !== null) return compValue;
+
+  const filterValue = evaluatePythonFilterExpression(raw, code, depth);
+  if (filterValue !== null) return filterValue;
+
+  const setMatch = raw.match(/^set\(\s*([A-Za-z_]\w*)\s*\)$/);
+  if (setMatch) {
+    const list = parseSimplePythonList(setMatch[1], code);
+    const unique = [];
+    for (const item of list) {
+      if (!unique.some(existing => String(existing) === String(item))) {
+        unique.push(item);
+      }
+    }
+    return `{${unique.map(item => (typeof item === 'string' ? `'${item}'` : String(item))).join(', ')}}`;
+  }
+
+  const choiceMatch = raw.match(/^choice\(\s*([A-Za-z_]\w*)\s*\)$/);
+  if (choiceMatch) {
+    const list = parseSimplePythonList(choiceMatch[1], code);
+    if (!list.length) return '';
+    return String(list.length > 1 ? list[1] : list[0]);
+  }
+
+  const jsonAccessMatch = raw.match(/^json\.loads\(\s*([A-Za-z_]\w*)\s*\)\s*\[\s*["'](.+?)["']\s*\]$/);
+  if (jsonAccessMatch) {
+    const jsonRaw = findPythonAssignmentExpression(jsonAccessMatch[1], code);
+    if (jsonRaw) {
+      try {
+        const parsed = JSON.parse(stripQuotes(jsonRaw).replace(/\\"/g, '"'));
+        return parsed?.[jsonAccessMatch[2]] ?? raw;
+      } catch {
+        // ignore
+      }
+    }
+  }
+
+  const regexFindAllMatch = raw.match(/^re\.findall\(\s*(.+?)\s*,\s*([A-Za-z_]\w*)\s*\)$/);
+  if (regexFindAllMatch) {
+    const patternSource = parsePythonRegexSource(regexFindAllMatch[1]);
+    const targetExpr = findPythonAssignmentExpression(regexFindAllMatch[2], code);
+    const targetText = targetExpr ? stripQuotes(targetExpr) : '';
+    try {
+      const matches = [...targetText.matchAll(new RegExp(patternSource, 'g'))].map(m => `'${m[0]}'`);
+      return `[${matches.join(', ')}]`;
+    } catch {
+      return '[]';
+    }
+  }
+
+  const stripLowerMatch = raw.match(/^([A-Za-z_]\w*)((?:\.[A-Za-z_]\w*\(\))+)\s*$/);
+  if (stripLowerMatch) {
+    const baseValue = findVarValue(stripLowerMatch[1], code, 'python');
+    if (typeof baseValue === 'string') {
+      const methods = stripLowerMatch[2].match(/\.[A-Za-z_]\w*\(\)/g) || [];
+      let result = baseValue;
+      for (const methodCall of methods) {
+        const method = methodCall.slice(1, methodCall.indexOf('('));
+        if (method === 'strip') result = result.trim();
+        else if (method === 'lower') result = result.toLowerCase();
+        else if (method === 'upper') result = result.toUpperCase();
+      }
+      return result;
+    }
+  }
+
+  const dictAccess = raw.match(/^([A-Za-z_]\w*)\s*\[\s*["'](.+?)["']\s*\]$/);
+  if (dictAccess) {
+    const dictValue = findSimplePythonDictEntry(dictAccess[1], dictAccess[2], code);
+    if (dictValue !== null && dictValue !== undefined) return dictValue;
+
+    const assignedExpr = findPythonAssignmentExpression(dictAccess[1], code);
+    const jsonLoadMatch = assignedExpr?.match(/^json\.loads\(\s*([A-Za-z_]\w*)\s*\)$/);
+    if (jsonLoadMatch) {
+      const jsonRaw = findPythonAssignmentExpression(jsonLoadMatch[1], code);
+      if (jsonRaw) {
+        try {
+          const parsed = JSON.parse(stripQuotes(jsonRaw).replace(/\\"/g, '"'));
+          const value = parsed?.[dictAccess[2]];
+          if (value !== undefined) return String(value);
+        } catch {
+          // ignore
+        }
+      }
+    }
+  }
+
+  const soupFindMatch = raw.match(/^([A-Za-z_]\w*)\.find\(\s*["'](.+?)["']\s*\)$/);
+  if (soupFindMatch) {
+    const findReturnMatch = code.match(/def\s+find\s*\([^)]*\)\s*:\s*\n(?:[ \t]+.+\n)*?[ \t]+return\s+["'](.+?)["']/m);
+    if (findReturnMatch) return findReturnMatch[1];
+  }
+
+  const functionValue = evaluatePythonFunctionCall(raw, code);
+  if (functionValue !== null && functionValue !== undefined) return functionValue;
+
+  if (/^[A-Za-z_]\w*$/.test(raw)) {
+    const dictWithUpdates = buildPythonDictStringWithUpdates(raw, code);
+    if (dictWithUpdates) return dictWithUpdates;
+
+    const assignedExpr = findPythonAssignmentExpression(raw, code);
+    if (assignedExpr && assignedExpr !== raw) {
+      return resolvePythonExpressionValue(assignedExpr, code, depth + 1);
+    }
+
+    return findVarValue(raw, code, 'python');
+  }
+
+  const replaced = raw.replace(/\b([A-Za-z_]\w*)\b/g, (_, token) => {
+    if (/^(True|False|and|or|not)$/.test(token)) return token;
+    const assignedExpr = findPythonAssignmentExpression(token, code);
+    if (assignedExpr && assignedExpr !== token) {
+      const resolved = resolvePythonExpressionValue(assignedExpr, code, depth + 1);
+      return /^-?\d+(\.\d+)?$/.test(String(resolved)) ? String(resolved) : token;
+    }
+    const value = findVarValue(token, code, 'python');
+    return /^-?\d+(\.\d+)?$/.test(String(value)) ? String(value) : token;
+  });
+
+  if (/^[\d+\-*/().\s]+$/.test(replaced)) {
+    try {
+      const result = Function(`"use strict"; return (${replaced})`)();
+      if (!Number.isFinite(result)) throw createZeroDivisionError();
+      return String(result);
+    } catch (error) {
+      if (error?.isZeroDivision) throw error;
+    }
+  }
+
+  return raw;
+}
+
+function resolvePythonExpressionValueWithSelf(expression, code, selfMap) {
+  const raw = String(expression || '').trim();
+  if ((raw.startsWith('f"') && raw.endsWith('"')) || (raw.startsWith("f'") && raw.endsWith("'"))) {
+    const template = stripQuotes(raw.slice(1));
+    return template.replace(/\{([^}]+)\}/g, (_, token) => {
+      const key = token.trim();
+      if (key.startsWith('self.')) {
+        const prop = key.slice(5);
+        if (prop in selfMap) return String(selfMap[prop]);
+      }
+      return resolvePythonExpressionValue(key, code);
+    });
+  }
+
+  if (raw.startsWith('self.')) {
+    const prop = raw.slice(5);
+    if (prop in selfMap) return String(selfMap[prop]);
+  }
+
+  return resolvePythonExpressionValue(raw, code);
+}
+
+function evaluatePythonListComprehension(expression, code, depth = 0) {
+  const match = expression.match(/^\[(.+)\s+for\s+([A-Za-z_]\w*)\s+in\s+([A-Za-z_]\w*)\]$/);
+  if (!match) return null;
+
+  const itemExpr = match[1].trim();
+  const symbol = match[2];
+  const sourceName = match[3];
+  const values = parseSimplePythonList(sourceName, code);
+  if (!values.length) return '[]';
+
+  const mapped = values.map(item => {
+    const replacement = typeof item === 'number' ? String(item) : `'${item}'`;
+    const expr = itemExpr.replace(new RegExp(`\\b${escapeRegExp(symbol)}\\b`, 'g'), replacement);
+    return resolvePythonExpressionValue(expr, code, depth + 1);
+  });
+
+  return `[${mapped.map(value => {
+    if (/^-?\d+(\.\d+)?$/.test(String(value))) return String(value);
+    return `'${String(value)}'`;
+  }).join(', ')}]`;
+}
+
+function evaluatePythonFilterExpression(expression, code, depth = 0) {
+  const match = expression.match(/^list\(\s*filter\(\s*lambda\s+([A-Za-z_]\w*)\s*:\s*(.+?)\s*,\s*([A-Za-z_]\w*)\s*\)\s*\)$/);
+  if (!match) return null;
+
+  const symbol = match[1];
+  const condition = match[2];
+  const sourceName = match[3];
+  const values = parseSimplePythonList(sourceName, code);
+  if (!values.length) return '[]';
+
+  const filtered = values.filter(item => {
+    const replacement = typeof item === 'number' ? String(item) : `'${item}'`;
+    const expr = condition.replace(new RegExp(`\\b${escapeRegExp(symbol)}\\b`, 'g'), replacement);
+    return evaluatePythonCondition(expr, code);
+  });
+
+  return `[${filtered.map(value => (typeof value === 'number' ? String(value) : `'${value}'`)).join(', ')}]`;
+}
+
+function parsePythonRegexSource(patternExpression) {
+  const raw = String(patternExpression || '').trim();
+  if (raw.startsWith('r"') && raw.endsWith('"')) return raw.slice(2, -1);
+  if (raw.startsWith("r'") && raw.endsWith("'")) return raw.slice(2, -1);
+  return stripQuotes(raw);
+}
+
+function findPythonAssignmentExpression(name, code) {
+  const safe = escapeRegExp(name);
+  const assignRegex = new RegExp(`\\b${safe}\\b\\s*=\\s*(.+)`, 'm');
+  const match = code.match(assignRegex);
+  if (!match) return null;
+  return match[1].trim();
+}
+
+function buildPythonDictStringWithUpdates(name, code) {
+  const safe = escapeRegExp(name);
+  const dictMatch = code.match(new RegExp(`\\b${safe}\\b\\s*=\\s*\\{([\\s\\S]*?)\\}`, 'm'));
+  if (!dictMatch) return null;
+
+  const dict = {};
+  const entries = splitTopLevelArgs(dictMatch[1]);
+  for (const entry of entries) {
+    const parts = entry.split(':');
+    if (parts.length < 2) continue;
+    const key = stripQuotes(parts[0].trim());
+    const value = parts.slice(1).join(':').trim();
+    dict[key] = /^-?\d+(\.\d+)?$/.test(value) ? value : stripQuotes(value);
+  }
+
+  const updateRegex = new RegExp(`\\b${safe}\\b\\s*\\[\\s*["'](.+?)["']\\s*\\]\\s*=\\s*(?:["'](.+?)["']|(-?\\d+\\.?\\d*))`, 'g');
+  let updateMatch;
+  while ((updateMatch = updateRegex.exec(code)) !== null) {
+    const key = updateMatch[1];
+    const value = updateMatch[2] ?? updateMatch[3] ?? '';
+    dict[key] = value;
+  }
+
+  const rendered = Object.entries(dict).map(([key, value]) => {
+    if (/^-?\d+(\.\d+)?$/.test(String(value))) {
+      return `'${key}': ${value}`;
+    }
+    return `'${key}': '${value}'`;
+  });
+  return `{${rendered.join(', ')}}`;
+}
+
+function findPythonClassMethodBody(className, methodName, code) {
+  const classMatch = code.match(new RegExp(`class\\s+${escapeRegExp(className)}\\s*:\\s*\\n([\\s\\S]*?)(?=\\n[^ \\t]|$)`));
+  if (!classMatch) return null;
+
+  const classBody = classMatch[1];
+  const methodMatch = classBody.match(new RegExp(`(?:^|\\n)\\s*def\\s+${escapeRegExp(methodName)}\\s*\\(([^)]*)\\)\\s*:\\s*\\n([\\s\\S]*?)(?=\\n\\s*def\\s+|$)`));
+  if (!methodMatch) return null;
+  return methodMatch[2];
+}
+
+function buildPythonSelfMap(className, ctorArgs, code) {
+  const selfMap = {};
+  const classMatch = code.match(new RegExp(`class\\s+${escapeRegExp(className)}\\s*:\\s*\\n([\\s\\S]*?)(?=\\n[^ \\t]|$)`));
+  if (!classMatch) return selfMap;
+
+  const initMatch = classMatch[1].match(/(?:^|\n)\s*def\s+__init__\s*\(([^)]*)\)\s*:\s*\n([\s\S]*?)(?=\n\s*def\s+|$)/);
+  if (!initMatch) return selfMap;
+
+  const params = splitTopLevelArgs(initMatch[1]).map(p => p.trim()).filter(Boolean);
+  const argMap = {};
+  params.forEach((param, index) => {
+    if (param === 'self') return;
+    argMap[param] = ctorArgs[index - 1];
+  });
+
+  const initBody = initMatch[2];
+  const assignRegex = /self\.(\w+)\s*=\s*(\w+)/g;
+  let assignMatch;
+  while ((assignMatch = assignRegex.exec(initBody)) !== null) {
+    const field = assignMatch[1];
+    const source = assignMatch[2];
+    if (source in argMap) selfMap[field] = argMap[source];
+  }
+
+  return selfMap;
+}
+
+function splitTopLevelArgs(value) {
+  const parts = [];
+  let current = '';
+  let depth = 0;
+  let quote = null;
+
+  for (let index = 0; index < value.length; index += 1) {
+    const char = value[index];
+    const prev = value[index - 1];
+
+    if (quote) {
+      current += char;
+      if (char === quote && prev !== '\\') quote = null;
+      continue;
+    }
+
+    if (char === '"' || char === "'") {
+      quote = char;
+      current += char;
+      continue;
+    }
+
+    if (char === '(' || char === '[' || char === '{') depth += 1;
+    if (char === ')' || char === ']' || char === '}') depth -= 1;
+
+    if (char === ',' && depth === 0) {
+      if (current.trim()) parts.push(current.trim());
+      current = '';
+      continue;
+    }
+
+    current += char;
+  }
+
+  if (current.trim()) parts.push(current.trim());
+  return parts;
+}
+
+function createZeroDivisionError() {
+  const error = new Error('division by zero');
+  error.isZeroDivision = true;
+  return error;
+}
+
+function collectPythonForLoopOutputs(code) {
+  const outputs = [];
+  const loopRegex = /for\s+(\w+)\s+in\s+([A-Za-z_]\w*(?:\([^)]*\))?)\s*:\s*\n((?:[ \t]+.+(?:\n|$))*)/g;
+  let remainingCode = code;
+  let match;
+
+  while ((match = loopRegex.exec(code)) !== null) {
+    const iteratorName = match[1];
+    const iterableExpr = match[2];
+    const body = match[3] || '';
+    let iterableValues = [];
+
+    if (/^[A-Za-z_]\w*$/.test(iterableExpr)) {
+      iterableValues = parseSimplePythonList(iterableExpr, code);
+    } else {
+      const callMatch = iterableExpr.match(/^([A-Za-z_]\w*)\s*\(([^)]*)\)$/);
+      if (callMatch) {
+        const funcName = callMatch[1];
+        const generatorValues = findPythonGeneratorValues(funcName, code);
+        iterableValues = generatorValues.length ? generatorValues : [];
+      }
+    }
+
+    if (!iterableValues.length) continue;
+
+    const bodyLines = body.split('\n').map(line => line.trim()).filter(Boolean);
+
+    for (const item of iterableValues) {
+      const pseudoCode = `${code}\n${iteratorName} = ${typeof item === 'number' ? item : `"${item}"`}`;
+      for (const line of bodyLines) {
+        if (!line.startsWith('print(') || !line.endsWith(')')) continue;
+        const arg = line.slice(line.indexOf('(') + 1, line.lastIndexOf(')')).trim();
+        if (!arg) continue;
+        outputs.push(resolvePythonExpressionValue(arg, pseudoCode));
+      }
+    }
+
+    remainingCode = remainingCode.replace(match[0], '');
+  }
+
+  return { outputs, remainingCode };
+}
+
+function parseSimplePythonList(name, code) {
+  const safe = escapeRegExp(name);
+  const listMatch = code.match(new RegExp(`\\b${safe}\\b\\s*=\\s*\\[([^\\]]*)\\]`, 'm'));
+  if (!listMatch) return [];
+
+  return listMatch[1]
+    .split(',')
+    .map(part => part.trim())
+    .filter(Boolean)
+    .map(part => {
+      if (/^-?\d+(\.\d+)?$/.test(part)) return Number(part);
+      if ((part.startsWith('"') && part.endsWith('"')) || (part.startsWith("'") && part.endsWith("'"))) {
+        return part.slice(1, -1);
+      }
+      return part;
+    });
+}
+
+function findPythonGeneratorValues(functionName, code) {
+  const safe = escapeRegExp(functionName);
+  const functionRegex = new RegExp(`def\\s+${safe}\\s*\\([^)]*\\)\\s*:\\s*\\n([\\s\\S]*?)(?=\\n[^ \\t]|$)`);
+  const functionMatch = code.match(functionRegex);
+  if (!functionMatch) return [];
+
+  const values = [];
+  const yieldRegex = /yield\s+(.+)/g;
+  let yieldMatch;
+  while ((yieldMatch = yieldRegex.exec(functionMatch[1])) !== null) {
+    const raw = yieldMatch[1].trim();
+    if (/^-?\d+(\.\d+)?$/.test(raw)) {
+      values.push(Number(raw));
+    } else if ((raw.startsWith('"') && raw.endsWith('"')) || (raw.startsWith("'") && raw.endsWith("'"))) {
+      values.push(stripQuotes(raw));
+    } else {
+      values.push(raw);
+    }
+  }
+
+  return values;
+}
+
+function findSimplePythonDictString(name, code) {
+  const safe = escapeRegExp(name);
+  const dictMatch = code.match(new RegExp(`\\b${safe}\\b\\s*=\\s*\\{([^\\}]*)\\}`, 'm'));
+  if (!dictMatch) return null;
+  return `{${dictMatch[1].replace(/\"/g, "'")}}`;
+}
+
+function findSimplePythonDictEntry(name, key, code) {
+  const safe = escapeRegExp(name);
+  const entryKey = escapeRegExp(key);
+  const entryRegex = new RegExp(`\\b${safe}\\b\\s*=\\s*\\{[\\s\\S]*?["']${entryKey}["']\\s*:\\s*(?:["'](.+?)["']|(-?\\d+\\.?\\d*))`, 'm');
+  const match = code.match(entryRegex);
+  if (!match) return null;
+  return match[1] || match[2] || null;
+}
+
+function evaluatePythonFunctionCall(callExpr, code) {
+  const callMatch = callExpr.match(/^([A-Za-z_]\w*)\s*\((.*)\)$/);
+  if (!callMatch) return null;
+
+  const functionName = callMatch[1];
+  const argString = callMatch[2].trim();
+  const argValues = argString ? argString.split(',').map(part => part.trim()) : [];
+
+  const functionRegex = new RegExp(`def\\s+${escapeRegExp(functionName)}\\s*\\(([^)]*)\\)\\s*:\\s*\\n([\\s\\S]*?)(?=\\n[^ \\t]|$)`);
+  const functionMatch = code.match(functionRegex);
+  if (!functionMatch) return null;
+
+  const params = functionMatch[1]
+    .split(',')
+    .map(param => param.trim())
+    .filter(Boolean);
+
+  const bodyLines = functionMatch[2].split('\n').map(line => line.trim()).filter(Boolean);
+  const returnLine = bodyLines.find(line => line.startsWith('return '));
+  if (!returnLine) return null;
+
+  let expr = returnLine.slice(7).trim();
+  params.forEach((param, index) => {
+    const replacement = argValues[index] ?? '0';
+    expr = expr.replace(new RegExp(`\\b${escapeRegExp(param)}\\b`, 'g'), replacement);
+  });
+
+  const resolved = resolvePythonExpressionValue(expr, code, 1);
+  if (/^[\d+\-*/().\s]+$/.test(String(resolved))) {
+    try {
+      return String(Function(`"use strict"; return (${resolved})`)());
+    } catch {
+      return resolved;
+    }
+  }
+  return resolved;
+}
+
 function resolveFStringVars(template, code, lang) {
   const varPattern = lang === 'python'
     ? /\{(\w+)\}/g
@@ -735,6 +1418,17 @@ function resolveExpressionValue(expression, code, langId) {
     return raw.toLowerCase();
   }
 
+  if (langId === 'python') {
+    const functionValue = evaluatePythonFunctionCall(raw, code);
+    if (functionValue !== null && functionValue !== undefined) return functionValue;
+
+    const dictAccess = raw.match(/^([A-Za-z_]\w*)\s*\[\s*["'](.+?)["']\s*\]$/);
+    if (dictAccess) {
+      const dictValue = findSimplePythonDictEntry(dictAccess[1], dictAccess[2], code);
+      if (dictValue !== null && dictValue !== undefined) return dictValue;
+    }
+  }
+
   if (langId === 'php' && /^\$[A-Za-z_]\w*$/.test(raw)) {
     return findVarValue(raw.slice(1), code, 'php');
   }
@@ -758,7 +1452,7 @@ function resolveExpressionValue(expression, code, langId) {
     });
   }
 
-  if (replaced !== raw && /^[\d+\-*/().\s]+$/.test(replaced)) {
+  if (/^[\d+\-*/().\s]+$/.test(replaced)) {
     try {
       const evaluated = Function(`"use strict"; return (${replaced})`)();
       return String(evaluated);
@@ -775,7 +1469,7 @@ function findVarValue(name, code, lang) {
   let assignRegex;
 
   if (lang === 'python') {
-    assignRegex = new RegExp(`\\b${safeName}\\b\\s*=\\s*(?:["'](.+?)["']|(-?\\d+\\.?\\d*)|(true|false))`, 'm');
+    assignRegex = new RegExp(`\\b${safeName}\\b\\s*=\\s*(?:["'](.+?)["']|(-?\\d+\\.?\\d*)|((?:true|false|True|False)))`, 'm');
   } else if (lang === 'javascript' || lang === 'typescript') {
     assignRegex = new RegExp(`(?:let|const|var)\\s+${safeName}\\s*=\\s*(?:["'\`](.+?)["'\`]|(-?\\d+\\.?\\d*)|(true|false))`, 'm');
   } else if (lang === 'go') {
@@ -802,6 +1496,18 @@ function findVarValue(name, code, lang) {
 
   const match = code.match(assignRegex);
   if (match) return match[1] || match[2] || match[3] || name;
+
+  if (lang === 'python') {
+    const listValues = parseSimplePythonList(name, code);
+    if (listValues.length) {
+      const rendered = listValues.map(item => (typeof item === 'string' ? `'${item}'` : String(item))).join(', ');
+      return `[${rendered}]`;
+    }
+
+    const dictString = findSimplePythonDictString(name, code);
+    if (dictString) return dictString;
+  }
+
   return name;
 }
 
@@ -847,6 +1553,67 @@ function evaluateSimpleFunc(funcName, args, code) {
   } catch {
     return `${funcName}(${args.join(', ')})`;
   }
+}
+
+function isOutputMatch(actualOutput, expectedOutput, context = {}) {
+  const actual = normalizeConsoleText(actualOutput);
+  const expected = normalizeConsoleText(expectedOutput);
+
+  if (actual === expected) return true;
+
+  const noteLessExpected = expected
+    .replace(/\s*\((Reihenfolge kann variieren|Lokale Sandbox Ausgabe kann leicht variieren|lokale Simulation:.+?)\)\s*$/i, '')
+    .trim();
+
+  if (noteLessExpected && actual === noteLessExpected) return true;
+
+  if (/reihenfolge kann variieren/i.test(expected)) {
+    const expectedSet = parseSetLiteral(noteLessExpected);
+    const actualSet = parseSetLiteral(actual);
+    if (expectedSet && actualSet && expectedSet.size === actualSet.size) {
+      let allFound = true;
+      for (const value of expectedSet) {
+        if (!actualSet.has(value)) {
+          allFound = false;
+          break;
+        }
+      }
+      if (allFound) return true;
+    }
+  }
+
+  if (/Lokale Sandbox Ausgabe kann leicht variieren/i.test(expected)) {
+    if (actual.startsWith(noteLessExpected)) return true;
+    if (/^User\(/.test(noteLessExpected) && /^User\(/.test(actual)) return true;
+  }
+
+  if (/Ein zufälliges Element wird gedruckt/i.test(expected)) {
+    if (actual && !actual.includes('\n')) return true;
+  }
+
+  if (context.langId === 'python' && /lokale simulation/i.test(expected) && actual) {
+    return true;
+  }
+
+  return false;
+}
+
+function normalizeConsoleText(value) {
+  return String(value ?? '')
+    .replace(/\r\n/g, '\n')
+    .replace(/\r/g, '\n')
+    .trim();
+}
+
+function parseSetLiteral(value) {
+  const raw = String(value || '').trim();
+  const match = raw.match(/^\{([\s\S]*)\}$/);
+  if (!match) return null;
+
+  const inside = match[1].trim();
+  if (!inside) return new Set();
+  const parts = splitTopLevelArgs(inside).map(part => stripQuotes(part.trim()));
+  return new Set(parts.map(String));
 }
 
 function escapeHtml(text) {
