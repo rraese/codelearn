@@ -94,10 +94,7 @@ export function renderLesson(container, params) {
 
           <!-- Editor Panel -->
           <div class="editor-panel">
-            <div class="exercise-instructions">
-              <h3>🎯 Aufgabe</h3>
-              <p>${lesson.exercise.instructions}</p>
-            </div>
+            ${renderExerciseInstructions(lesson.exercise, lesson.id)}
 
             <div class="editor-container">
               <div class="editor-header">
@@ -197,6 +194,96 @@ function renderPaywall(container, lang, lessonId) {
   bindNavbar(container);
 }
 
+function getHintLevel(lessonId) {
+  if (lessonId <= 10) return { key: 'beginner', label: 'Anfänger' };
+  if (lessonId <= 20) return { key: 'intermediate', label: 'Aufbau' };
+  return { key: 'advanced', label: 'Fortgeschritten' };
+}
+
+function normalizeHintText(hintText) {
+  if (!hintText) return '';
+  return hintText.replace(/Ergaenze/g, 'Ergänze');
+}
+
+function splitHintText(hintText) {
+  const normalized = normalizeHintText(hintText).trim();
+  const marker = '\n2) Beispiel:\n';
+  const parts = normalized.split(marker);
+
+  if (parts.length === 2) {
+    return {
+      guidance: parts[0].replace(/^1\)\s*/, '').trim(),
+      example: parts[1].trim(),
+    };
+  }
+
+  return {
+    guidance: 'Orientiere dich am Muster aus dem Theorie-Teil.',
+    example: normalized,
+  };
+}
+
+function getAdaptiveHint(hintText, lessonId) {
+  if (!hintText) return null;
+
+  const level = getHintLevel(lessonId);
+  const { guidance, example } = splitHintText(hintText);
+
+  if (level.key === 'beginner') {
+    return {
+      levelLabel: level.label,
+      text: `1) ${guidance}\n2) Passe das Beispiel an deine Aufgabe an.\n3) Beispiel:\n${example}`,
+    };
+  }
+
+  if (level.key === 'intermediate') {
+    return {
+      levelLabel: level.label,
+      text: `Leite die Lösung aus dem Muster ab.\nBeispiel:\n${example}`,
+    };
+  }
+
+  return {
+    levelLabel: level.label,
+    text: `Kurz-Hinweis:\n${example}`,
+  };
+}
+
+function renderExerciseInstructions(exercise, lessonId) {
+  const adaptiveHint = getAdaptiveHint(exercise.hint, lessonId);
+  const steps = [
+    'Lies den Starter-Code und ergänze die fehlende Stelle.',
+    'Nutze das passende Muster aus dem Theorie-Teil links.',
+    'Führe den Code aus und vergleiche die Ausgabe exakt mit dem Ziel.'
+  ];
+
+  return `
+    <div class="exercise-instructions">
+      <h3>🎯 Aufgabe</h3>
+      <p class="exercise-goal">${escapeHtml(exercise.instructions)}</p>
+
+      <div class="exercise-section">
+        <h4>So gehst du vor</h4>
+        <ol class="exercise-steps">
+          ${steps.map(step => `<li>${escapeHtml(step)}</li>`).join('')}
+        </ol>
+      </div>
+
+      <div class="exercise-section">
+        <h4>Zielausgabe</h4>
+        <pre class="exercise-expected">${escapeHtml(exercise.expectedOutput)}</pre>
+      </div>
+
+      ${adaptiveHint ? `
+      <div class="exercise-section">
+        <h4>Code-Muster (${escapeHtml(adaptiveHint.levelLabel)}-Hinweis)</h4>
+        <pre class="exercise-hint">${escapeHtml(adaptiveHint.text)}</pre>
+      </div>
+      ` : ''}
+    </div>
+  `;
+}
+
 function initEditor(langId, lesson) {
   const editorEl = document.getElementById('code-editor');
   if (!editorEl) return;
@@ -229,6 +316,7 @@ function bindButtons(langId, lesson, done) {
   const btnReset = document.getElementById('btn-reset');
   const btnComplete = document.getElementById('btn-complete');
   const consoleOutput = document.getElementById('console-output');
+  const adaptiveHint = getAdaptiveHint(lesson.exercise.hint, lesson.id);
 
   // Run button
   btnRun?.addEventListener('click', () => {
@@ -256,7 +344,7 @@ function bindButtons(langId, lesson, done) {
       consoleOutput.innerHTML = `
         <div class="output-line">${escapeHtml(userOutput || '(keine Ausgabe)')}</div>
         <div class="error-message">❌ Die Ausgabe stimmt noch nicht. Erwartet: "${escapeHtml(expectedOutput)}"</div>
-        ${lesson.exercise.hint ? `<div class="hint-message">💡 Tipp: ${escapeHtml(lesson.exercise.hint)}</div>` : ''}
+        ${adaptiveHint ? `<div class="hint-message">💡 ${escapeHtml(adaptiveHint.levelLabel)}-Hinweis:\n${escapeHtml(adaptiveHint.text)}</div>` : ''}
       `;
       consoleOutput.classList.add('error');
       consoleOutput.classList.remove('success');

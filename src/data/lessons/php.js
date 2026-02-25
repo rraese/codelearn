@@ -23,10 +23,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Hallo verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Hallo verstanden!" aus.',
             starterCode: '// Hallo Welt & echo\n',
             expectedOutput: 'Hallo verstanden!',
-            hint: 'echo "Hallo verstanden!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Hallo verstanden!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Hallo Welt & echo', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -57,10 +57,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Variablen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Variablen verstanden!" aus.',
             starterCode: '// Variablen & $\n',
             expectedOutput: 'Variablen verstanden!',
-            hint: 'echo "Variablen verstanden!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Variablen verstanden!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Variablen & $', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -91,10 +91,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Datentypen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Datentypen verstanden!" aus.',
             starterCode: '// Datentypen & Casting\n',
             expectedOutput: 'Datentypen verstanden!',
-            hint: 'echo "Datentypen verstanden!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Datentypen verstanden!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Datentypen & Casting', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -125,10 +125,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "If/elseif/else verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "If/elseif/else verstanden!" aus.',
             starterCode: '// If/elseif/else\n',
             expectedOutput: 'If/elseif/else verstanden!',
-            hint: 'echo "If/elseif/else verstanden!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "If/elseif/else verstanden!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['If/elseif/else', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -159,10 +159,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Schleifen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Schleifen verstanden!" aus.',
             starterCode: '// Schleifen\n',
             expectedOutput: 'Schleifen verstanden!',
-            hint: 'echo "Schleifen verstanden!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Schleifen verstanden!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Schleifen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -193,10 +193,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Funktionen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Funktionen verstanden!" aus.',
             starterCode: '// Funktionen\n',
             expectedOutput: 'Funktionen verstanden!',
-            hint: 'echo "Funktionen verstanden!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Funktionen verstanden!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Funktionen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -227,10 +227,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Arrays verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Arrays verstanden!" aus.',
             starterCode: '// Arrays\n',
             expectedOutput: 'Arrays verstanden!',
-            hint: 'echo "Arrays verstanden!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Arrays verstanden!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Arrays', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -261,10 +261,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Strings verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Strings verstanden!" aus.',
             starterCode: '// Strings\n',
             expectedOutput: 'Strings verstanden!',
-            hint: 'echo "Strings verstanden!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Strings verstanden!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Strings', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -295,10 +295,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Klassen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Klassen verstanden!" aus.',
             starterCode: '// Klassen & OOP\n',
             expectedOutput: 'Klassen verstanden!',
-            hint: 'echo "Klassen verstanden!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Klassen verstanden!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Klassen & OOP', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -329,10 +329,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Vererbung verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Vererbung verstanden!" aus.',
             starterCode: '// Vererbung & Interfaces\n',
             expectedOutput: 'Vererbung verstanden!',
-            hint: 'echo "Vererbung verstanden!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Vererbung verstanden!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Vererbung & Interfaces', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -363,10 +363,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Traits verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Traits verstanden!" aus.',
             starterCode: '// Traits\n',
             expectedOutput: 'Traits verstanden!',
-            hint: 'echo "Traits verstanden!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Traits verstanden!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Traits', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -397,10 +397,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Namespaces verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Namespaces verstanden!" aus.',
             starterCode: '// Namespaces\n',
             expectedOutput: 'Namespaces verstanden!',
-            hint: 'echo "Namespaces verstanden!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Namespaces verstanden!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Namespaces', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -431,10 +431,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Error Handling gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Error Handling gemeistert!" aus.',
             starterCode: '// Error Handling\n',
             expectedOutput: 'Error Handling gemeistert!',
-            hint: 'echo "Error Handling gemeistert!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Error Handling gemeistert!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Error Handling', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -465,10 +465,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Superglobals gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Superglobals gemeistert!" aus.',
             starterCode: '// Superglobals\n',
             expectedOutput: 'Superglobals gemeistert!',
-            hint: 'echo "Superglobals gemeistert!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Superglobals gemeistert!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Superglobals', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -499,10 +499,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Dateien lesen/schreiben gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Dateien lesen/schreiben gemeistert!" aus.',
             starterCode: '// Dateien lesen/schreiben\n',
             expectedOutput: 'Dateien lesen/schreiben gemeistert!',
-            hint: 'echo "Dateien lesen/schreiben gemeistert!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Dateien lesen/schreiben gemeistert!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Dateien lesen/schreiben', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -533,10 +533,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Regular Expressions gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Regular Expressions gemeistert!" aus.',
             starterCode: '// Regular Expressions\n',
             expectedOutput: 'Regular Expressions gemeistert!',
-            hint: 'echo "Regular Expressions gemeistert!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Regular Expressions gemeistert!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Regular Expressions', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -567,10 +567,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Datenbanken mit PDO gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Datenbanken mit PDO gemeistert!" aus.',
             starterCode: '// Datenbanken mit PDO\n',
             expectedOutput: 'Datenbanken mit PDO gemeistert!',
-            hint: 'echo "Datenbanken mit PDO gemeistert!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Datenbanken mit PDO gemeistert!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Datenbanken mit PDO', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -601,10 +601,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Sessions gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Sessions gemeistert!" aus.',
             starterCode: '// Sessions & Cookies\n',
             expectedOutput: 'Sessions gemeistert!',
-            hint: 'echo "Sessions gemeistert!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Sessions gemeistert!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Sessions & Cookies', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -635,10 +635,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "JSON Handling gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "JSON Handling gemeistert!" aus.',
             starterCode: '// JSON Handling\n',
             expectedOutput: 'JSON Handling gemeistert!',
-            hint: 'echo "JSON Handling gemeistert!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "JSON Handling gemeistert!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['JSON Handling', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -669,10 +669,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Composer gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Composer gemeistert!" aus.',
             starterCode: '// Composer\n',
             expectedOutput: 'Composer gemeistert!',
-            hint: 'echo "Composer gemeistert!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Composer gemeistert!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Composer', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -703,10 +703,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Type Declarations gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Type Declarations gemeistert!" aus.',
             starterCode: '// Type Declarations\n',
             expectedOutput: 'Type Declarations gemeistert!',
-            hint: 'echo "Type Declarations gemeistert!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Type Declarations gemeistert!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Type Declarations', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -737,10 +737,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Enums (PHP 8.1) gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Enums (PHP 8.1) gemeistert!" aus.',
             starterCode: '// Enums (PHP 8.1)\n',
             expectedOutput: 'Enums (PHP 8.1) gemeistert!',
-            hint: 'echo "Enums (PHP 8.1) gemeistert!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Enums (PHP 8.1) gemeistert!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Enums (PHP 8.1)', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -771,10 +771,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Fibers gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Fibers gemeistert!" aus.',
             starterCode: '// Fibers\n',
             expectedOutput: 'Fibers gemeistert!',
-            hint: 'echo "Fibers gemeistert!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Fibers gemeistert!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Fibers', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -805,10 +805,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Named Arguments gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Named Arguments gemeistert!" aus.',
             starterCode: '// Named Arguments\n',
             expectedOutput: 'Named Arguments gemeistert!',
-            hint: 'echo "Named Arguments gemeistert!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Named Arguments gemeistert!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Named Arguments', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -839,10 +839,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Match Expression gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Match Expression gemeistert!" aus.',
             starterCode: '// Match Expression\n',
             expectedOutput: 'Match Expression gemeistert!',
-            hint: 'echo "Match Expression gemeistert!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Match Expression gemeistert!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Match Expression', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -873,10 +873,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Laravel Grundlagen gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Laravel Grundlagen gemeistert!" aus.',
             starterCode: '// Laravel Grundlagen\n',
             expectedOutput: 'Laravel Grundlagen gemeistert!',
-            hint: 'echo "Laravel Grundlagen gemeistert!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Laravel Grundlagen gemeistert!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Laravel Grundlagen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -907,10 +907,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Laravel Routing gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Laravel Routing gemeistert!" aus.',
             starterCode: '// Laravel Routing\n',
             expectedOutput: 'Laravel Routing gemeistert!',
-            hint: 'echo "Laravel Routing gemeistert!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Laravel Routing gemeistert!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Laravel Routing', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -941,10 +941,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Laravel Eloquent gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Laravel Eloquent gemeistert!" aus.',
             starterCode: '// Laravel Eloquent\n',
             expectedOutput: 'Laravel Eloquent gemeistert!',
-            hint: 'echo "Laravel Eloquent gemeistert!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Laravel Eloquent gemeistert!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Laravel Eloquent', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -975,10 +975,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "PHPUnit Testing gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "PHPUnit Testing gemeistert!" aus.',
             starterCode: '// PHPUnit Testing\n',
             expectedOutput: 'PHPUnit Testing gemeistert!',
-            hint: 'echo "PHPUnit Testing gemeistert!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "PHPUnit Testing gemeistert!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['PHPUnit Testing', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -1009,10 +1009,10 @@ export const phpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Projekt: Blog-Engine gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Projekt: Blog-Engine gemeistert!" aus.',
             starterCode: '// Projekt: Blog-Engine\n',
             expectedOutput: 'Projekt: Blog-Engine gemeistert!',
-            hint: 'echo "Projekt: Blog-Engine gemeistert!";'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\necho "Projekt: Blog-Engine gemeistert!";'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Projekt: Blog-Engine', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },

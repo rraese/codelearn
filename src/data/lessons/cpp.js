@@ -23,10 +23,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Hallo verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Hallo verstanden!" aus.',
             starterCode: '// Hallo Welt & cout\n',
             expectedOutput: 'Hallo verstanden!',
-            hint: 'cout << "Hallo verstanden!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "Hallo verstanden!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Hallo Welt & cout', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -57,10 +57,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Variablen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Variablen verstanden!" aus.',
             starterCode: '// Variablen & Datentypen\n',
             expectedOutput: 'Variablen verstanden!',
-            hint: 'cout << "Variablen verstanden!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "Variablen verstanden!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Variablen & Datentypen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -91,10 +91,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Schleifen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Schleifen verstanden!" aus.',
             starterCode: '// Schleifen\n',
             expectedOutput: 'Schleifen verstanden!',
-            hint: 'cout << "Schleifen verstanden!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "Schleifen verstanden!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Schleifen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -125,10 +125,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "If verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "If verstanden!" aus.',
             starterCode: '// If & switch\n',
             expectedOutput: 'If verstanden!',
-            hint: 'cout << "If verstanden!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "If verstanden!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['If & switch', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -159,10 +159,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Funktionen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Funktionen verstanden!" aus.',
             starterCode: '// Funktionen\n',
             expectedOutput: 'Funktionen verstanden!',
-            hint: 'cout << "Funktionen verstanden!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "Funktionen verstanden!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Funktionen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -193,10 +193,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Arrays verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Arrays verstanden!" aus.',
             starterCode: '// Arrays & Vectors\n',
             expectedOutput: 'Arrays verstanden!',
-            hint: 'cout << "Arrays verstanden!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "Arrays verstanden!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Arrays & Vectors', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -227,10 +227,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Pointer verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Pointer verstanden!" aus.',
             starterCode: '// Pointer & Referenzen\n',
             expectedOutput: 'Pointer verstanden!',
-            hint: 'cout << "Pointer verstanden!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "Pointer verstanden!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Pointer & Referenzen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -261,10 +261,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Klassen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Klassen verstanden!" aus.',
             starterCode: '// Klassen & OOP\n',
             expectedOutput: 'Klassen verstanden!',
-            hint: 'cout << "Klassen verstanden!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "Klassen verstanden!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Klassen & OOP', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -295,10 +295,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Templates verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Templates verstanden!" aus.',
             starterCode: '// Templates\n',
             expectedOutput: 'Templates verstanden!',
-            hint: 'cout << "Templates verstanden!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "Templates verstanden!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Templates', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -329,10 +329,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "STL Algorithmen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "STL Algorithmen verstanden!" aus.',
             starterCode: '// STL Algorithmen\n',
             expectedOutput: 'STL Algorithmen verstanden!',
-            hint: 'cout << "STL Algorithmen verstanden!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "STL Algorithmen verstanden!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['STL Algorithmen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -363,10 +363,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Exceptions verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Exceptions verstanden!" aus.',
             starterCode: '// Exceptions\n',
             expectedOutput: 'Exceptions verstanden!',
-            hint: 'cout << "Exceptions verstanden!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "Exceptions verstanden!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Exceptions', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -397,10 +397,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Move Semantics verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Move Semantics verstanden!" aus.',
             starterCode: '// Move Semantics\n',
             expectedOutput: 'Move Semantics verstanden!',
-            hint: 'cout << "Move Semantics verstanden!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "Move Semantics verstanden!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Move Semantics', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -431,10 +431,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Vererbung gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Vererbung gemeistert!" aus.',
             starterCode: '// Vererbung\n',
             expectedOutput: 'Vererbung gemeistert!',
-            hint: 'cout << "Vererbung gemeistert!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "Vererbung gemeistert!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Vererbung', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -465,10 +465,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Polymorphismus gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Polymorphismus gemeistert!" aus.',
             starterCode: '// Polymorphismus\n',
             expectedOutput: 'Polymorphismus gemeistert!',
-            hint: 'cout << "Polymorphismus gemeistert!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "Polymorphismus gemeistert!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Polymorphismus', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -499,10 +499,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Operator Overloading gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Operator Overloading gemeistert!" aus.',
             starterCode: '// Operator Overloading\n',
             expectedOutput: 'Operator Overloading gemeistert!',
-            hint: 'cout << "Operator Overloading gemeistert!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "Operator Overloading gemeistert!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Operator Overloading', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -533,10 +533,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Lambda Expressions gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Lambda Expressions gemeistert!" aus.',
             starterCode: '// Lambda Expressions\n',
             expectedOutput: 'Lambda Expressions gemeistert!',
-            hint: 'cout << "Lambda Expressions gemeistert!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "Lambda Expressions gemeistert!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Lambda Expressions', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -567,10 +567,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Multithreading gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Multithreading gemeistert!" aus.',
             starterCode: '// Multithreading\n',
             expectedOutput: 'Multithreading gemeistert!',
-            hint: 'cout << "Multithreading gemeistert!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "Multithreading gemeistert!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Multithreading', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -601,10 +601,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "RAII gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "RAII gemeistert!" aus.',
             starterCode: '// RAII & Ressourcen\n',
             expectedOutput: 'RAII gemeistert!',
-            hint: 'cout << "RAII gemeistert!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "RAII gemeistert!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['RAII & Ressourcen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -635,10 +635,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "String Handling gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "String Handling gemeistert!" aus.',
             starterCode: '// String Handling\n',
             expectedOutput: 'String Handling gemeistert!',
-            hint: 'cout << "String Handling gemeistert!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "String Handling gemeistert!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['String Handling', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -669,10 +669,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "File I/O gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "File I/O gemeistert!" aus.',
             starterCode: '// File I/O\n',
             expectedOutput: 'File I/O gemeistert!',
-            hint: 'cout << "File I/O gemeistert!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "File I/O gemeistert!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['File I/O', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -703,10 +703,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Namespaces gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Namespaces gemeistert!" aus.',
             starterCode: '// Namespaces\n',
             expectedOutput: 'Namespaces gemeistert!',
-            hint: 'cout << "Namespaces gemeistert!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "Namespaces gemeistert!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Namespaces', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -737,10 +737,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "constexpr gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "constexpr gemeistert!" aus.',
             starterCode: '// constexpr\n',
             expectedOutput: 'constexpr gemeistert!',
-            hint: 'cout << "constexpr gemeistert!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "constexpr gemeistert!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['constexpr', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -771,10 +771,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Ranges (C++20) gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Ranges (C++20) gemeistert!" aus.',
             starterCode: '// Ranges (C++20)\n',
             expectedOutput: 'Ranges (C++20) gemeistert!',
-            hint: 'cout << "Ranges (C++20) gemeistert!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "Ranges (C++20) gemeistert!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Ranges (C++20)', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -805,10 +805,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Concepts (C++20) gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Concepts (C++20) gemeistert!" aus.',
             starterCode: '// Concepts (C++20)\n',
             expectedOutput: 'Concepts (C++20) gemeistert!',
-            hint: 'cout << "Concepts (C++20) gemeistert!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "Concepts (C++20) gemeistert!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Concepts (C++20)', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -839,10 +839,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "std::optional gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "std::optional gemeistert!" aus.',
             starterCode: '// std::optional\n',
             expectedOutput: 'std::optional gemeistert!',
-            hint: 'cout << "std::optional gemeistert!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "std::optional gemeistert!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['std::optional', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -873,10 +873,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "std::variant gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "std::variant gemeistert!" aus.',
             starterCode: '// std::variant\n',
             expectedOutput: 'std::variant gemeistert!',
-            hint: 'cout << "std::variant gemeistert!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "std::variant gemeistert!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['std::variant', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -907,10 +907,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Coroutines gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Coroutines gemeistert!" aus.',
             starterCode: '// Coroutines\n',
             expectedOutput: 'Coroutines gemeistert!',
-            hint: 'cout << "Coroutines gemeistert!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "Coroutines gemeistert!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Coroutines', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -941,10 +941,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "CMake gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "CMake gemeistert!" aus.',
             starterCode: '// CMake\n',
             expectedOutput: 'CMake gemeistert!',
-            hint: 'cout << "CMake gemeistert!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "CMake gemeistert!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['CMake', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -975,10 +975,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Unit Testing gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Unit Testing gemeistert!" aus.',
             starterCode: '// Unit Testing\n',
             expectedOutput: 'Unit Testing gemeistert!',
-            hint: 'cout << "Unit Testing gemeistert!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "Unit Testing gemeistert!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Unit Testing', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -1009,10 +1009,10 @@ export const cppLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Projekt: Game Engine gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Projekt: Game Engine gemeistert!" aus.',
             starterCode: '// Projekt: Game Engine\n',
             expectedOutput: 'Projekt: Game Engine gemeistert!',
-            hint: 'cout << "Projekt: Game Engine gemeistert!" << endl;'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\ncout << "Projekt: Game Engine gemeistert!" << endl;'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Projekt: Game Engine', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },

@@ -23,10 +23,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Hallo verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Hallo verstanden!" aus.',
             starterCode: '// Hallo Welt & puts\n',
             expectedOutput: 'Hallo verstanden!',
-            hint: 'puts "Hallo verstanden!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Hallo verstanden!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Hallo Welt & puts', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -57,10 +57,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Variablen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Variablen verstanden!" aus.',
             starterCode: '// Variablen & Datentypen\n',
             expectedOutput: 'Variablen verstanden!',
-            hint: 'puts "Variablen verstanden!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Variablen verstanden!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Variablen & Datentypen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -91,10 +91,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Strings verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Strings verstanden!" aus.',
             starterCode: '// Strings & Symbole\n',
             expectedOutput: 'Strings verstanden!',
-            hint: 'puts "Strings verstanden!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Strings verstanden!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Strings & Symbole', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -125,10 +125,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "If/unless verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "If/unless verstanden!" aus.',
             starterCode: '// If/unless & Ternary\n',
             expectedOutput: 'If/unless verstanden!',
-            hint: 'puts "If/unless verstanden!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "If/unless verstanden!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['If/unless & Ternary', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -159,10 +159,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Schleifen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Schleifen verstanden!" aus.',
             starterCode: '// Schleifen & Iteratoren\n',
             expectedOutput: 'Schleifen verstanden!',
-            hint: 'puts "Schleifen verstanden!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Schleifen verstanden!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Schleifen & Iteratoren', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -193,10 +193,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Methoden verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Methoden verstanden!" aus.',
             starterCode: '// Methoden\n',
             expectedOutput: 'Methoden verstanden!',
-            hint: 'puts "Methoden verstanden!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Methoden verstanden!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Methoden', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -227,10 +227,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Arrays verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Arrays verstanden!" aus.',
             starterCode: '// Arrays\n',
             expectedOutput: 'Arrays verstanden!',
-            hint: 'puts "Arrays verstanden!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Arrays verstanden!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Arrays', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -261,10 +261,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Hashes verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Hashes verstanden!" aus.',
             starterCode: '// Hashes\n',
             expectedOutput: 'Hashes verstanden!',
-            hint: 'puts "Hashes verstanden!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Hashes verstanden!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Hashes', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -295,10 +295,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Blocks verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Blocks verstanden!" aus.',
             starterCode: '// Blocks & Procs\n',
             expectedOutput: 'Blocks verstanden!',
-            hint: 'puts "Blocks verstanden!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Blocks verstanden!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Blocks & Procs', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -329,10 +329,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Klassen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Klassen verstanden!" aus.',
             starterCode: '// Klassen & Objekte\n',
             expectedOutput: 'Klassen verstanden!',
-            hint: 'puts "Klassen verstanden!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Klassen verstanden!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Klassen & Objekte', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -363,10 +363,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Module verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Module verstanden!" aus.',
             starterCode: '// Module & Mixins\n',
             expectedOutput: 'Module verstanden!',
-            hint: 'puts "Module verstanden!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Module verstanden!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Module & Mixins', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -397,10 +397,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Vererbung verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Vererbung verstanden!" aus.',
             starterCode: '// Vererbung\n',
             expectedOutput: 'Vererbung verstanden!',
-            hint: 'puts "Vererbung verstanden!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Vererbung verstanden!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Vererbung', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -431,10 +431,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Exceptions gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Exceptions gemeistert!" aus.',
             starterCode: '// Exceptions\n',
             expectedOutput: 'Exceptions gemeistert!',
-            hint: 'puts "Exceptions gemeistert!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Exceptions gemeistert!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Exceptions', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -465,10 +465,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Regular Expressions gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Regular Expressions gemeistert!" aus.',
             starterCode: '// Regular Expressions\n',
             expectedOutput: 'Regular Expressions gemeistert!',
-            hint: 'puts "Regular Expressions gemeistert!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Regular Expressions gemeistert!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Regular Expressions', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -499,10 +499,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Enumerables gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Enumerables gemeistert!" aus.',
             starterCode: '// Enumerables\n',
             expectedOutput: 'Enumerables gemeistert!',
-            hint: 'puts "Enumerables gemeistert!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Enumerables gemeistert!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Enumerables', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -533,10 +533,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Lambdas gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Lambdas gemeistert!" aus.',
             starterCode: '// Lambdas & Closures\n',
             expectedOutput: 'Lambdas gemeistert!',
-            hint: 'puts "Lambdas gemeistert!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Lambdas gemeistert!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Lambdas & Closures', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -567,10 +567,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "File I/O gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "File I/O gemeistert!" aus.',
             starterCode: '// File I/O\n',
             expectedOutput: 'File I/O gemeistert!',
-            hint: 'puts "File I/O gemeistert!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "File I/O gemeistert!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['File I/O', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -601,10 +601,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Metaprogramming gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Metaprogramming gemeistert!" aus.',
             starterCode: '// Metaprogramming\n',
             expectedOutput: 'Metaprogramming gemeistert!',
-            hint: 'puts "Metaprogramming gemeistert!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Metaprogramming gemeistert!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Metaprogramming', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -635,10 +635,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Open Classes gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Open Classes gemeistert!" aus.',
             starterCode: '// Open Classes\n',
             expectedOutput: 'Open Classes gemeistert!',
-            hint: 'puts "Open Classes gemeistert!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Open Classes gemeistert!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Open Classes', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -669,10 +669,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Gems gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Gems gemeistert!" aus.',
             starterCode: '// Gems & Bundler\n',
             expectedOutput: 'Gems gemeistert!',
-            hint: 'puts "Gems gemeistert!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Gems gemeistert!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Gems & Bundler', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -703,10 +703,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Testing mit RSpec gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Testing mit RSpec gemeistert!" aus.',
             starterCode: '// Testing mit RSpec\n',
             expectedOutput: 'Testing mit RSpec gemeistert!',
-            hint: 'puts "Testing mit RSpec gemeistert!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Testing mit RSpec gemeistert!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Testing mit RSpec', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -737,10 +737,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "JSON gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "JSON gemeistert!" aus.',
             starterCode: '// JSON & APIs\n',
             expectedOutput: 'JSON gemeistert!',
-            hint: 'puts "JSON gemeistert!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "JSON gemeistert!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['JSON & APIs', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -771,10 +771,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Concurrency gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Concurrency gemeistert!" aus.',
             starterCode: '// Concurrency\n',
             expectedOutput: 'Concurrency gemeistert!',
-            hint: 'puts "Concurrency gemeistert!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Concurrency gemeistert!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Concurrency', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -805,10 +805,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Pattern Matching gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Pattern Matching gemeistert!" aus.',
             starterCode: '// Pattern Matching\n',
             expectedOutput: 'Pattern Matching gemeistert!',
-            hint: 'puts "Pattern Matching gemeistert!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Pattern Matching gemeistert!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Pattern Matching', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -839,10 +839,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Rails Grundlagen gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Rails Grundlagen gemeistert!" aus.',
             starterCode: '// Rails Grundlagen\n',
             expectedOutput: 'Rails Grundlagen gemeistert!',
-            hint: 'puts "Rails Grundlagen gemeistert!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Rails Grundlagen gemeistert!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Rails Grundlagen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -873,10 +873,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Rails MVC gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Rails MVC gemeistert!" aus.',
             starterCode: '// Rails MVC\n',
             expectedOutput: 'Rails MVC gemeistert!',
-            hint: 'puts "Rails MVC gemeistert!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Rails MVC gemeistert!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Rails MVC', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -907,10 +907,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "ActiveRecord gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "ActiveRecord gemeistert!" aus.',
             starterCode: '// ActiveRecord\n',
             expectedOutput: 'ActiveRecord gemeistert!',
-            hint: 'puts "ActiveRecord gemeistert!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "ActiveRecord gemeistert!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['ActiveRecord', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -941,10 +941,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Rails Routing gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Rails Routing gemeistert!" aus.',
             starterCode: '// Rails Routing\n',
             expectedOutput: 'Rails Routing gemeistert!',
-            hint: 'puts "Rails Routing gemeistert!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Rails Routing gemeistert!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Rails Routing', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -975,10 +975,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Rake Tasks gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Rake Tasks gemeistert!" aus.',
             starterCode: '// Rake Tasks\n',
             expectedOutput: 'Rake Tasks gemeistert!',
-            hint: 'puts "Rake Tasks gemeistert!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Rake Tasks gemeistert!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Rake Tasks', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -1009,10 +1009,10 @@ export const rubyLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Projekt: Web-App gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Projekt: Web-App gemeistert!" aus.',
             starterCode: '// Projekt: Web-App\n',
             expectedOutput: 'Projekt: Web-App gemeistert!',
-            hint: 'puts "Projekt: Web-App gemeistert!"'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nputs "Projekt: Web-App gemeistert!"'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Projekt: Web-App', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },

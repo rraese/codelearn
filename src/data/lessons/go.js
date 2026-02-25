@@ -23,10 +23,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Hallo verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Hallo verstanden!" aus.',
             starterCode: '// Hallo Welt & fmt\n',
             expectedOutput: 'Hallo verstanden!',
-            hint: 'fmt.Println("Hallo verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("Hallo verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Hallo Welt & fmt', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -57,10 +57,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Variablen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Variablen verstanden!" aus.',
             starterCode: '// Variablen & Typen\n',
             expectedOutput: 'Variablen verstanden!',
-            hint: 'fmt.Println("Variablen verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("Variablen verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Variablen & Typen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -91,10 +91,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Schleifen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Schleifen verstanden!" aus.',
             starterCode: '// Schleifen mit for\n',
             expectedOutput: 'Schleifen verstanden!',
-            hint: 'fmt.Println("Schleifen verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("Schleifen verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Schleifen mit for', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -125,10 +125,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "If verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "If verstanden!" aus.',
             starterCode: '// If & Switch\n',
             expectedOutput: 'If verstanden!',
-            hint: 'fmt.Println("If verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("If verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['If & Switch', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -159,10 +159,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Funktionen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Funktionen verstanden!" aus.',
             starterCode: '// Funktionen\n',
             expectedOutput: 'Funktionen verstanden!',
-            hint: 'fmt.Println("Funktionen verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("Funktionen verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Funktionen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -193,10 +193,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Arrays verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Arrays verstanden!" aus.',
             starterCode: '// Arrays & Slices\n',
             expectedOutput: 'Arrays verstanden!',
-            hint: 'fmt.Println("Arrays verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("Arrays verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Arrays & Slices', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -227,10 +227,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Structs verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Structs verstanden!" aus.',
             starterCode: '// Structs\n',
             expectedOutput: 'Structs verstanden!',
-            hint: 'fmt.Println("Structs verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("Structs verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Structs', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -261,10 +261,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Goroutines verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Goroutines verstanden!" aus.',
             starterCode: '// Goroutines & Channels\n',
             expectedOutput: 'Goroutines verstanden!',
-            hint: 'fmt.Println("Goroutines verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("Goroutines verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Goroutines & Channels', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -295,10 +295,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Interfaces verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Interfaces verstanden!" aus.',
             starterCode: '// Interfaces\n',
             expectedOutput: 'Interfaces verstanden!',
-            hint: 'fmt.Println("Interfaces verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("Interfaces verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Interfaces', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -329,10 +329,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Maps verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Maps verstanden!" aus.',
             starterCode: '// Maps\n',
             expectedOutput: 'Maps verstanden!',
-            hint: 'fmt.Println("Maps verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("Maps verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Maps', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -363,10 +363,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Error Handling verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Error Handling verstanden!" aus.',
             starterCode: '// Error Handling\n',
             expectedOutput: 'Error Handling verstanden!',
-            hint: 'fmt.Println("Error Handling verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("Error Handling verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Error Handling', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -397,10 +397,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Packages verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Packages verstanden!" aus.',
             starterCode: '// Packages & Testing\n',
             expectedOutput: 'Packages verstanden!',
-            hint: 'fmt.Println("Packages verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("Packages verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Packages & Testing', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -431,10 +431,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Pointer gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Pointer gemeistert!" aus.',
             starterCode: '// Pointer\n',
             expectedOutput: 'Pointer gemeistert!',
-            hint: 'fmt.Println("Pointer gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("Pointer gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Pointer', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -465,10 +465,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Methods gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Methods gemeistert!" aus.',
             starterCode: '// Methods & Receivers\n',
             expectedOutput: 'Methods gemeistert!',
-            hint: 'fmt.Println("Methods gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("Methods gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Methods & Receivers', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -499,10 +499,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Embedding gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Embedding gemeistert!" aus.',
             starterCode: '// Embedding\n',
             expectedOutput: 'Embedding gemeistert!',
-            hint: 'fmt.Println("Embedding gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("Embedding gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Embedding', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -533,10 +533,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Generics gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Generics gemeistert!" aus.',
             starterCode: '// Generics\n',
             expectedOutput: 'Generics gemeistert!',
-            hint: 'fmt.Println("Generics gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("Generics gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Generics', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -567,10 +567,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Context gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Context gemeistert!" aus.',
             starterCode: '// Context\n',
             expectedOutput: 'Context gemeistert!',
-            hint: 'fmt.Println("Context gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("Context gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Context', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -601,10 +601,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Concurrency Patterns gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Concurrency Patterns gemeistert!" aus.',
             starterCode: '// Concurrency Patterns\n',
             expectedOutput: 'Concurrency Patterns gemeistert!',
-            hint: 'fmt.Println("Concurrency Patterns gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("Concurrency Patterns gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Concurrency Patterns', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -635,10 +635,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "WaitGroups gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "WaitGroups gemeistert!" aus.',
             starterCode: '// WaitGroups & Mutexes\n',
             expectedOutput: 'WaitGroups gemeistert!',
-            hint: 'fmt.Println("WaitGroups gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("WaitGroups gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['WaitGroups & Mutexes', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -669,10 +669,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Reflection gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Reflection gemeistert!" aus.',
             starterCode: '// Reflection\n',
             expectedOutput: 'Reflection gemeistert!',
-            hint: 'fmt.Println("Reflection gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("Reflection gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Reflection', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -703,10 +703,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "JSON Handling gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "JSON Handling gemeistert!" aus.',
             starterCode: '// JSON Handling\n',
             expectedOutput: 'JSON Handling gemeistert!',
-            hint: 'fmt.Println("JSON Handling gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("JSON Handling gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['JSON Handling', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -737,10 +737,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "HTTP Server gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "HTTP Server gemeistert!" aus.',
             starterCode: '// HTTP Server\n',
             expectedOutput: 'HTTP Server gemeistert!',
-            hint: 'fmt.Println("HTTP Server gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("HTTP Server gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['HTTP Server', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -771,10 +771,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "HTTP Client gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "HTTP Client gemeistert!" aus.',
             starterCode: '// HTTP Client\n',
             expectedOutput: 'HTTP Client gemeistert!',
-            hint: 'fmt.Println("HTTP Client gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("HTTP Client gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['HTTP Client', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -805,10 +805,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Datenbank-Zugriff gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Datenbank-Zugriff gemeistert!" aus.',
             starterCode: '// Datenbank-Zugriff\n',
             expectedOutput: 'Datenbank-Zugriff gemeistert!',
-            hint: 'fmt.Println("Datenbank-Zugriff gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("Datenbank-Zugriff gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Datenbank-Zugriff', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -839,10 +839,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "File I/O gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "File I/O gemeistert!" aus.',
             starterCode: '// File I/O\n',
             expectedOutput: 'File I/O gemeistert!',
-            hint: 'fmt.Println("File I/O gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("File I/O gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['File I/O', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -873,10 +873,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "CLI-Tools mit Cobra gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "CLI-Tools mit Cobra gemeistert!" aus.',
             starterCode: '// CLI-Tools mit Cobra\n',
             expectedOutput: 'CLI-Tools mit Cobra gemeistert!',
-            hint: 'fmt.Println("CLI-Tools mit Cobra gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("CLI-Tools mit Cobra gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['CLI-Tools mit Cobra', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -907,10 +907,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Middleware gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Middleware gemeistert!" aus.',
             starterCode: '// Middleware\n',
             expectedOutput: 'Middleware gemeistert!',
-            hint: 'fmt.Println("Middleware gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("Middleware gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Middleware', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -941,10 +941,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Docker gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Docker gemeistert!" aus.',
             starterCode: '// Docker & Go\n',
             expectedOutput: 'Docker gemeistert!',
-            hint: 'fmt.Println("Docker gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("Docker gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Docker & Go', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -975,10 +975,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Benchmarking gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Benchmarking gemeistert!" aus.',
             starterCode: '// Benchmarking\n',
             expectedOutput: 'Benchmarking gemeistert!',
-            hint: 'fmt.Println("Benchmarking gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("Benchmarking gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Benchmarking', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -1009,10 +1009,10 @@ export const goLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Projekt: REST API gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Projekt: REST API gemeistert!" aus.',
             starterCode: '// Projekt: REST API\n',
             expectedOutput: 'Projekt: REST API gemeistert!',
-            hint: 'fmt.Println("Projekt: REST API gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nfmt.Println("Projekt: REST API gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Projekt: REST API', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },

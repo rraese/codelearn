@@ -23,10 +23,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Hallo verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Hallo verstanden!" aus.',
             starterCode: '// Hallo Welt & println\n',
             expectedOutput: 'Hallo verstanden!',
-            hint: 'println("Hallo verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Hallo verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Hallo Welt & println', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -57,10 +57,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Variablen: verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Variablen: verstanden!" aus.',
             starterCode: '// Variablen: val & var\n',
             expectedOutput: 'Variablen: verstanden!',
-            hint: 'println("Variablen: verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Variablen: verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Variablen: val & var', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -91,10 +91,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Datentypen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Datentypen verstanden!" aus.',
             starterCode: '// Datentypen & Null Safety\n',
             expectedOutput: 'Datentypen verstanden!',
-            hint: 'println("Datentypen verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Datentypen verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Datentypen & Null Safety', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -125,10 +125,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "If-Bedingungen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "If-Bedingungen verstanden!" aus.',
             starterCode: '// If-Bedingungen & when\n',
             expectedOutput: 'If-Bedingungen verstanden!',
-            hint: 'println("If-Bedingungen verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("If-Bedingungen verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['If-Bedingungen & when', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -159,10 +159,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Schleifen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Schleifen verstanden!" aus.',
             starterCode: '// Schleifen & Ranges\n',
             expectedOutput: 'Schleifen verstanden!',
-            hint: 'println("Schleifen verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Schleifen verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Schleifen & Ranges', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -193,10 +193,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Funktionen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Funktionen verstanden!" aus.',
             starterCode: '// Funktionen\n',
             expectedOutput: 'Funktionen verstanden!',
-            hint: 'println("Funktionen verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Funktionen verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Funktionen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -227,10 +227,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Collections verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Collections verstanden!" aus.',
             starterCode: '// Collections\n',
             expectedOutput: 'Collections verstanden!',
-            hint: 'println("Collections verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Collections verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Collections', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -261,10 +261,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Lambda Expressions verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Lambda Expressions verstanden!" aus.',
             starterCode: '// Lambda Expressions\n',
             expectedOutput: 'Lambda Expressions verstanden!',
-            hint: 'println("Lambda Expressions verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Lambda Expressions verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Lambda Expressions', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -295,10 +295,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Klassen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Klassen verstanden!" aus.',
             starterCode: '// Klassen & OOP\n',
             expectedOutput: 'Klassen verstanden!',
-            hint: 'println("Klassen verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Klassen verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Klassen & OOP', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -329,10 +329,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Data Classes verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Data Classes verstanden!" aus.',
             starterCode: '// Data Classes\n',
             expectedOutput: 'Data Classes verstanden!',
-            hint: 'println("Data Classes verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Data Classes verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Data Classes', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -363,10 +363,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Sealed Classes verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Sealed Classes verstanden!" aus.',
             starterCode: '// Sealed Classes\n',
             expectedOutput: 'Sealed Classes verstanden!',
-            hint: 'println("Sealed Classes verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Sealed Classes verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Sealed Classes', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -397,10 +397,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Enums verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Enums verstanden!" aus.',
             starterCode: '// Enums & Companion\n',
             expectedOutput: 'Enums verstanden!',
-            hint: 'println("Enums verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Enums verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Enums & Companion', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -431,10 +431,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Generics gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Generics gemeistert!" aus.',
             starterCode: '// Generics\n',
             expectedOutput: 'Generics gemeistert!',
-            hint: 'println("Generics gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Generics gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Generics', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -465,10 +465,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Extensions gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Extensions gemeistert!" aus.',
             starterCode: '// Extensions\n',
             expectedOutput: 'Extensions gemeistert!',
-            hint: 'println("Extensions gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Extensions gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Extensions', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -499,10 +499,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Scope Functions gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Scope Functions gemeistert!" aus.',
             starterCode: '// Scope Functions\n',
             expectedOutput: 'Scope Functions gemeistert!',
-            hint: 'println("Scope Functions gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Scope Functions gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Scope Functions', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -533,10 +533,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Coroutines Basics gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Coroutines Basics gemeistert!" aus.',
             starterCode: '// Coroutines Basics\n',
             expectedOutput: 'Coroutines Basics gemeistert!',
-            hint: 'println("Coroutines Basics gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Coroutines Basics gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Coroutines Basics', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -567,10 +567,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Coroutines Advanced gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Coroutines Advanced gemeistert!" aus.',
             starterCode: '// Coroutines Advanced\n',
             expectedOutput: 'Coroutines Advanced gemeistert!',
-            hint: 'println("Coroutines Advanced gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Coroutines Advanced gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Coroutines Advanced', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -601,10 +601,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Delegation gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Delegation gemeistert!" aus.',
             starterCode: '// Delegation\n',
             expectedOutput: 'Delegation gemeistert!',
-            hint: 'println("Delegation gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Delegation gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Delegation', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -635,10 +635,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Destructuring gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Destructuring gemeistert!" aus.',
             starterCode: '// Destructuring\n',
             expectedOutput: 'Destructuring gemeistert!',
-            hint: 'println("Destructuring gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Destructuring gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Destructuring', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -669,10 +669,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Inline Functions gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Inline Functions gemeistert!" aus.',
             starterCode: '// Inline Functions\n',
             expectedOutput: 'Inline Functions gemeistert!',
-            hint: 'println("Inline Functions gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Inline Functions gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Inline Functions', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -703,10 +703,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Annotation Processing gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Annotation Processing gemeistert!" aus.',
             starterCode: '// Annotation Processing\n',
             expectedOutput: 'Annotation Processing gemeistert!',
-            hint: 'println("Annotation Processing gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Annotation Processing gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Annotation Processing', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -737,10 +737,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Sequences gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Sequences gemeistert!" aus.',
             starterCode: '// Sequences\n',
             expectedOutput: 'Sequences gemeistert!',
-            hint: 'println("Sequences gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Sequences gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Sequences', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -771,10 +771,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Type Aliases gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Type Aliases gemeistert!" aus.',
             starterCode: '// Type Aliases\n',
             expectedOutput: 'Type Aliases gemeistert!',
-            hint: 'println("Type Aliases gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Type Aliases gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Type Aliases', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -805,10 +805,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "DSLs in Kotlin gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "DSLs in Kotlin gemeistert!" aus.',
             starterCode: '// DSLs in Kotlin\n',
             expectedOutput: 'DSLs in Kotlin gemeistert!',
-            hint: 'println("DSLs in Kotlin gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("DSLs in Kotlin gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['DSLs in Kotlin', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -839,10 +839,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Serialization gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Serialization gemeistert!" aus.',
             starterCode: '// Serialization\n',
             expectedOutput: 'Serialization gemeistert!',
-            hint: 'println("Serialization gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Serialization gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Serialization', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -873,10 +873,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Ktor gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Ktor gemeistert!" aus.',
             starterCode: '// Ktor\n',
             expectedOutput: 'Ktor gemeistert!',
-            hint: 'println("Ktor gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Ktor gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Ktor', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -907,10 +907,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Android Basics gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Android Basics gemeistert!" aus.',
             starterCode: '// Android Basics\n',
             expectedOutput: 'Android Basics gemeistert!',
-            hint: 'println("Android Basics gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Android Basics gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Android Basics', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -941,10 +941,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Jetpack Compose gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Jetpack Compose gemeistert!" aus.',
             starterCode: '// Jetpack Compose\n',
             expectedOutput: 'Jetpack Compose gemeistert!',
-            hint: 'println("Jetpack Compose gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Jetpack Compose gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Jetpack Compose', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -975,10 +975,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Testing gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Testing gemeistert!" aus.',
             starterCode: '// Testing\n',
             expectedOutput: 'Testing gemeistert!',
-            hint: 'println("Testing gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Testing gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Testing', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -1009,10 +1009,10 @@ export const kotlinLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Projekt: Android App gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Projekt: Android App gemeistert!" aus.',
             starterCode: '// Projekt: Android App\n',
             expectedOutput: 'Projekt: Android App gemeistert!',
-            hint: 'println("Projekt: Android App gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln("Projekt: Android App gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Projekt: Android App', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },

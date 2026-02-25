@@ -23,10 +23,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Hallo verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Hallo verstanden!" aus.',
             starterCode: '// Hallo Welt & println!\n',
             expectedOutput: 'Hallo verstanden!',
-            hint: 'println!("Hallo verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("Hallo verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Hallo Welt & println!', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -57,10 +57,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Variablen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Variablen verstanden!" aus.',
             starterCode: '// Variablen & Mutabilität\n',
             expectedOutput: 'Variablen verstanden!',
-            hint: 'println!("Variablen verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("Variablen verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Variablen & Mutabilität', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -91,10 +91,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Schleifen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Schleifen verstanden!" aus.',
             starterCode: '// Schleifen & Iteratoren\n',
             expectedOutput: 'Schleifen verstanden!',
-            hint: 'println!("Schleifen verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("Schleifen verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Schleifen & Iteratoren', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -125,10 +125,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "If-Bedingungen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "If-Bedingungen verstanden!" aus.',
             starterCode: '// If-Bedingungen & Match\n',
             expectedOutput: 'If-Bedingungen verstanden!',
-            hint: 'println!("If-Bedingungen verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("If-Bedingungen verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['If-Bedingungen & Match', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -159,10 +159,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Funktionen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Funktionen verstanden!" aus.',
             starterCode: '// Funktionen & Rückgabewerte\n',
             expectedOutput: 'Funktionen verstanden!',
-            hint: 'println!("Funktionen verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("Funktionen verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Funktionen & Rückgabewerte', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -193,10 +193,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Ownership verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Ownership verstanden!" aus.',
             starterCode: '// Ownership & Borrowing\n',
             expectedOutput: 'Ownership verstanden!',
-            hint: 'println!("Ownership verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("Ownership verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Ownership & Borrowing', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -227,10 +227,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Structs verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Structs verstanden!" aus.',
             starterCode: '// Structs\n',
             expectedOutput: 'Structs verstanden!',
-            hint: 'println!("Structs verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("Structs verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Structs', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -261,10 +261,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Enums verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Enums verstanden!" aus.',
             starterCode: '// Enums & Error Handling\n',
             expectedOutput: 'Enums verstanden!',
-            hint: 'println!("Enums verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("Enums verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Enums & Error Handling', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -295,10 +295,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Vektoren verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Vektoren verstanden!" aus.',
             starterCode: '// Vektoren & Collections\n',
             expectedOutput: 'Vektoren verstanden!',
-            hint: 'println!("Vektoren verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("Vektoren verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Vektoren & Collections', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -329,10 +329,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Traits verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Traits verstanden!" aus.',
             starterCode: '// Traits\n',
             expectedOutput: 'Traits verstanden!',
-            hint: 'println!("Traits verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("Traits verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Traits', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -363,10 +363,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Lifetimes verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Lifetimes verstanden!" aus.',
             starterCode: '// Lifetimes\n',
             expectedOutput: 'Lifetimes verstanden!',
-            hint: 'println!("Lifetimes verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("Lifetimes verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Lifetimes', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -397,10 +397,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Closures verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Closures verstanden!" aus.',
             starterCode: '// Closures & Iteratoren\n',
             expectedOutput: 'Closures verstanden!',
-            hint: 'println!("Closures verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("Closures verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Closures & Iteratoren', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -431,10 +431,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Generics gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Generics gemeistert!" aus.',
             starterCode: '// Generics\n',
             expectedOutput: 'Generics gemeistert!',
-            hint: 'println!("Generics gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("Generics gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Generics', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -465,10 +465,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Smart Pointer gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Smart Pointer gemeistert!" aus.',
             starterCode: '// Smart Pointer\n',
             expectedOutput: 'Smart Pointer gemeistert!',
-            hint: 'println!("Smart Pointer gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("Smart Pointer gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Smart Pointer', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -499,10 +499,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Concurrency gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Concurrency gemeistert!" aus.',
             starterCode: '// Concurrency\n',
             expectedOutput: 'Concurrency gemeistert!',
-            hint: 'println!("Concurrency gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("Concurrency gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Concurrency', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -533,10 +533,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Modules gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Modules gemeistert!" aus.',
             starterCode: '// Modules & Crates\n',
             expectedOutput: 'Modules gemeistert!',
-            hint: 'println!("Modules gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("Modules gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Modules & Crates', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -567,10 +567,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Testing gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Testing gemeistert!" aus.',
             starterCode: '// Testing\n',
             expectedOutput: 'Testing gemeistert!',
-            hint: 'println!("Testing gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("Testing gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Testing', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -601,10 +601,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Error Types gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Error Types gemeistert!" aus.',
             starterCode: '// Error Types\n',
             expectedOutput: 'Error Types gemeistert!',
-            hint: 'println!("Error Types gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("Error Types gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Error Types', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -635,10 +635,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "String-Typen gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "String-Typen gemeistert!" aus.',
             starterCode: '// String-Typen\n',
             expectedOutput: 'String-Typen gemeistert!',
-            hint: 'println!("String-Typen gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("String-Typen gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['String-Typen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -669,10 +669,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Pattern Matching Adv. gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Pattern Matching Adv. gemeistert!" aus.',
             starterCode: '// Pattern Matching Adv.\n',
             expectedOutput: 'Pattern Matching Adv. gemeistert!',
-            hint: 'println!("Pattern Matching Adv. gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("Pattern Matching Adv. gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Pattern Matching Adv.', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -703,10 +703,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Macros gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Macros gemeistert!" aus.',
             starterCode: '// Macros\n',
             expectedOutput: 'Macros gemeistert!',
-            hint: 'println!("Macros gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("Macros gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Macros', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -737,10 +737,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Unsafe Rust gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Unsafe Rust gemeistert!" aus.',
             starterCode: '// Unsafe Rust\n',
             expectedOutput: 'Unsafe Rust gemeistert!',
-            hint: 'println!("Unsafe Rust gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("Unsafe Rust gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Unsafe Rust', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -771,10 +771,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Async/Await gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Async/Await gemeistert!" aus.',
             starterCode: '// Async/Await\n',
             expectedOutput: 'Async/Await gemeistert!',
-            hint: 'println!("Async/Await gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("Async/Await gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Async/Await', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -805,10 +805,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Serde gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Serde gemeistert!" aus.',
             starterCode: '// Serde & JSON\n',
             expectedOutput: 'Serde gemeistert!',
-            hint: 'println!("Serde gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("Serde gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Serde & JSON', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -839,10 +839,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "HTTP mit reqwest gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "HTTP mit reqwest gemeistert!" aus.',
             starterCode: '// HTTP mit reqwest\n',
             expectedOutput: 'HTTP mit reqwest gemeistert!',
-            hint: 'println!("HTTP mit reqwest gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("HTTP mit reqwest gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['HTTP mit reqwest', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -873,10 +873,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Actix Web gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Actix Web gemeistert!" aus.',
             starterCode: '// Actix Web\n',
             expectedOutput: 'Actix Web gemeistert!',
-            hint: 'println!("Actix Web gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("Actix Web gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Actix Web', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -907,10 +907,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "File I/O gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "File I/O gemeistert!" aus.',
             starterCode: '// File I/O\n',
             expectedOutput: 'File I/O gemeistert!',
-            hint: 'println!("File I/O gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("File I/O gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['File I/O', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -941,10 +941,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Cargo gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Cargo gemeistert!" aus.',
             starterCode: '// Cargo & Dependencies\n',
             expectedOutput: 'Cargo gemeistert!',
-            hint: 'println!("Cargo gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("Cargo gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Cargo & Dependencies', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -975,10 +975,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "FFI gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "FFI gemeistert!" aus.',
             starterCode: '// FFI & C-Interop\n',
             expectedOutput: 'FFI gemeistert!',
-            hint: 'println!("FFI gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("FFI gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['FFI & C-Interop', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -1009,10 +1009,10 @@ export const rustLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Projekt: CLI Tool gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Projekt: CLI Tool gemeistert!" aus.',
             starterCode: '// Projekt: CLI Tool\n',
             expectedOutput: 'Projekt: CLI Tool gemeistert!',
-            hint: 'println!("Projekt: CLI Tool gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprintln!("Projekt: CLI Tool gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Projekt: CLI Tool', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },

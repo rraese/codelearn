@@ -237,6 +237,50 @@
     line-height: 1.6;
 }
 
+.exercise-goal {
+    margin-bottom: var(--space-md);
+}
+
+.exercise-section {
+    margin-top: var(--space-md);
+}
+
+.exercise-section h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.exercise-steps {
+    margin: 0;
+    padding-left: var(--space-lg);
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+.exercise-steps li {
+    margin-bottom: 0.25rem;
+}
+
+.exercise-expected,
+.exercise-hint {
+    margin: 0;
+    background: rgba(15, 23, 42, 0.55);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: var(--radius-md);
+    padding: var(--space-sm) var(--space-md);
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+
 /* Quiz Section */
 .quiz-section {
     background: var(--bg-card);

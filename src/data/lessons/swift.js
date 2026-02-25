@@ -23,10 +23,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Hallo verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Hallo verstanden!" aus.',
             starterCode: '// Hallo Welt & print\n',
             expectedOutput: 'Hallo verstanden!',
-            hint: 'print("Hallo verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("Hallo verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Hallo Welt & print', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -57,10 +57,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Variablen: verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Variablen: verstanden!" aus.',
             starterCode: '// Variablen: var & let\n',
             expectedOutput: 'Variablen: verstanden!',
-            hint: 'print("Variablen: verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("Variablen: verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Variablen: var & let', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -91,10 +91,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Datentypen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Datentypen verstanden!" aus.',
             starterCode: '// Datentypen & Optionals\n',
             expectedOutput: 'Datentypen verstanden!',
-            hint: 'print("Datentypen verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("Datentypen verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Datentypen & Optionals', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -125,10 +125,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "If-Bedingungen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "If-Bedingungen verstanden!" aus.',
             starterCode: '// If-Bedingungen & guard\n',
             expectedOutput: 'If-Bedingungen verstanden!',
-            hint: 'print("If-Bedingungen verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("If-Bedingungen verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['If-Bedingungen & guard', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -159,10 +159,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Schleifen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Schleifen verstanden!" aus.',
             starterCode: '// Schleifen & ranges\n',
             expectedOutput: 'Schleifen verstanden!',
-            hint: 'print("Schleifen verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("Schleifen verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Schleifen & ranges', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -193,10 +193,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Funktionen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Funktionen verstanden!" aus.',
             starterCode: '// Funktionen\n',
             expectedOutput: 'Funktionen verstanden!',
-            hint: 'print("Funktionen verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("Funktionen verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Funktionen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -227,10 +227,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Arrays verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Arrays verstanden!" aus.',
             starterCode: '// Arrays & Dictionaries\n',
             expectedOutput: 'Arrays verstanden!',
-            hint: 'print("Arrays verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("Arrays verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Arrays & Dictionaries', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -261,10 +261,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Closures verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Closures verstanden!" aus.',
             starterCode: '// Closures\n',
             expectedOutput: 'Closures verstanden!',
-            hint: 'print("Closures verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("Closures verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Closures', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -295,10 +295,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Structs vs Classes verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Structs vs Classes verstanden!" aus.',
             starterCode: '// Structs vs Classes\n',
             expectedOutput: 'Structs vs Classes verstanden!',
-            hint: 'print("Structs vs Classes verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("Structs vs Classes verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Structs vs Classes', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -329,10 +329,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Enums verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Enums verstanden!" aus.',
             starterCode: '// Enums & Associated Values\n',
             expectedOutput: 'Enums verstanden!',
-            hint: 'print("Enums verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("Enums verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Enums & Associated Values', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -363,10 +363,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Protocols verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Protocols verstanden!" aus.',
             starterCode: '// Protocols\n',
             expectedOutput: 'Protocols verstanden!',
-            hint: 'print("Protocols verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("Protocols verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Protocols', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -397,10 +397,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Extensions verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Extensions verstanden!" aus.',
             starterCode: '// Extensions\n',
             expectedOutput: 'Extensions verstanden!',
-            hint: 'print("Extensions verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("Extensions verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Extensions', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -431,10 +431,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Error Handling gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Error Handling gemeistert!" aus.',
             starterCode: '// Error Handling\n',
             expectedOutput: 'Error Handling gemeistert!',
-            hint: 'print("Error Handling gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("Error Handling gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Error Handling', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -465,10 +465,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Generics gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Generics gemeistert!" aus.',
             starterCode: '// Generics\n',
             expectedOutput: 'Generics gemeistert!',
-            hint: 'print("Generics gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("Generics gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Generics', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -499,10 +499,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Access Control gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Access Control gemeistert!" aus.',
             starterCode: '// Access Control\n',
             expectedOutput: 'Access Control gemeistert!',
-            hint: 'print("Access Control gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("Access Control gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Access Control', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -533,10 +533,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Property Wrappers gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Property Wrappers gemeistert!" aus.',
             starterCode: '// Property Wrappers\n',
             expectedOutput: 'Property Wrappers gemeistert!',
-            hint: 'print("Property Wrappers gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("Property Wrappers gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Property Wrappers', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -567,10 +567,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Concurrency gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Concurrency gemeistert!" aus.',
             starterCode: '// Concurrency\n',
             expectedOutput: 'Concurrency gemeistert!',
-            hint: 'print("Concurrency gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("Concurrency gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Concurrency', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -601,10 +601,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Actors gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Actors gemeistert!" aus.',
             starterCode: '// Actors\n',
             expectedOutput: 'Actors gemeistert!',
-            hint: 'print("Actors gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("Actors gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Actors', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -635,10 +635,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Collection Protocols gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Collection Protocols gemeistert!" aus.',
             starterCode: '// Collection Protocols\n',
             expectedOutput: 'Collection Protocols gemeistert!',
-            hint: 'print("Collection Protocols gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("Collection Protocols gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Collection Protocols', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -669,10 +669,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Result Builder gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Result Builder gemeistert!" aus.',
             starterCode: '// Result Builder\n',
             expectedOutput: 'Result Builder gemeistert!',
-            hint: 'print("Result Builder gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("Result Builder gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Result Builder', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -703,10 +703,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Key Paths gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Key Paths gemeistert!" aus.',
             starterCode: '// Key Paths\n',
             expectedOutput: 'Key Paths gemeistert!',
-            hint: 'print("Key Paths gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("Key Paths gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Key Paths', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -737,10 +737,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Codable gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Codable gemeistert!" aus.',
             starterCode: '// Codable & JSON\n',
             expectedOutput: 'Codable gemeistert!',
-            hint: 'print("Codable gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("Codable gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Codable & JSON', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -771,10 +771,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "SwiftUI Grundlagen gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "SwiftUI Grundlagen gemeistert!" aus.',
             starterCode: '// SwiftUI Grundlagen\n',
             expectedOutput: 'SwiftUI Grundlagen gemeistert!',
-            hint: 'print("SwiftUI Grundlagen gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("SwiftUI Grundlagen gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['SwiftUI Grundlagen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -805,10 +805,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "SwiftUI State gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "SwiftUI State gemeistert!" aus.',
             starterCode: '// SwiftUI State\n',
             expectedOutput: 'SwiftUI State gemeistert!',
-            hint: 'print("SwiftUI State gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("SwiftUI State gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['SwiftUI State', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -839,10 +839,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "URLSession gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "URLSession gemeistert!" aus.',
             starterCode: '// URLSession\n',
             expectedOutput: 'URLSession gemeistert!',
-            hint: 'print("URLSession gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("URLSession gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['URLSession', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -873,10 +873,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Core Data gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Core Data gemeistert!" aus.',
             starterCode: '// Core Data\n',
             expectedOutput: 'Core Data gemeistert!',
-            hint: 'print("Core Data gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("Core Data gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Core Data', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -907,10 +907,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Swift Package Manager gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Swift Package Manager gemeistert!" aus.',
             starterCode: '// Swift Package Manager\n',
             expectedOutput: 'Swift Package Manager gemeistert!',
-            hint: 'print("Swift Package Manager gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("Swift Package Manager gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Swift Package Manager', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -941,10 +941,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "XCTest gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "XCTest gemeistert!" aus.',
             starterCode: '// XCTest\n',
             expectedOutput: 'XCTest gemeistert!',
-            hint: 'print("XCTest gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("XCTest gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['XCTest', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -975,10 +975,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Memory Management gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Memory Management gemeistert!" aus.',
             starterCode: '// Memory Management\n',
             expectedOutput: 'Memory Management gemeistert!',
-            hint: 'print("Memory Management gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("Memory Management gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Memory Management', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -1009,10 +1009,10 @@ export const swiftLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Projekt: iOS App gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Projekt: iOS App gemeistert!" aus.',
             starterCode: '// Projekt: iOS App\n',
             expectedOutput: 'Projekt: iOS App gemeistert!',
-            hint: 'print("Projekt: iOS App gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nprint("Projekt: iOS App gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Projekt: iOS App', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },

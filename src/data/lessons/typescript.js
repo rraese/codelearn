@@ -23,10 +23,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Hallo verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Hallo verstanden!" aus.',
             starterCode: '// Hallo Welt & Typen\n',
             expectedOutput: 'Hallo verstanden!',
-            hint: 'console.log("Hallo verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Hallo verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Hallo Welt & Typen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -57,10 +57,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Basis-Typen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Basis-Typen verstanden!" aus.',
             starterCode: '// Basis-Typen\n',
             expectedOutput: 'Basis-Typen verstanden!',
-            hint: 'console.log("Basis-Typen verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Basis-Typen verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Basis-Typen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -91,10 +91,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Interfaces verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Interfaces verstanden!" aus.',
             starterCode: '// Interfaces\n',
             expectedOutput: 'Interfaces verstanden!',
-            hint: 'console.log("Interfaces verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Interfaces verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Interfaces', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -125,10 +125,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Funktionen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Funktionen verstanden!" aus.',
             starterCode: '// Funktionen mit Typen\n',
             expectedOutput: 'Funktionen verstanden!',
-            hint: 'console.log("Funktionen verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Funktionen verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Funktionen mit Typen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -159,10 +159,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Generics verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Generics verstanden!" aus.',
             starterCode: '// Generics\n',
             expectedOutput: 'Generics verstanden!',
-            hint: 'console.log("Generics verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Generics verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Generics', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -193,10 +193,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Enums verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Enums verstanden!" aus.',
             starterCode: '// Enums\n',
             expectedOutput: 'Enums verstanden!',
-            hint: 'console.log("Enums verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Enums verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Enums', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -227,10 +227,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Klassen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Klassen verstanden!" aus.',
             starterCode: '// Klassen\n',
             expectedOutput: 'Klassen verstanden!',
-            hint: 'console.log("Klassen verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Klassen verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Klassen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -261,10 +261,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Type Guards verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Type Guards verstanden!" aus.',
             starterCode: '// Type Guards\n',
             expectedOutput: 'Type Guards verstanden!',
-            hint: 'console.log("Type Guards verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Type Guards verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Type Guards', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -295,10 +295,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Mapped Types verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Mapped Types verstanden!" aus.',
             starterCode: '// Mapped Types\n',
             expectedOutput: 'Mapped Types verstanden!',
-            hint: 'console.log("Mapped Types verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Mapped Types verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Mapped Types', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -329,10 +329,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Decorators verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Decorators verstanden!" aus.',
             starterCode: '// Decorators\n',
             expectedOutput: 'Decorators verstanden!',
-            hint: 'console.log("Decorators verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Decorators verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Decorators', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -363,10 +363,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Module Patterns verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Module Patterns verstanden!" aus.',
             starterCode: '// Module Patterns\n',
             expectedOutput: 'Module Patterns verstanden!',
-            hint: 'console.log("Module Patterns verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Module Patterns verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Module Patterns', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -397,10 +397,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Conditional Types verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Conditional Types verstanden!" aus.',
             starterCode: '// Conditional Types\n',
             expectedOutput: 'Conditional Types verstanden!',
-            hint: 'console.log("Conditional Types verstanden!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Conditional Types verstanden!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Conditional Types', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -431,10 +431,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Utility Types gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Utility Types gemeistert!" aus.',
             starterCode: '// Utility Types\n',
             expectedOutput: 'Utility Types gemeistert!',
-            hint: 'console.log("Utility Types gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Utility Types gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Utility Types', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -465,10 +465,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Union gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Union gemeistert!" aus.',
             starterCode: '// Union & Intersection\n',
             expectedOutput: 'Union gemeistert!',
-            hint: 'console.log("Union gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Union gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Union & Intersection', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -499,10 +499,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Type Assertions gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Type Assertions gemeistert!" aus.',
             starterCode: '// Type Assertions\n',
             expectedOutput: 'Type Assertions gemeistert!',
-            hint: 'console.log("Type Assertions gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Type Assertions gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Type Assertions', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -533,10 +533,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Template Literal Types gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Template Literal Types gemeistert!" aus.',
             starterCode: '// Template Literal Types\n',
             expectedOutput: 'Template Literal Types gemeistert!',
-            hint: 'console.log("Template Literal Types gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Template Literal Types gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Template Literal Types', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -567,10 +567,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Infer gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Infer gemeistert!" aus.',
             starterCode: '// Infer & Extract\n',
             expectedOutput: 'Infer gemeistert!',
-            hint: 'console.log("Infer gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Infer gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Infer & Extract', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -601,10 +601,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Discriminated Unions gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Discriminated Unions gemeistert!" aus.',
             starterCode: '// Discriminated Unions\n',
             expectedOutput: 'Discriminated Unions gemeistert!',
-            hint: 'console.log("Discriminated Unions gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Discriminated Unions gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Discriminated Unions', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -635,10 +635,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Index Signatures gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Index Signatures gemeistert!" aus.',
             starterCode: '// Index Signatures\n',
             expectedOutput: 'Index Signatures gemeistert!',
-            hint: 'console.log("Index Signatures gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Index Signatures gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Index Signatures', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -669,10 +669,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Namespace Patterns gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Namespace Patterns gemeistert!" aus.',
             starterCode: '// Namespace Patterns\n',
             expectedOutput: 'Namespace Patterns gemeistert!',
-            hint: 'console.log("Namespace Patterns gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Namespace Patterns gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Namespace Patterns', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -703,10 +703,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Declaration Files gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Declaration Files gemeistert!" aus.',
             starterCode: '// Declaration Files\n',
             expectedOutput: 'Declaration Files gemeistert!',
-            hint: 'console.log("Declaration Files gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Declaration Files gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Declaration Files', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -737,10 +737,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Strict Mode gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Strict Mode gemeistert!" aus.',
             starterCode: '// Strict Mode\n',
             expectedOutput: 'Strict Mode gemeistert!',
-            hint: 'console.log("Strict Mode gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Strict Mode gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Strict Mode', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -771,10 +771,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Async Types gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Async Types gemeistert!" aus.',
             starterCode: '// Async Types\n',
             expectedOutput: 'Async Types gemeistert!',
-            hint: 'console.log("Async Types gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Async Types gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Async Types', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -805,10 +805,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "React mit TypeScript gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "React mit TypeScript gemeistert!" aus.',
             starterCode: '// React mit TypeScript\n',
             expectedOutput: 'React mit TypeScript gemeistert!',
-            hint: 'console.log("React mit TypeScript gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("React mit TypeScript gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['React mit TypeScript', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -839,10 +839,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Express mit TypeScript gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Express mit TypeScript gemeistert!" aus.',
             starterCode: '// Express mit TypeScript\n',
             expectedOutput: 'Express mit TypeScript gemeistert!',
-            hint: 'console.log("Express mit TypeScript gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Express mit TypeScript gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Express mit TypeScript', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -873,10 +873,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Error Handling gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Error Handling gemeistert!" aus.',
             starterCode: '// Error Handling\n',
             expectedOutput: 'Error Handling gemeistert!',
-            hint: 'console.log("Error Handling gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Error Handling gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Error Handling', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -907,10 +907,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Generics Advanced gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Generics Advanced gemeistert!" aus.',
             starterCode: '// Generics Advanced\n',
             expectedOutput: 'Generics Advanced gemeistert!',
-            hint: 'console.log("Generics Advanced gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Generics Advanced gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Generics Advanced', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -941,10 +941,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Performance-Tipps gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Performance-Tipps gemeistert!" aus.',
             starterCode: '// Performance-Tipps\n',
             expectedOutput: 'Performance-Tipps gemeistert!',
-            hint: 'console.log("Performance-Tipps gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Performance-Tipps gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Performance-Tipps', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -975,10 +975,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Migration von JS gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Migration von JS gemeistert!" aus.',
             starterCode: '// Migration von JS\n',
             expectedOutput: 'Migration von JS gemeistert!',
-            hint: 'console.log("Migration von JS gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Migration von JS gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Migration von JS', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -1009,10 +1009,10 @@ export const typescriptLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Projekt: Typsichere API gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Projekt: Typsichere API gemeistert!" aus.',
             starterCode: '// Projekt: Typsichere API\n',
             expectedOutput: 'Projekt: Typsichere API gemeistert!',
-            hint: 'console.log("Projekt: Typsichere API gemeistert!")'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nconsole.log("Projekt: Typsichere API gemeistert!")'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Projekt: Typsichere API', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },

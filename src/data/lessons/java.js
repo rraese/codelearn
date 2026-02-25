@@ -23,10 +23,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Hallo verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Hallo verstanden!" aus.',
             starterCode: '// Hallo Welt & public static\n',
             expectedOutput: 'Hallo verstanden!',
-            hint: 'System.out.println("Hallo verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Hallo verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Hallo Welt & public static', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -57,10 +57,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Variablen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Variablen verstanden!" aus.',
             starterCode: '// Variablen & Datentypen\n',
             expectedOutput: 'Variablen verstanden!',
-            hint: 'System.out.println("Variablen verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Variablen verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Variablen & Datentypen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -91,10 +91,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Operatoren verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Operatoren verstanden!" aus.',
             starterCode: '// Operatoren & Ausdrücke\n',
             expectedOutput: 'Operatoren verstanden!',
-            hint: 'System.out.println("Operatoren verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Operatoren verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Operatoren & Ausdrücke', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -125,10 +125,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "If-Bedingungen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "If-Bedingungen verstanden!" aus.',
             starterCode: '// If-Bedingungen & switch\n',
             expectedOutput: 'If-Bedingungen verstanden!',
-            hint: 'System.out.println("If-Bedingungen verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("If-Bedingungen verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['If-Bedingungen & switch', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -159,10 +159,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Schleifen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Schleifen verstanden!" aus.',
             starterCode: '// Schleifen\n',
             expectedOutput: 'Schleifen verstanden!',
-            hint: 'System.out.println("Schleifen verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Schleifen verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Schleifen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -193,10 +193,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Arrays verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Arrays verstanden!" aus.',
             starterCode: '// Arrays\n',
             expectedOutput: 'Arrays verstanden!',
-            hint: 'System.out.println("Arrays verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Arrays verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Arrays', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -227,10 +227,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Methoden verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Methoden verstanden!" aus.',
             starterCode: '// Methoden\n',
             expectedOutput: 'Methoden verstanden!',
-            hint: 'System.out.println("Methoden verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Methoden verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Methoden', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -261,10 +261,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Klassen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Klassen verstanden!" aus.',
             starterCode: '// Klassen & Objekte\n',
             expectedOutput: 'Klassen verstanden!',
-            hint: 'System.out.println("Klassen verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Klassen verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Klassen & Objekte', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -295,10 +295,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Konstruktoren verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Konstruktoren verstanden!" aus.',
             starterCode: '// Konstruktoren & this\n',
             expectedOutput: 'Konstruktoren verstanden!',
-            hint: 'System.out.println("Konstruktoren verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Konstruktoren verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Konstruktoren & this', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -329,10 +329,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Vererbung verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Vererbung verstanden!" aus.',
             starterCode: '// Vererbung\n',
             expectedOutput: 'Vererbung verstanden!',
-            hint: 'System.out.println("Vererbung verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Vererbung verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Vererbung', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -363,10 +363,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Interfaces verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Interfaces verstanden!" aus.',
             starterCode: '// Interfaces\n',
             expectedOutput: 'Interfaces verstanden!',
-            hint: 'System.out.println("Interfaces verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Interfaces verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Interfaces', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -397,10 +397,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Abstract Classes verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Abstract Classes verstanden!" aus.',
             starterCode: '// Abstract Classes\n',
             expectedOutput: 'Abstract Classes verstanden!',
-            hint: 'System.out.println("Abstract Classes verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Abstract Classes verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Abstract Classes', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -431,10 +431,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Exceptions gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Exceptions gemeistert!" aus.',
             starterCode: '// Exceptions\n',
             expectedOutput: 'Exceptions gemeistert!',
-            hint: 'System.out.println("Exceptions gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Exceptions gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Exceptions', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -465,10 +465,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Collections: List gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Collections: List gemeistert!" aus.',
             starterCode: '// Collections: List & Set\n',
             expectedOutput: 'Collections: List gemeistert!',
-            hint: 'System.out.println("Collections: List gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Collections: List gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Collections: List & Set', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -499,10 +499,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Collections: Map gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Collections: Map gemeistert!" aus.',
             starterCode: '// Collections: Map\n',
             expectedOutput: 'Collections: Map gemeistert!',
-            hint: 'System.out.println("Collections: Map gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Collections: Map gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Collections: Map', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -533,10 +533,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Generics gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Generics gemeistert!" aus.',
             starterCode: '// Generics\n',
             expectedOutput: 'Generics gemeistert!',
-            hint: 'System.out.println("Generics gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Generics gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Generics', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -567,10 +567,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Streams API gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Streams API gemeistert!" aus.',
             starterCode: '// Streams API\n',
             expectedOutput: 'Streams API gemeistert!',
-            hint: 'System.out.println("Streams API gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Streams API gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Streams API', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -601,10 +601,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Lambda Expressions gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Lambda Expressions gemeistert!" aus.',
             starterCode: '// Lambda Expressions\n',
             expectedOutput: 'Lambda Expressions gemeistert!',
-            hint: 'System.out.println("Lambda Expressions gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Lambda Expressions gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Lambda Expressions', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -635,10 +635,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Optional gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Optional gemeistert!" aus.',
             starterCode: '// Optional\n',
             expectedOutput: 'Optional gemeistert!',
-            hint: 'System.out.println("Optional gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Optional gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Optional', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -669,10 +669,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "String gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "String gemeistert!" aus.',
             starterCode: '// String & StringBuilder\n',
             expectedOutput: 'String gemeistert!',
-            hint: 'System.out.println("String gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("String gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['String & StringBuilder', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -703,10 +703,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Enums gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Enums gemeistert!" aus.',
             starterCode: '// Enums\n',
             expectedOutput: 'Enums gemeistert!',
-            hint: 'System.out.println("Enums gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Enums gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Enums', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -737,10 +737,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Records gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Records gemeistert!" aus.',
             starterCode: '// Records\n',
             expectedOutput: 'Records gemeistert!',
-            hint: 'System.out.println("Records gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Records gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Records', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -771,10 +771,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Pattern Matching gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Pattern Matching gemeistert!" aus.',
             starterCode: '// Pattern Matching\n',
             expectedOutput: 'Pattern Matching gemeistert!',
-            hint: 'System.out.println("Pattern Matching gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Pattern Matching gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Pattern Matching', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -805,10 +805,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Multithreading gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Multithreading gemeistert!" aus.',
             starterCode: '// Multithreading\n',
             expectedOutput: 'Multithreading gemeistert!',
-            hint: 'System.out.println("Multithreading gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Multithreading gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Multithreading', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -839,10 +839,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "File I/O gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "File I/O gemeistert!" aus.',
             starterCode: '// File I/O\n',
             expectedOutput: 'File I/O gemeistert!',
-            hint: 'System.out.println("File I/O gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("File I/O gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['File I/O', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -873,10 +873,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Annotations gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Annotations gemeistert!" aus.',
             starterCode: '// Annotations\n',
             expectedOutput: 'Annotations gemeistert!',
-            hint: 'System.out.println("Annotations gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Annotations gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Annotations', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -907,10 +907,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Maven gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Maven gemeistert!" aus.',
             starterCode: '// Maven & Gradle\n',
             expectedOutput: 'Maven gemeistert!',
-            hint: 'System.out.println("Maven gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Maven gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Maven & Gradle', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -941,10 +941,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "JUnit Testing gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "JUnit Testing gemeistert!" aus.',
             starterCode: '// JUnit Testing\n',
             expectedOutput: 'JUnit Testing gemeistert!',
-            hint: 'System.out.println("JUnit Testing gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("JUnit Testing gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['JUnit Testing', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -975,10 +975,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Spring Überblick gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Spring Überblick gemeistert!" aus.',
             starterCode: '// Spring Überblick\n',
             expectedOutput: 'Spring Überblick gemeistert!',
-            hint: 'System.out.println("Spring Überblick gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Spring Überblick gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Spring Überblick', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -1009,10 +1009,10 @@ export const javaLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Projekt: REST API gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Projekt: REST API gemeistert!" aus.',
             starterCode: '// Projekt: REST API\n',
             expectedOutput: 'Projekt: REST API gemeistert!',
-            hint: 'System.out.println("Projekt: REST API gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nSystem.out.println("Projekt: REST API gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Projekt: REST API', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },

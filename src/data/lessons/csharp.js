@@ -23,10 +23,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Hallo verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Hallo verstanden!" aus.',
             starterCode: '// Hallo Welt & Console\n',
             expectedOutput: 'Hallo verstanden!',
-            hint: 'Console.WriteLine("Hallo verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Hallo verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Hallo Welt & Console', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -57,10 +57,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Variablen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Variablen verstanden!" aus.',
             starterCode: '// Variablen & Datentypen\n',
             expectedOutput: 'Variablen verstanden!',
-            hint: 'Console.WriteLine("Variablen verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Variablen verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Variablen & Datentypen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -91,10 +91,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Operatoren verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Operatoren verstanden!" aus.',
             starterCode: '// Operatoren & Ausdrücke\n',
             expectedOutput: 'Operatoren verstanden!',
-            hint: 'Console.WriteLine("Operatoren verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Operatoren verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Operatoren & Ausdrücke', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -125,10 +125,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "If-Bedingungen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "If-Bedingungen verstanden!" aus.',
             starterCode: '// If-Bedingungen & switch\n',
             expectedOutput: 'If-Bedingungen verstanden!',
-            hint: 'Console.WriteLine("If-Bedingungen verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("If-Bedingungen verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['If-Bedingungen & switch', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -159,10 +159,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Schleifen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Schleifen verstanden!" aus.',
             starterCode: '// Schleifen\n',
             expectedOutput: 'Schleifen verstanden!',
-            hint: 'Console.WriteLine("Schleifen verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Schleifen verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Schleifen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -193,10 +193,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Arrays verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Arrays verstanden!" aus.',
             starterCode: '// Arrays & Listen\n',
             expectedOutput: 'Arrays verstanden!',
-            hint: 'Console.WriteLine("Arrays verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Arrays verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Arrays & Listen', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -227,10 +227,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Methoden verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Methoden verstanden!" aus.',
             starterCode: '// Methoden\n',
             expectedOutput: 'Methoden verstanden!',
-            hint: 'Console.WriteLine("Methoden verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Methoden verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Methoden', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -261,10 +261,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Klassen verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Klassen verstanden!" aus.',
             starterCode: '// Klassen & Objekte\n',
             expectedOutput: 'Klassen verstanden!',
-            hint: 'Console.WriteLine("Klassen verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Klassen verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Klassen & Objekte', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -295,10 +295,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Properties verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Properties verstanden!" aus.',
             starterCode: '// Properties\n',
             expectedOutput: 'Properties verstanden!',
-            hint: 'Console.WriteLine("Properties verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Properties verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Properties', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -329,10 +329,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Vererbung verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Vererbung verstanden!" aus.',
             starterCode: '// Vererbung\n',
             expectedOutput: 'Vererbung verstanden!',
-            hint: 'Console.WriteLine("Vererbung verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Vererbung verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Vererbung', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -363,10 +363,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Interfaces verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Interfaces verstanden!" aus.',
             starterCode: '// Interfaces\n',
             expectedOutput: 'Interfaces verstanden!',
-            hint: 'Console.WriteLine("Interfaces verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Interfaces verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Interfaces', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -397,10 +397,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Generics verstanden!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Generics verstanden!" aus.',
             starterCode: '// Generics\n',
             expectedOutput: 'Generics verstanden!',
-            hint: 'Console.WriteLine("Generics verstanden!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Generics verstanden!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Generics', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -431,10 +431,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "LINQ gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "LINQ gemeistert!" aus.',
             starterCode: '// LINQ\n',
             expectedOutput: 'LINQ gemeistert!',
-            hint: 'Console.WriteLine("LINQ gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("LINQ gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['LINQ', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -465,10 +465,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Exceptions gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Exceptions gemeistert!" aus.',
             starterCode: '// Exceptions\n',
             expectedOutput: 'Exceptions gemeistert!',
-            hint: 'Console.WriteLine("Exceptions gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Exceptions gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Exceptions', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -499,10 +499,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Delegates gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Delegates gemeistert!" aus.',
             starterCode: '// Delegates & Events\n',
             expectedOutput: 'Delegates gemeistert!',
-            hint: 'Console.WriteLine("Delegates gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Delegates gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Delegates & Events', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -533,10 +533,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Lambda Expressions gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Lambda Expressions gemeistert!" aus.',
             starterCode: '// Lambda Expressions\n',
             expectedOutput: 'Lambda Expressions gemeistert!',
-            hint: 'Console.WriteLine("Lambda Expressions gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Lambda Expressions gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Lambda Expressions', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -567,10 +567,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Async/Await gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Async/Await gemeistert!" aus.',
             starterCode: '// Async/Await\n',
             expectedOutput: 'Async/Await gemeistert!',
-            hint: 'Console.WriteLine("Async/Await gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Async/Await gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Async/Await', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -601,10 +601,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Nullable Types gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Nullable Types gemeistert!" aus.',
             starterCode: '// Nullable Types\n',
             expectedOutput: 'Nullable Types gemeistert!',
-            hint: 'Console.WriteLine("Nullable Types gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Nullable Types gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Nullable Types', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -635,10 +635,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Records gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Records gemeistert!" aus.',
             starterCode: '// Records & Structs\n',
             expectedOutput: 'Records gemeistert!',
-            hint: 'Console.WriteLine("Records gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Records gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Records & Structs', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -669,10 +669,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Pattern Matching gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Pattern Matching gemeistert!" aus.',
             starterCode: '// Pattern Matching\n',
             expectedOutput: 'Pattern Matching gemeistert!',
-            hint: 'Console.WriteLine("Pattern Matching gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Pattern Matching gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Pattern Matching', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -703,10 +703,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Collections gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Collections gemeistert!" aus.',
             starterCode: '// Collections\n',
             expectedOutput: 'Collections gemeistert!',
-            hint: 'Console.WriteLine("Collections gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Collections gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Collections', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -737,10 +737,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Extension Methods gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Extension Methods gemeistert!" aus.',
             starterCode: '// Extension Methods\n',
             expectedOutput: 'Extension Methods gemeistert!',
-            hint: 'Console.WriteLine("Extension Methods gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Extension Methods gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Extension Methods', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -771,10 +771,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Reflection gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Reflection gemeistert!" aus.',
             starterCode: '// Reflection\n',
             expectedOutput: 'Reflection gemeistert!',
-            hint: 'Console.WriteLine("Reflection gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Reflection gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Reflection', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -805,10 +805,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Attributes gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Attributes gemeistert!" aus.',
             starterCode: '// Attributes\n',
             expectedOutput: 'Attributes gemeistert!',
-            hint: 'Console.WriteLine("Attributes gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Attributes gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Attributes', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -839,10 +839,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "File I/O gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "File I/O gemeistert!" aus.',
             starterCode: '// File I/O\n',
             expectedOutput: 'File I/O gemeistert!',
-            hint: 'Console.WriteLine("File I/O gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("File I/O gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['File I/O', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -873,10 +873,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Entity Framework gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Entity Framework gemeistert!" aus.',
             starterCode: '// Entity Framework\n',
             expectedOutput: 'Entity Framework gemeistert!',
-            hint: 'Console.WriteLine("Entity Framework gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Entity Framework gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Entity Framework', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -907,10 +907,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "ASP.NET Basics gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "ASP.NET Basics gemeistert!" aus.',
             starterCode: '// ASP.NET Basics\n',
             expectedOutput: 'ASP.NET Basics gemeistert!',
-            hint: 'Console.WriteLine("ASP.NET Basics gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("ASP.NET Basics gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['ASP.NET Basics', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -941,10 +941,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Unit Testing gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Unit Testing gemeistert!" aus.',
             starterCode: '// Unit Testing\n',
             expectedOutput: 'Unit Testing gemeistert!',
-            hint: 'Console.WriteLine("Unit Testing gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Unit Testing gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Unit Testing', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -975,10 +975,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Dependency Injection gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Dependency Injection gemeistert!" aus.',
             starterCode: '// Dependency Injection\n',
             expectedOutput: 'Dependency Injection gemeistert!',
-            hint: 'Console.WriteLine("Dependency Injection gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Dependency Injection gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Dependency Injection', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
@@ -1009,10 +1009,10 @@ export const csharpLessons = [
 <p>Übe diese Konzepte regelmäßig und baue eigene kleine Projekte damit!</p>
     `,
         exercise: {
-            instructions: 'Gib "Projekt: Web API gemeistert!" aus.',
+            instructions: 'Nutze den Starter-Code und wende das Thema dieser Lektion an. Gib am Ende exakt "Projekt: Web API gemeistert!" aus.',
             starterCode: '// Projekt: Web API\n',
             expectedOutput: 'Projekt: Web API gemeistert!',
-            hint: 'Console.WriteLine("Projekt: Web API gemeistert!");'
+            hint: '1) Ergaenze den fehlenden Code nach dem Muster aus der Theorie.\n2) Beispiel:\nConsole.WriteLine("Projekt: Web API gemeistert!");'
         },
         quiz: [
             { question: 'Was hast du in dieser Lektion gelernt?', options: ['Projekt: Web API', 'Nichts Neues', 'Nur Theorie', 'Nur Praxis'], correct: 0 },
