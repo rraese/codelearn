@@ -4,6 +4,9 @@ import { supabase } from './lib/supabase.js';
 let currentUser = null;
 let userProfile = null;
 const authListeners = [];
+const FORCED_PRO_EMAILS = new Set([
+    're.raese@gmail.com',
+]);
 
 // Initialize auth - call once on app start
 export async function initAuth() {
@@ -77,6 +80,8 @@ export function getProfile() {
 
 // Get user tier
 export function getUserTier() {
+    const email = String(currentUser?.email || '').toLowerCase();
+    if (FORCED_PRO_EMAILS.has(email)) return 'pro';
     return userProfile?.tier || 'free';
 }
 

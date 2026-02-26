@@ -250,21 +250,21 @@ function inferTopicType(title, description) {
 
 function getTopicExplanation(topic) {
   const texts = {
-    basics: 'Du lernst den kleinsten lauffaehigen Ablauf: schreiben, ausfuehren, pruefen.',
-    variables: 'Du speicherst Werte unter klaren Namen und nutzt sie zuverlaessig weiter.',
-    loops: 'Du wiederholst denselben Schritt fuer mehrere Werte ohne Copy-Paste.',
-    conditions: 'Du steuerst den Ablauf ueber klare Bedingungen und Zweige.',
-    functions: 'Du kapselst Logik in wiederverwendbare Bausteine mit Ein- und Ausgabe.',
-    collections: 'Du verwaltest mehrere Werte strukturiert und greifst gezielt darauf zu.',
-    oop: 'Du modellierst Daten und Verhalten gemeinsam in Typen/Objekten.',
-    async: 'Du koordinierst Ablaeufe, deren Ergebnisse zeitversetzt zurueckkommen.',
-    errors: 'Du behandelst Fehler kontrolliert statt unkontrolliert abzubrechen.',
-    modules: 'Du strukturierst Code in Dateien/Module mit klaren Schnittstellen.',
-    testing: 'Du pruefst Verhalten reproduzierbar und erkennst Fehler frueh.',
-    web: 'Du verarbeitest typische Web/API-Ein- und Ausgaben robust.',
-    data: 'Du laedst, wandelst und validierst Daten nachvollziehbar.',
-    project: 'Du kombinierst mehrere Konzepte zu einem vollstaendigen Ablauf.',
-    general: 'Du trainierst sauberes Arbeiten: kleine Schritte, klare Kontrolle, exakte Ausgabe.',
+    basics: 'Du lernst den kleinsten lauffaehigen Ablauf: Code schreiben, ausfuehren und die Ausgabe exakt pruefen. Ziel ist, ein sicheres Grundmuster zu etablieren, das in allen spaeteren Themen wiederverwendet wird.',
+    variables: 'Du speicherst Werte unter klaren Namen und entscheidest bewusst, ob ein Wert veraenderbar ist. So bleibt dein Code nachvollziehbar und du vermeidest typische Fehler durch unbeabsichtigte Aenderungen.',
+    loops: 'Du wiederholst denselben Schritt fuer viele Werte ohne Copy-Paste. Dabei trainierst du, wie Datenquelle, Schleifenkopf und Ausgabe logisch zusammenhaengen.',
+    conditions: 'Du steuerst den Ablauf ueber klare Bedingungen und getrennte Zweige. Der Fokus liegt darauf, dass jede relevante Situation vorhersehbar behandelt wird.',
+    functions: 'Du kapselst Logik in wiederverwendbare Bausteine mit definierten Eingaben und Ausgaben. So wird Code kuerzer, testbarer und leichter zu pflegen.',
+    collections: 'Du verwaltest mehrere Werte strukturiert und greifst gezielt darauf zu. Wichtig ist, die passende Struktur zu waehlen und Zugriff sauber zu kontrollieren.',
+    oop: 'Du modellierst Daten und Verhalten gemeinsam in Typen/Objekten. Das hilft dir, komplexere Programme in klar getrennte Verantwortungen aufzuteilen.',
+    async: 'Du koordinierst Ablaeufe, deren Ergebnisse zeitversetzt zurueckkommen. Du lernst, wann gewartet werden muss und wie Reihenfolge stabil bleibt.',
+    errors: 'Du behandelst Fehler kontrolliert statt unkontrolliert abzubrechen. Ziel ist ein robustes Verhalten mit klarer Rueckmeldung im Fehlerfall.',
+    modules: 'Du strukturierst Code in Dateien/Module mit klaren Schnittstellen. Damit bleiben Projekte auch mit wachsendem Umfang uebersichtlich.',
+    testing: 'Du pruefst Verhalten reproduzierbar und erkennst Fehler frueh. Tests geben dir Sicherheit bei Refactoring und neuen Features.',
+    web: 'Du verarbeitest typische Web/API-Ein- und Ausgaben robust. Dabei steht im Mittelpunkt, valide Daten zu liefern und Fehlerfaelle sauber zu behandeln.',
+    data: 'Du laedst, wandelst und validierst Daten nachvollziehbar. Das verhindert stille Datenfehler und verbessert die Qualitaet deiner Ergebnisse.',
+    project: 'Du kombinierst mehrere Konzepte zu einem vollstaendigen Ablauf. Entscheidend ist die Integration: Teilaufgaben sauber verbinden und Endergebnis pruefen.',
+    general: 'Du trainierst sauberes Arbeiten: kleine Schritte, klare Kontrolle und exakte Ausgabe. Dieses Vorgehen reduziert Fehler und beschleunigt Debugging.',
   };
 
   return texts[topic] || texts.general;
@@ -272,21 +272,21 @@ function getTopicExplanation(topic) {
 
 function getTopicCoreConcepts(topic) {
   const concepts = {
-    basics: ['Welche minimale Struktur lauffaehig sein muss.', 'Wie du Ausgabe exakt erzeugst.', 'Wie du Ergebnis und Ziel vergleichst.'],
-    variables: ['Wann du einen Wert speicherst.', 'Wie Namen Lesbarkeit und Fehlerquote beeinflussen.', 'Wie Datentypen das Verhalten aendern.'],
-    loops: ['Wie Datenquelle und Schleifenkopf zusammenhaengen.', 'Welche Aktion pro Durchlauf ausgefuehrt wird.', 'Wie Reihenfolge und Vollstaendigkeit geprueft werden.'],
-    conditions: ['Welche Bedingung fachlich richtig ist.', 'Wie True-/False-Pfad klar getrennt wird.', 'Wie du Kantenfaelle testest.'],
-    functions: ['Welche Eingaben die Funktion braucht.', 'Was die Funktion garantiert zurueckliefert.', 'Wie Aufruf und Rueckgabe zusammenspielen.'],
-    collections: ['Welche Struktur zur Aufgabe passt.', 'Wie Zugriff ueber Index/Key sicher erfolgt.', 'Welche Ausgabe wirklich gefordert ist.'],
-    oop: ['Welche Daten im Objektzustand liegen.', 'Welche Methode welche Verantwortung hat.', 'Wie Instanz und Methodenaufruf zusammenhaengen.'],
-    async: ['Wann ein Ergebnis noch nicht verfuegbar ist.', 'Wo auf ein Ergebnis gewartet werden muss.', 'Warum Reihenfolge bei Ausgaben wichtig ist.'],
-    errors: ['Welche Fehler realistisch auftreten.', 'Wo du Fehler abfaengst.', 'Welche klare Reaktion im Fehlerfall erfolgt.'],
-    modules: ['Welche Teile du auslagerst.', 'Welche Schnittstelle exportiert/importiert wird.', 'Wie Abhaengigkeiten klein bleiben.'],
-    testing: ['Welches Verhalten ein Test absichert.', 'Welche Eingaben kritisch sind.', 'Wie ein Testausfall interpretiert wird.'],
-    web: ['Welche Daten reinkommen und rausgehen.', 'Wie erfolgreiche und fehlerhafte Faelle getrennt werden.', 'Wie Ergebnisdaten exakt ausgegeben werden.'],
-    data: ['Wie Rohdaten eingelesen werden.', 'Welche Transformation noetig ist.', 'Wie du das Ergebnis validierst.'],
-    project: ['Wie Teilziele definiert werden.', 'Wie Teilziele integriert werden.', 'Wie du End-to-End pruefst.'],
-    general: ['Zieltext exakt lesen.', 'Nur relevante Stelle aendern.', 'Nach jedem Run sofort gegenpruefen.'],
+    basics: ['Welche minimale Struktur lauffaehig sein muss.', 'Wie du Ausgabe exakt und ohne Zusatzzeichen erzeugst.', 'Wie du Ergebnis und Zielausgabe zeilenweise vergleichst.'],
+    variables: ['Wann du einen Wert wirklich speichern solltest.', 'Wie gute Namen Lesbarkeit, Wartbarkeit und Fehlerquote beeinflussen.', 'Wie Veraenderbarkeit und Datentyp das spaetere Verhalten bestimmen.'],
+    loops: ['Wie Datenquelle und Schleifenkopf zusammenhaengen.', 'Welche Aktion pro Durchlauf exakt ausgefuehrt wird.', 'Wie Reihenfolge, Vollstaendigkeit und Abbruchbedingungen geprueft werden.'],
+    conditions: ['Welche Bedingung fachlich korrekt ist.', 'Wie True-/False-Pfade klar getrennt und vollstaendig sind.', 'Wie du Randfaelle so testest, dass keine Zweige fehlen.'],
+    functions: ['Welche Eingaben die Funktion braucht und warum.', 'Was die Funktion garantiert zurueckliefert.', 'Wie Aufruf, Rueckgabe und Weiterverarbeitung zusammenspielen.'],
+    collections: ['Welche Struktur zur Aufgabe passt.', 'Wie Zugriff ueber Index/Key robust und sicher erfolgt.', 'Welche Ausgabe wirklich gefordert ist und was bewusst nicht ausgegeben wird.'],
+    oop: ['Welche Daten in den Objektzustand gehoeren.', 'Welche Methode welche Verantwortung hat.', 'Wie Instanz, Methodenaufruf und Zustand konsistent zusammenhaengen.'],
+    async: ['Wann ein Ergebnis noch nicht verfuegbar ist.', 'Wo explizit auf ein Ergebnis gewartet werden muss.', 'Warum Reihenfolge und Synchronisation bei Ausgaben wichtig sind.'],
+    errors: ['Welche Fehler realistisch auftreten koennen.', 'Wo du Fehler abfaengst und welche Granularitaet sinnvoll ist.', 'Welche klare Reaktion im Fehlerfall erfolgt.'],
+    modules: ['Welche Teile du sinnvoll auslagerst.', 'Welche Schnittstelle exportiert/importiert wird.', 'Wie Abhaengigkeiten klein und austauschbar bleiben.'],
+    testing: ['Welches Verhalten ein Test wirklich absichert.', 'Welche Eingaben und Randfaelle kritisch sind.', 'Wie ein Testausfall gelesen und behoben wird.'],
+    web: ['Welche Daten reinkommen und rausgehen.', 'Wie erfolgreiche und fehlerhafte Faelle getrennt werden.', 'Wie Ergebnisdaten stabil, valide und exakt ausgegeben werden.'],
+    data: ['Wie Rohdaten eingelesen werden.', 'Welche Transformation noetig ist.', 'Wie du das Ergebnis mit klaren Regeln validierst.'],
+    project: ['Wie Teilziele definiert und priorisiert werden.', 'Wie Teilziele sauber integriert werden.', 'Wie du End-to-End testest und das Ergebnis absicherst.'],
+    general: ['Zieltext exakt lesen und in Teilziele zerlegen.', 'Nur relevante Stelle aendern statt breit umzubauen.', 'Nach jedem Run sofort gegenpruefen und iterieren.'],
   };
 
   return concepts[topic] || concepts.general;
@@ -294,13 +294,13 @@ function getTopicCoreConcepts(topic) {
 
 function getTopicSteps(topic) {
   const steps = {
-    basics: ['Starter-Code lesen.', 'Eine minimale lauffaehige Aenderung machen.', 'Ausgabe exakt mit dem Ziel vergleichen.'],
-    variables: ['Wert mit sprechendem Namen speichern.', 'Wert gezielt veraendern oder weiterreichen.', 'Endwert ausgeben und pruefen.'],
-    loops: ['Quelle der Werte festlegen.', 'Schleifenkopf korrekt formulieren.', 'Pro Durchlauf genau eine klare Aktion ausfuehren.'],
-    conditions: ['Bedingung in Klartext formulieren.', 'True- und False-Pfad sauber trennen.', 'Mit realen Werten gegenpruefen.'],
-    functions: ['Signatur festlegen.', 'Logik in der Funktion implementieren.', 'Funktion aufrufen und Rueckgabe pruefen.'],
+    basics: ['Starter-Code lesen und Zielausgabe markieren.', 'Eine minimale lauffaehige Aenderung machen.', 'Ausgabe exakt mit dem Ziel vergleichen und nur noetige Stellen nachziehen.'],
+    variables: ['Wert mit sprechendem Namen speichern und Typ/Veraenderbarkeit bewusst waehlen.', 'Wert gezielt veraendern oder weiterreichen.', 'Endwert exakt ausgeben und mit der Soll-Ausgabe abgleichen.'],
+    loops: ['Quelle der Werte festlegen.', 'Schleifenkopf korrekt formulieren.', 'Pro Durchlauf genau eine klare Aktion ausfuehren und Reihenfolge pruefen.'],
+    conditions: ['Bedingung in Klartext formulieren.', 'True- und False-Pfad sauber trennen.', 'Mit realen und Randwerten gegenpruefen.'],
+    functions: ['Signatur mit Eingaben und Rueckgabewert festlegen.', 'Logik in der Funktion implementieren.', 'Funktion aufrufen und Rueckgabe pruefen.'],
     collections: ['Passende Datenstruktur waehlen.', 'Zugriff ueber Index/Key korrekt setzen.', 'Ergebnis ohne Nebenwerte ausgeben.'],
-    oop: ['Typ/Klasse definieren.', 'Instanz erzeugen.', 'Methode gezielt aufrufen und Ausgabe pruefen.'],
+    oop: ['Typ/Klasse definieren.', 'Instanz erzeugen und initialisieren.', 'Methode gezielt aufrufen und Ausgabe pruefen.'],
     async: ['Asynchronen Ablauf starten.', 'Auf Ergebnis warten/synchronisieren.', 'Erst danach weiterarbeiten und ausgeben.'],
     errors: ['Fehlerquelle identifizieren.', 'Schutzblock hinzufuegen.', 'Im Fehlerfall eine klare Reaktion ausgeben.'],
     general: ['Aufgabe praezise lesen.', 'In kleinen Schritten ergaenzen.', 'Nach jedem Run gegen die Zielausgabe pruefen.'],
@@ -311,6 +311,8 @@ function getTopicSteps(topic) {
 
 function getTopicSelfCheck(topic) {
   const checks = {
+    basics: ['Wird exakt der geforderte Text ausgegeben?', 'Enthaelt die Ausgabe keine zusaetzlichen Zeichen, Leerzeilen oder Tippfehler?'],
+    variables: ['Ist klar, welcher Wert veraenderbar und welcher konstant sein soll?', 'Wird genau die richtige Variable ausgegeben und nicht nur ein Platzhaltertext?'],
     loops: ['Werden alle Elemente wirklich durchlaufen?', 'Wird pro Durchlauf genau ein korrekter Wert ausgegeben?'],
     conditions: ['Ist die Bedingung fachlich richtig?', 'Gibt es fuer beide Faelle eine klare Reaktion?'],
     functions: ['Wird die Funktion korrekt aufgerufen?', 'Stimmt der Rueckgabewert und dessen Ausgabe?'],
@@ -402,7 +404,8 @@ function getLanguageMiniExample(langId, topic) {
       functions: 'int Verdoppeln(int x) {\n    return x * 2;\n}\nConsole.WriteLine(Verdoppeln(4));',
     },
     swift: {
-      general: 'let wert = 5\nprint(wert)',
+      general: 'let startWert = 5\nvar aktuellerWert = startWert\naktuellerWert += 1\nprint(aktuellerWert)',
+      variables: 'let appName = "CodeLearn"      // konstant\nvar punkte = 0                  // veraenderbar\npunkte += 10\nprint("\\(appName): \\(punkte)")',
       loops: 'let werte = [1, 2, 3]\nfor wert in werte {\n    print(wert)\n}',
       conditions: 'let score = 42\nif score >= 50 {\n    print("Bestanden")\n} else {\n    print("Noch nicht")\n}',
       functions: 'func verdoppeln(_ x: Int) -> Int {\n    return x * 2\n}\nprint(verdoppeln(4))',
@@ -431,6 +434,30 @@ function getLanguageMiniExample(langId, topic) {
   return languageExamples[topic] || languageExamples.general;
 }
 
+function getLanguageTopicFocus(langId, topic) {
+  if (langId === 'swift' && topic === 'variables') {
+    return 'In Swift gilt: `let` fuer Konstanten (nicht aenderbar), `var` fuer veraenderbare Werte. Wenn ein Wert sich im Ablauf nie aendert, nutze `let` als Standard und wechsle nur bei Bedarf zu `var`.';
+  }
+
+  if (langId === 'javascript' && topic === 'variables') {
+    return 'In JavaScript nutze in der Regel `const` als Standard und `let` nur dann, wenn sich der Wert spaeter wirklich aendert.';
+  }
+
+  if (langId === 'typescript' && topic === 'variables') {
+    return 'In TypeScript gilt wie in JavaScript: `const` als Standard. Ergaenze Typen dort, wo sie das Verstaendnis verbessern oder Fehler frueh sichtbar machen.';
+  }
+
+  if (langId === 'go' && topic === 'variables') {
+    return 'In Go ist `:=` fuer kurze Deklarationen ueblich. Nutze `var` mit Typangabe dann, wenn die Lesbarkeit davon profitiert oder ein Zero-Value gebraucht wird.';
+  }
+
+  if (langId === 'python' && topic === 'variables') {
+    return 'Python kennt keine `const`-Schluesselwoerter. Konventionell werden Konstanten in GROSSBUCHSTABEN benannt, veraenderbare Werte in normaler Schreibweise.';
+  }
+
+  return '';
+}
+
 function buildAdaptiveTheory(lesson, langId, langName) {
   const topic = inferTopicType(lesson.title, lesson.description);
   const explanation = getTopicExplanation(topic);
@@ -439,6 +466,7 @@ function buildAdaptiveTheory(lesson, langId, langName) {
   const checks = getTopicSelfCheck(topic);
   const pitfalls = getTopicPitfalls(topic);
   const miniExample = getLanguageMiniExample(langId, topic);
+  const languageFocus = getLanguageTopicFocus(langId, topic);
 
   return `
 <h2>${escapeHtml(lesson.title)}</h2>
@@ -457,6 +485,7 @@ function buildAdaptiveTheory(lesson, langId, langName) {
 
 <h3>Mini-Beispiel in ${escapeHtml(langName)} (nicht die Aufgabenloesung)</h3>
 <pre class="code-block">${escapeHtml(miniExample)}</pre>
+${languageFocus ? `\n<h3>Sprach-Fokus (${escapeHtml(langName)})</h3>\n<p>${escapeHtml(languageFocus)}</p>` : ''}
 
 <h3>Selbst-Check vor dem Run</h3>
 <ul>
@@ -1595,7 +1624,7 @@ function findVarValue(name, code, lang) {
   } else if (lang === 'javascript' || lang === 'typescript') {
     assignRegex = new RegExp(`(?:let|const|var)\\s+${safeName}\\s*=\\s*(?:["'\`](.+?)["'\`]|(-?\\d+\\.?\\d*)|(true|false))`, 'm');
   } else if (lang === 'go') {
-    assignRegex = new RegExp(`(?:var\\s+)?${safeName}\\s*:?=\\s*(?:["'](.+?)["']|(-?\\d+\\.?\\d*)|(true|false))`, 'm');
+    assignRegex = new RegExp(`(?:var\\s+)?${safeName}(?:\\s+[^=\\n:]+)?\\s*:?=\\s*(?:["'](.+?)["']|(-?\\d+\\.?\\d*)|(true|false))`, 'm');
   } else if (lang === 'cpp') {
     assignRegex = new RegExp(`(?:int|string|float|double|auto|bool)\\s+${safeName}\\s*=\\s*(?:["'](.+?)["']|(-?\\d+\\.?\\d*)|(true|false))`, 'm');
   } else if (lang === 'java') {
@@ -1603,9 +1632,9 @@ function findVarValue(name, code, lang) {
   } else if (lang === 'csharp') {
     assignRegex = new RegExp(`(?:var|int|double|float|decimal|bool|string|char|long)\\s+${safeName}\\s*=\\s*(?:["'](.+?)["']|(-?\\d+\\.?\\d*)|(true|false))`, 'm');
   } else if (lang === 'swift') {
-    assignRegex = new RegExp(`(?:let|var)\\s+${safeName}\\s*=\\s*(?:["'](.+?)["']|(-?\\d+\\.?\\d*)|(true|false))`, 'm');
+    assignRegex = new RegExp(`(?:let|var)\\s+${safeName}(?:\\s*:\\s*[^=\\n]+)?\\s*=\\s*(?:["'](.+?)["']|(-?\\d+\\.?\\d*)|(true|false))`, 'm');
   } else if (lang === 'kotlin') {
-    assignRegex = new RegExp(`(?:val|var)\\s+${safeName}\\s*=\\s*(?:["'](.+?)["']|(-?\\d+\\.?\\d*)|(true|false))`, 'm');
+    assignRegex = new RegExp(`(?:val|var)\\s+${safeName}(?:\\s*:\\s*[^=\\n]+)?\\s*=\\s*(?:["'](.+?)["']|(-?\\d+\\.?\\d*)|(true|false))`, 'm');
   } else if (lang === 'php') {
     assignRegex = new RegExp(`\\$${safeName}\\s*=\\s*(?:["'](.+?)["']|(-?\\d+\\.?\\d*)|(true|false))`, 'm');
   } else if (lang === 'ruby') {
