@@ -504,17 +504,21 @@ ${languageFocus ? `\n<h3>Sprach-Fokus (${escapeHtml(langName)})</h3>\n<p>${escap
 
 function prepareLessonForRender(lesson, langId) {
   const clonedExercise = { ...(lesson.exercise || {}) };
-  const hasClozeStarter = shouldUseClozeStarter(lesson.id, clonedExercise.starterCode);
+  const topic = inferTopicType(lesson.title, lesson.description);
+  const shouldGenerateStarter = shouldUseGeneratedStarter(lesson.id, clonedExercise.starterCode);
 
-  if (hasClozeStarter) {
-    clonedExercise.starterCode = buildClozeStarterCode(langId, clonedExercise.expectedOutput);
+  if (shouldGenerateStarter) {
+    const generated = buildGeneratedExercise(langId, topic, lesson.id, clonedExercise.expectedOutput);
+    clonedExercise.starterCode = generated.starterCode;
+    clonedExercise.expectedOutput = generated.expectedOutput;
+    clonedExercise.instructions = generated.instructions;
+  } else {
+    clonedExercise.instructions = buildExerciseGoalText(
+      clonedExercise.instructions,
+      lesson.id,
+      false
+    );
   }
-
-  clonedExercise.instructions = buildExerciseGoalText(
-    clonedExercise.instructions,
-    lesson.id,
-    hasClozeStarter
-  );
 
   return {
     ...lesson,
@@ -522,8 +526,8 @@ function prepareLessonForRender(lesson, langId) {
   };
 }
 
-function shouldUseClozeStarter(lessonId, starterCode) {
-  if (lessonId > 5) return false;
+function shouldUseGeneratedStarter(lessonId, starterCode) {
+  if (lessonId > 12) return false;
   return isTemplateOnlyStarter(starterCode);
 }
 
@@ -539,11 +543,7 @@ function isTemplateOnlyStarter(starterCode) {
   return !hasRealCode;
 }
 
-function buildExerciseGoalText(rawInstructions, lessonId, hasClozeStarter) {
-  if (hasClozeStarter) {
-    return 'Lueckentext-Aufgabe: Ersetze die Stelle mit ___ im Starter-Code und erzeuge exakt die Zielausgabe.';
-  }
-
+function buildExerciseGoalText(rawInstructions, lessonId) {
   if (!isGenericInstructionText(rawInstructions)) {
     return rawInstructions;
   }
@@ -563,25 +563,530 @@ function isGenericInstructionText(value) {
   return text.includes('nutze den starter-code und wende das thema dieser lektion an');
 }
 
-function buildClozeStarterCode(langId, expectedOutput) {
-  const expected = escapeForDoubleQuotedString(expectedOutput);
-
-  const templates = {
-    python: `# Lueckentext: Ersetze ___ mit der richtigen Variable\nziel_text = "${expected}"\nprint(___)\n`,
-    javascript: `// Lueckentext: Ersetze ___ mit der richtigen Variable\nconst zielText = "${expected}";\nconsole.log(___);\n`,
-    typescript: `// Lueckentext: Ersetze ___ mit der richtigen Variable\nconst zielText: string = "${expected}";\nconsole.log(___);\n`,
-    go: `// Lueckentext: Ersetze ___ mit der richtigen Variable\nzielText := "${expected}"\nfmt.Println(___)\n`,
-    rust: `// Lueckentext: Ersetze ___ mit der richtigen Variable\nlet ziel_text = "${expected}";\nprintln!("{}", ___);\n`,
-    cpp: `// Lueckentext: Ersetze ___ mit der richtigen Variable\nstring zielText = "${expected}";\ncout << ___ << endl;\n`,
-    java: `// Lueckentext: Ersetze ___ mit der richtigen Variable\nString zielText = "${expected}";\nSystem.out.println(___);\n`,
-    csharp: `// Lueckentext: Ersetze ___ mit der richtigen Variable\nstring zielText = "${expected}";\nConsole.WriteLine(___);\n`,
-    swift: `// Lueckentext: Ersetze ___ mit der richtigen Variable\nlet zielText = "${expected}"\nprint(___)\n`,
-    kotlin: `// Lueckentext: Ersetze ___ mit der richtigen Variable\nval zielText = "${expected}"\nprintln(___)\n`,
-    php: `// Lueckentext: Ersetze ___ mit der richtigen Variable\n$zielText = "${expected}";\necho ___;\n`,
-    ruby: `# Lueckentext: Ersetze ___ mit der richtigen Variable\nziel_text = "${expected}"\nputs ___\n`,
+function getLangSyntax(langId) {
+  const syntax = {
+    python: {
+      comment: '#',
+      printExpr: expr => `print(${expr})`,
+      numberVar: (name, value) => `${name} = ${value}`,
+      textVar: (name, text) => `${name} = "${text}"`,
+      varRef: name => name,
+      textExpr: text => `"${text}"`,
+    },
+    javascript: {
+      comment: '//',
+      printExpr: expr => `console.log(${expr});`,
+      numberVar: (name, value) => `const ${name} = ${value};`,
+      textVar: (name, text) => `const ${name} = "${text}";`,
+      varRef: name => name,
+      textExpr: text => `"${text}"`,
+    },
+    typescript: {
+      comment: '//',
+      printExpr: expr => `console.log(${expr});`,
+      numberVar: (name, value) => `const ${name} = ${value};`,
+      textVar: (name, text) => `const ${name} = "${text}";`,
+      varRef: name => name,
+      textExpr: text => `"${text}"`,
+    },
+    go: {
+      comment: '//',
+      printExpr: expr => `fmt.Println(${expr})`,
+      numberVar: (name, value) => `${name} := ${value}`,
+      textVar: (name, text) => `${name} := "${text}"`,
+      varRef: name => name,
+      textExpr: text => `"${text}"`,
+    },
+    rust: {
+      comment: '//',
+      printExpr: expr => `println!("{}", ${expr});`,
+      numberVar: (name, value) => `let ${name} = ${value};`,
+      textVar: (name, text) => `let ${name} = "${text}";`,
+      varRef: name => name,
+      textExpr: text => `"${text}"`,
+    },
+    cpp: {
+      comment: '//',
+      printExpr: expr => `cout << ${expr} << endl;`,
+      numberVar: (name, value) => `int ${name} = ${value};`,
+      textVar: (name, text) => `string ${name} = "${text}";`,
+      varRef: name => name,
+      textExpr: text => `"${text}"`,
+    },
+    java: {
+      comment: '//',
+      printExpr: expr => `System.out.println(${expr});`,
+      numberVar: (name, value) => `int ${name} = ${value};`,
+      textVar: (name, text) => `String ${name} = "${text}";`,
+      varRef: name => name,
+      textExpr: text => `"${text}"`,
+    },
+    csharp: {
+      comment: '//',
+      printExpr: expr => `Console.WriteLine(${expr});`,
+      numberVar: (name, value) => `int ${name} = ${value};`,
+      textVar: (name, text) => `string ${name} = "${text}";`,
+      varRef: name => name,
+      textExpr: text => `"${text}"`,
+    },
+    swift: {
+      comment: '//',
+      printExpr: expr => `print(${expr})`,
+      numberVar: (name, value) => `let ${name} = ${value}`,
+      textVar: (name, text) => `let ${name} = "${text}"`,
+      varRef: name => name,
+      textExpr: text => `"${text}"`,
+    },
+    kotlin: {
+      comment: '//',
+      printExpr: expr => `println(${expr})`,
+      numberVar: (name, value) => `val ${name} = ${value}`,
+      textVar: (name, text) => `val ${name} = "${text}"`,
+      varRef: name => name,
+      textExpr: text => `"${text}"`,
+    },
+    php: {
+      comment: '//',
+      printExpr: expr => `echo ${expr};`,
+      numberVar: (name, value) => `$${name} = ${value};`,
+      textVar: (name, text) => `$${name} = "${text}";`,
+      varRef: name => `$${name}`,
+      textExpr: text => `"${text}"`,
+    },
+    ruby: {
+      comment: '#',
+      printExpr: expr => `puts ${expr}`,
+      numberVar: (name, value) => `${name} = ${value}`,
+      textVar: (name, text) => `${name} = "${text}"`,
+      varRef: name => name,
+      textExpr: text => `"${text}"`,
+    },
   };
 
-  return templates[langId] || `// Lueckentext\nprint("${expected}")\n`;
+  return syntax[langId] || syntax.javascript;
+}
+
+function buildGeneratedExercise(langId, topic, lessonId, fallbackExpectedOutput) {
+  const fallback = String(fallbackExpectedOutput || '').trim() || 'Hallo verstanden!';
+  if (topic === 'basics') return buildBasicsGeneratedExercise(langId, fallback);
+  if (topic === 'variables' || topic === 'data') return buildVariablesGeneratedExercise(langId, fallback);
+  if (topic === 'conditions') return buildConditionsGeneratedExercise(langId);
+  if (topic === 'loops') return buildLoopsGeneratedExercise(langId);
+  if (topic === 'functions') return buildFunctionsGeneratedExercise(langId);
+  if (topic === 'collections') return buildCollectionsGeneratedExercise(langId);
+
+  const rotation = lessonId % 4;
+  if (rotation === 0) return buildConditionsGeneratedExercise(langId);
+  if (rotation === 1) return buildLoopsGeneratedExercise(langId);
+  if (rotation === 2) return buildFunctionsGeneratedExercise(langId);
+  return buildCollectionsGeneratedExercise(langId);
+}
+
+function buildBasicsGeneratedExercise(langId, expectedOutput) {
+  const syntax = getLangSyntax(langId);
+  return {
+    starterCode: `${syntax.comment} Lueckentext: Ersetze ___ durch einen String in Anfuehrungszeichen\n${syntax.printExpr('___')}\n`,
+    expectedOutput,
+    instructions: 'Lueckentext-Aufgabe: Setze bei ___ den exakten Text als String-Literal ein (inkl. Anfuehrungszeichen).',
+  };
+}
+
+function buildVariablesGeneratedExercise(langId, expectedOutput) {
+  const syntax = getLangSyntax(langId);
+  const safeText = escapeForDoubleQuotedString(expectedOutput);
+  return {
+    starterCode: `${syntax.comment} Lueckentext: Ersetze ___ durch den Variablennamen\n${syntax.textVar('zielText', safeText)}\n${syntax.printExpr('___')}\n`,
+    expectedOutput,
+    instructions: 'Lueckentext-Aufgabe: Nutze bei ___ den richtigen Variablennamen statt eines Literals.',
+  };
+}
+
+function buildConditionsGeneratedExercise(langId) {
+  const instructions = 'Lueckentext-Aufgabe: Ersetze ___ durch eine Bedingung, damit "Bestanden" ausgegeben wird.';
+  if (langId === 'python') {
+    return {
+      starterCode: '# Lueckentext: Ersetze ___ durch eine Bedingung\nscore = 42\nif ___:\n    print("Bestanden")\nelse:\n    print("Noch nicht")\n',
+      expectedOutput: 'Bestanden',
+      instructions,
+    };
+  }
+
+  if (langId === 'ruby') {
+    return {
+      starterCode: '# Lueckentext: Ersetze ___ durch eine Bedingung\nscore = 42\nif ___\n  puts "Bestanden"\nelse\n  puts "Noch nicht"\nend\n',
+      expectedOutput: 'Bestanden',
+      instructions,
+    };
+  }
+
+  if (langId === 'go') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch eine Bedingung\nscore := 42\nif ___ {\n    fmt.Println("Bestanden")\n} else {\n    fmt.Println("Noch nicht")\n}\n',
+      expectedOutput: 'Bestanden',
+      instructions,
+    };
+  }
+
+  if (langId === 'swift') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch eine Bedingung\nlet score = 42\nif ___ {\n    print("Bestanden")\n} else {\n    print("Noch nicht")\n}\n',
+      expectedOutput: 'Bestanden',
+      instructions,
+    };
+  }
+
+  if (langId === 'rust') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch eine Bedingung\nlet score = 42;\nif ___ {\n    println!("Bestanden");\n} else {\n    println!("Noch nicht");\n}\n',
+      expectedOutput: 'Bestanden',
+      instructions,
+    };
+  }
+
+  if (langId === 'php') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch eine Bedingung\n$score = 42;\nif (___) {\n    echo "Bestanden";\n} else {\n    echo "Noch nicht";\n}\n',
+      expectedOutput: 'Bestanden',
+      instructions,
+    };
+  }
+
+  if (langId === 'cpp') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch eine Bedingung\nint score = 42;\nif (___) {\n    cout << "Bestanden" << endl;\n} else {\n    cout << "Noch nicht" << endl;\n}\n',
+      expectedOutput: 'Bestanden',
+      instructions,
+    };
+  }
+
+  if (langId === 'java') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch eine Bedingung\nint score = 42;\nif (___) {\n    System.out.println("Bestanden");\n} else {\n    System.out.println("Noch nicht");\n}\n',
+      expectedOutput: 'Bestanden',
+      instructions,
+    };
+  }
+
+  if (langId === 'csharp') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch eine Bedingung\nint score = 42;\nif (___) {\n    Console.WriteLine("Bestanden");\n} else {\n    Console.WriteLine("Noch nicht");\n}\n',
+      expectedOutput: 'Bestanden',
+      instructions,
+    };
+  }
+
+  if (langId === 'kotlin') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch eine Bedingung\nval score = 42\nif (___) {\n    println("Bestanden")\n} else {\n    println("Noch nicht")\n}\n',
+      expectedOutput: 'Bestanden',
+      instructions,
+    };
+  }
+
+  if (langId === 'typescript') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch eine Bedingung\nconst score = 42;\nif (___) {\n  console.log("Bestanden");\n} else {\n  console.log("Noch nicht");\n}\n',
+      expectedOutput: 'Bestanden',
+      instructions,
+    };
+  }
+
+  return {
+    starterCode: '// Lueckentext: Ersetze ___ durch eine Bedingung\nconst score = 42;\nif (___) {\n  console.log("Bestanden");\n} else {\n  console.log("Noch nicht");\n}\n',
+    expectedOutput: 'Bestanden',
+    instructions,
+  };
+}
+
+function buildLoopsGeneratedExercise(langId) {
+  const instructions = 'Lueckentext-Aufgabe: Ersetze ___ so, dass die Schleife ueber alle Werte laeuft.';
+  if (langId === 'python') {
+    return {
+      starterCode: '# Lueckentext: Ersetze ___ durch die Datenquelle\nwerte = [1, 2, 3]\nfor wert in ___:\n    print(wert)\n',
+      expectedOutput: '1\n2\n3',
+      instructions,
+    };
+  }
+
+  if (langId === 'ruby') {
+    return {
+      starterCode: '# Lueckentext: Ersetze ___ durch die Datenquelle\nwerte = [1, 2, 3]\n___.each do |wert|\n  puts wert\nend\n',
+      expectedOutput: '1\n2\n3',
+      instructions,
+    };
+  }
+
+  if (langId === 'go') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch die Datenquelle\nwerte := []int{1, 2, 3}\nfor _, wert := range ___ {\n    fmt.Println(wert)\n}\n',
+      expectedOutput: '1\n2\n3',
+      instructions,
+    };
+  }
+
+  if (langId === 'swift') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch die Datenquelle\nlet werte = [1, 2, 3]\nfor wert in ___ {\n    print(wert)\n}\n',
+      expectedOutput: '1\n2\n3',
+      instructions,
+    };
+  }
+
+  if (langId === 'rust') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch die Datenquelle\nlet werte = vec![1, 2, 3];\nfor wert in ___ {\n    println!("{}", wert);\n}\n',
+      expectedOutput: '1\n2\n3',
+      instructions,
+    };
+  }
+
+  if (langId === 'php') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch die Datenquelle\n$werte = [1, 2, 3];\nforeach (___ as $wert) {\n    echo $wert;\n}\n',
+      expectedOutput: '1\n2\n3',
+      instructions,
+    };
+  }
+
+  if (langId === 'cpp') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch die Datenquelle\nvector<int> werte = {1, 2, 3};\nfor (int wert : ___) {\n    cout << wert << endl;\n}\n',
+      expectedOutput: '1\n2\n3',
+      instructions,
+    };
+  }
+
+  if (langId === 'java') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch die Datenquelle\nint[] werte = {1, 2, 3};\nfor (int wert : ___) {\n    System.out.println(wert);\n}\n',
+      expectedOutput: '1\n2\n3',
+      instructions,
+    };
+  }
+
+  if (langId === 'csharp') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch die Datenquelle\nint[] werte = { 1, 2, 3 };\nforeach (var wert in ___) {\n    Console.WriteLine(wert);\n}\n',
+      expectedOutput: '1\n2\n3',
+      instructions,
+    };
+  }
+
+  if (langId === 'kotlin') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch die Datenquelle\nval werte = listOf(1, 2, 3)\nfor (wert in ___) {\n    println(wert)\n}\n',
+      expectedOutput: '1\n2\n3',
+      instructions,
+    };
+  }
+
+  if (langId === 'typescript') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch die Datenquelle\nconst werte = [1, 2, 3];\nfor (const wert of ___) {\n  console.log(wert);\n}\n',
+      expectedOutput: '1\n2\n3',
+      instructions,
+    };
+  }
+
+  return {
+    starterCode: '// Lueckentext: Ersetze ___ durch die Datenquelle\nconst werte = [1, 2, 3];\nfor (const wert of ___) {\n  console.log(wert);\n}\n',
+    expectedOutput: '1\n2\n3',
+    instructions,
+  };
+}
+
+function buildFunctionsGeneratedExercise(langId) {
+  const instructions = 'Lueckentext-Aufgabe: Ersetze ___ in der Rueckgabe so, dass verdoppeln(4) den Wert 8 liefert.';
+  if (langId === 'python') {
+    return {
+      starterCode: '# Lueckentext: Ersetze ___ in der Rueckgabe\ndef verdoppeln(x):\n    return ___\n\nprint(verdoppeln(4))\n',
+      expectedOutput: '8',
+      instructions,
+    };
+  }
+
+  if (langId === 'ruby') {
+    return {
+      starterCode: '# Lueckentext: Ersetze ___ in der Rueckgabe\ndef verdoppeln(x)\n  return ___\nend\n\nputs verdoppeln(4)\n',
+      expectedOutput: '8',
+      instructions,
+    };
+  }
+
+  if (langId === 'go') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ in der Rueckgabe\nfunc verdoppeln(x int) int {\n    return ___\n}\n\nfmt.Println(verdoppeln(4))\n',
+      expectedOutput: '8',
+      instructions,
+    };
+  }
+
+  if (langId === 'swift') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ in der Rueckgabe\nfunc verdoppeln(_ x: Int) -> Int {\n    return ___\n}\n\nprint(verdoppeln(4))\n',
+      expectedOutput: '8',
+      instructions,
+    };
+  }
+
+  if (langId === 'rust') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ in der Rueckgabe\nfn verdoppeln(x: i32) -> i32 {\n    return ___;\n}\n\nprintln!("{}", verdoppeln(4));\n',
+      expectedOutput: '8',
+      instructions,
+    };
+  }
+
+  if (langId === 'php') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ in der Rueckgabe\nfunction verdoppeln($x) {\n    return ___;\n}\n\necho verdoppeln(4);\n',
+      expectedOutput: '8',
+      instructions,
+    };
+  }
+
+  if (langId === 'cpp') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ in der Rueckgabe\nint verdoppeln(int x) {\n    return ___;\n}\n\ncout << verdoppeln(4) << endl;\n',
+      expectedOutput: '8',
+      instructions,
+    };
+  }
+
+  if (langId === 'java') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ in der Rueckgabe\nint verdoppeln(int x) {\n    return ___;\n}\n\nSystem.out.println(verdoppeln(4));\n',
+      expectedOutput: '8',
+      instructions,
+    };
+  }
+
+  if (langId === 'csharp') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ in der Rueckgabe\nint Verdoppeln(int x) {\n    return ___;\n}\n\nConsole.WriteLine(Verdoppeln(4));\n',
+      expectedOutput: '8',
+      instructions,
+    };
+  }
+
+  if (langId === 'kotlin') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ in der Rueckgabe\nfun verdoppeln(x: Int): Int {\n    return ___\n}\n\nprintln(verdoppeln(4))\n',
+      expectedOutput: '8',
+      instructions,
+    };
+  }
+
+  if (langId === 'typescript') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ in der Rueckgabe\nfunction verdoppeln(x) {\n  return ___;\n}\n\nconsole.log(verdoppeln(4));\n',
+      expectedOutput: '8',
+      instructions,
+    };
+  }
+
+  return {
+    starterCode: '// Lueckentext: Ersetze ___ in der Rueckgabe\nfunction verdoppeln(x) {\n  return ___;\n}\n\nconsole.log(verdoppeln(4));\n',
+    expectedOutput: '8',
+    instructions,
+  };
+}
+
+function buildCollectionsGeneratedExercise(langId) {
+  const instructions = 'Lueckentext-Aufgabe: Ersetze ___ durch den korrekten Index, um den mittleren Wert auszugeben.';
+  if (langId === 'python') {
+    return {
+      starterCode: '# Lueckentext: Ersetze ___ durch den richtigen Index\nwerte = [10, 20, 30]\nprint(werte[___])\n',
+      expectedOutput: '20',
+      instructions,
+    };
+  }
+
+  if (langId === 'ruby') {
+    return {
+      starterCode: '# Lueckentext: Ersetze ___ durch den richtigen Index\nwerte = [10, 20, 30]\nputs werte[___]\n',
+      expectedOutput: '20',
+      instructions,
+    };
+  }
+
+  if (langId === 'go') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch den richtigen Index\nwerte := []int{10, 20, 30}\nfmt.Println(werte[___])\n',
+      expectedOutput: '20',
+      instructions,
+    };
+  }
+
+  if (langId === 'swift') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch den richtigen Index\nlet werte = [10, 20, 30]\nprint(werte[___])\n',
+      expectedOutput: '20',
+      instructions,
+    };
+  }
+
+  if (langId === 'rust') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch den richtigen Index\nlet werte = vec![10, 20, 30];\nprintln!("{}", werte[___]);\n',
+      expectedOutput: '20',
+      instructions,
+    };
+  }
+
+  if (langId === 'php') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch den richtigen Index\n$werte = [10, 20, 30];\necho $werte[___];\n',
+      expectedOutput: '20',
+      instructions,
+    };
+  }
+
+  if (langId === 'cpp') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch den richtigen Index\nvector<int> werte = {10, 20, 30};\ncout << werte[___] << endl;\n',
+      expectedOutput: '20',
+      instructions,
+    };
+  }
+
+  if (langId === 'java') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch den richtigen Index\nint[] werte = {10, 20, 30};\nSystem.out.println(werte[___]);\n',
+      expectedOutput: '20',
+      instructions,
+    };
+  }
+
+  if (langId === 'csharp') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch den richtigen Index\nint[] werte = { 10, 20, 30 };\nConsole.WriteLine(werte[___]);\n',
+      expectedOutput: '20',
+      instructions,
+    };
+  }
+
+  if (langId === 'kotlin') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch den richtigen Index\nval werte = listOf(10, 20, 30)\nprintln(werte[___])\n',
+      expectedOutput: '20',
+      instructions,
+    };
+  }
+
+  if (langId === 'typescript') {
+    return {
+      starterCode: '// Lueckentext: Ersetze ___ durch den richtigen Index\nconst werte = [10, 20, 30];\nconsole.log(werte[___]);\n',
+      expectedOutput: '20',
+      instructions,
+    };
+  }
+
+  return {
+    starterCode: '// Lueckentext: Ersetze ___ durch den richtigen Index\nconst werte = [10, 20, 30];\nconsole.log(werte[___]);\n',
+    expectedOutput: '20',
+    instructions,
+  };
 }
 
 function escapeForDoubleQuotedString(value) {
@@ -636,7 +1141,7 @@ function getAdaptiveHint(lessonId, instructions) {
 
 function renderExerciseInstructions(exercise, lessonId) {
   const adaptiveHint = getAdaptiveHint(lessonId, exercise.instructions);
-  const isClozeTask = /lueckentext-aufgabe/i.test(exercise.instructions);
+  const isClozeTask = /lueckentext-aufgabe/i.test(exercise.instructions) || /___/.test(exercise.starterCode || '');
   const steps = [
     'Lies den Starter-Code und ergaenze die fehlende Stelle.',
     'Nutze das passende Muster aus dem Theorie-Teil links.',
@@ -811,76 +1316,342 @@ async function simulateOutput(code, langId) {
   }
 
   let outputs = [];
+  let remainingCode = code;
+
+  if ([
+    'rust',
+    'go',
+    'cpp',
+    'java',
+    'csharp',
+    'swift',
+    'kotlin',
+    'php',
+    'ruby'
+  ].includes(langId)) {
+    const structured = collectStructuredOutputs(remainingCode, code, langId);
+    outputs.push(...structured.outputs);
+    remainingCode = structured.remainingCode;
+  }
 
   if (langId === 'rust') {
-    const printlnRegex = /println!\s*\(\s*"(.+?)"\s*(?:,\s*(.+?))?\s*\)/g;
-    let match;
-    while ((match = printlnRegex.exec(code)) !== null) {
-      let format = match[1];
-      let args = match[2] || '';
-      if (args) {
-        const argList = args.split(',').map(a => a.trim());
-        let idx = 0;
-        format = format.replace(/\{\}/g, () => {
-          const argName = argList[idx++] || '';
-          return resolveRustVar(argName, code);
-        });
-      }
+    const rustCalls = extractCallArguments(remainingCode, 'println!');
+    for (const call of rustCalls) {
+      const parts = splitTopLevelArgs(call);
+      if (!parts.length) continue;
+      const formatToken = parts[0].trim();
+      let format = stripQuotes(formatToken);
+      let argIndex = 1;
+      format = format.replace(/\{\}/g, () => {
+        const argExpr = (parts[argIndex++] || '').trim();
+        return resolveExpressionValue(argExpr, remainingCode, 'rust');
+      });
       outputs.push(format);
     }
   } else if (langId === 'go') {
-    const fmtRegex = /fmt\.Println\s*\(\s*(?:"(.+?)"|(.+?))\s*\)/g;
-    let match;
-    while ((match = fmtRegex.exec(code)) !== null) {
-      const output = match[1] || resolveExpressionValue(match[2], code, 'go');
-      outputs.push(output);
+    const callArgs = extractCallArguments(remainingCode, 'fmt.Println');
+    for (const arg of callArgs) {
+      outputs.push(resolveExpressionValue(arg, remainingCode, 'go'));
     }
   } else if (langId === 'cpp') {
-    const coutRegex = /cout\s*<<\s*(?:"(.+?)"|(.+?))\s*(?:<<\s*endl)?/g;
+    const coutRegex = /cout\s*<<\s*(?:"([^"]+)"|([^;\n]+?))(?=\s*(?:<<\s*endl)?\s*;)/g;
     let match;
-    while ((match = coutRegex.exec(code)) !== null) {
-      const output = match[1] || resolveExpressionValue(match[2], code, 'cpp');
+    while ((match = coutRegex.exec(remainingCode)) !== null) {
+      const output = match[1] || resolveExpressionValue(match[2], remainingCode, 'cpp');
       outputs.push(output);
     }
   } else if (langId === 'java') {
-    const printRegex = /System\.out\.println\s*\(\s*(?:"(.+?)"|(.+?))\s*\)/g;
-    let match;
-    while ((match = printRegex.exec(code)) !== null) {
-      outputs.push(match[1] || resolveExpressionValue(match[2], code, 'java'));
+    const callArgs = extractCallArguments(remainingCode, 'System.out.println');
+    for (const arg of callArgs) {
+      outputs.push(resolveExpressionValue(arg, remainingCode, 'java'));
     }
   } else if (langId === 'csharp') {
-    const printRegex = /Console\.WriteLine\s*\(\s*(?:"(.+?)"|(.+?))\s*\)/g;
-    let match;
-    while ((match = printRegex.exec(code)) !== null) {
-      outputs.push(match[1] || resolveExpressionValue(match[2], code, 'csharp'));
+    const callArgs = extractCallArguments(remainingCode, 'Console.WriteLine');
+    for (const arg of callArgs) {
+      outputs.push(resolveExpressionValue(arg, remainingCode, 'csharp'));
     }
   } else if (langId === 'swift') {
-    const printRegex = /print\s*\(\s*(?:"(.+?)"|(.+?))\s*\)/g;
-    let match;
-    while ((match = printRegex.exec(code)) !== null) {
-      outputs.push(match[1] || resolveExpressionValue(match[2], code, 'swift'));
+    const callArgs = extractCallArguments(remainingCode, 'print');
+    for (const arg of callArgs) {
+      outputs.push(resolveExpressionValue(arg, remainingCode, 'swift'));
     }
   } else if (langId === 'kotlin') {
-    const printRegex = /println\s*\(\s*(?:"(.+?)"|(.+?))\s*\)/g;
-    let match;
-    while ((match = printRegex.exec(code)) !== null) {
-      outputs.push(match[1] || resolveExpressionValue(match[2], code, 'kotlin'));
+    const callArgs = extractCallArguments(remainingCode, 'println');
+    for (const arg of callArgs) {
+      outputs.push(resolveExpressionValue(arg, remainingCode, 'kotlin'));
     }
   } else if (langId === 'php') {
     const echoRegex = /echo\s+(?:"(.+?)"|'(.+?)'|(.+?))\s*;/g;
     let match;
-    while ((match = echoRegex.exec(code)) !== null) {
-      outputs.push(match[1] || match[2] || resolveExpressionValue(match[3], code, 'php'));
+    while ((match = echoRegex.exec(remainingCode)) !== null) {
+      outputs.push(match[1] || match[2] || resolveExpressionValue(match[3], remainingCode, 'php'));
     }
   } else if (langId === 'ruby') {
     const putsRegex = /puts\s+(?:"(.+?)"|'(.+?)'|(.+))/g;
     let match;
-    while ((match = putsRegex.exec(code)) !== null) {
-      outputs.push(match[1] || match[2] || resolveExpressionValue(match[3], code, 'ruby'));
+    while ((match = putsRegex.exec(remainingCode)) !== null) {
+      outputs.push(match[1] || match[2] || resolveExpressionValue(match[3], remainingCode, 'ruby'));
     }
   }
 
   return outputs.join('\n');
+}
+
+function collectStructuredOutputs(code, fullCode, langId) {
+  const outputs = [];
+  let remainingCode = code;
+
+  const ifResult = collectLanguageIfOutputs(remainingCode, fullCode, langId);
+  outputs.push(...ifResult.outputs);
+  remainingCode = ifResult.remainingCode;
+
+  const loopResult = collectLanguageLoopOutputs(remainingCode, fullCode, langId);
+  outputs.push(...loopResult.outputs);
+  remainingCode = loopResult.remainingCode;
+
+  return { outputs, remainingCode };
+}
+
+function collectLanguageIfOutputs(code, fullCode, langId) {
+  const outputs = [];
+  let remainingCode = code;
+  let ifRegex = null;
+
+  if (langId === 'ruby') {
+    ifRegex = /if\s+([^\n]+)\s*\n([\s\S]*?)\nelse\s*\n([\s\S]*?)\nend/g;
+  } else if (langId === 'go' || langId === 'swift' || langId === 'rust') {
+    ifRegex = /if\s+([^{\n]+)\s*\{([\s\S]*?)\}\s*else\s*\{([\s\S]*?)\}/g;
+  } else {
+    ifRegex = /if\s*\(([^)]+)\)\s*\{([\s\S]*?)\}\s*else\s*\{([\s\S]*?)\}/g;
+  }
+
+  let match;
+  while ((match = ifRegex.exec(code)) !== null) {
+    const condition = (match[1] || '').trim();
+    const ifBody = match[2] || '';
+    const elseBody = match[3] || '';
+    const selectedBody = evaluateConditionExpression(condition, fullCode, langId) ? ifBody : elseBody;
+    const expression = extractPrintExpressionFromBody(selectedBody, langId);
+    if (expression) {
+      outputs.push(resolveExpressionValue(expression, fullCode, langId));
+    }
+    remainingCode = remainingCode.replace(match[0], '');
+  }
+
+  return { outputs, remainingCode };
+}
+
+function collectLanguageLoopOutputs(code, fullCode, langId) {
+  const outputs = [];
+  let remainingCode = code;
+  let loopRegex = null;
+  let iterableIndex = 2;
+  let iteratorIndex = 1;
+  let bodyIndex = 3;
+
+  if (langId === 'go') {
+    loopRegex = /for\s*(?:_,\s*)?(\w+)\s*:?=\s*range\s+([A-Za-z_]\w*)\s*\{([\s\S]*?)\}/g;
+  } else if (langId === 'swift') {
+    loopRegex = /for\s+(\w+)\s+in\s+([A-Za-z_]\w*)\s*\{([\s\S]*?)\}/g;
+  } else if (langId === 'rust') {
+    loopRegex = /for\s+(\w+)\s+in\s+([A-Za-z_]\w*)\s*\{([\s\S]*?)\n\}/g;
+  } else if (langId === 'kotlin') {
+    loopRegex = /for\s*\(\s*(\w+)\s+in\s+([A-Za-z_]\w*)\s*\)\s*\{([\s\S]*?)\}/g;
+  } else if (langId === 'csharp') {
+    loopRegex = /foreach\s*\(\s*var\s+(\w+)\s+in\s+([A-Za-z_]\w*)\s*\)\s*\{([\s\S]*?)\}/g;
+  } else if (langId === 'cpp' || langId === 'java') {
+    loopRegex = /for\s*\(\s*(?:[^:]+?\s+)?(\w+)\s*:\s*([A-Za-z_]\w*)\s*\)\s*\{([\s\S]*?)\}/g;
+  } else if (langId === 'php') {
+    loopRegex = /foreach\s*\(\s*\$?([A-Za-z_]\w*)\s+as\s+\$([A-Za-z_]\w*)\s*\)\s*\{([\s\S]*?)\}/g;
+    iterableIndex = 1;
+    iteratorIndex = 2;
+    bodyIndex = 3;
+  } else if (langId === 'ruby') {
+    loopRegex = /([A-Za-z_]\w*)\.each\s+do\s+\|([A-Za-z_]\w*)\|([\s\S]*?)end/g;
+    iterableIndex = 1;
+    iteratorIndex = 2;
+    bodyIndex = 3;
+  } else {
+    return { outputs, remainingCode };
+  }
+
+  let match;
+  while ((match = loopRegex.exec(code)) !== null) {
+    const iteratorName = (match[iteratorIndex] || '').trim();
+    const iterableName = (match[iterableIndex] || '').replace(/^\$/, '').trim();
+    const body = match[bodyIndex] || '';
+    const expression = extractPrintExpressionFromBody(body, langId);
+    const values = parseSimpleCollectionValues(iterableName, fullCode, langId);
+
+    if (expression && values.length) {
+      for (const value of values) {
+        const assignment = buildAssignmentSnippet(langId, iteratorName, value);
+        const pseudoCode = `${fullCode}\n${assignment}`;
+        outputs.push(resolveExpressionValue(expression, pseudoCode, langId));
+      }
+    }
+
+    remainingCode = remainingCode.replace(match[0], '');
+  }
+
+  return { outputs, remainingCode };
+}
+
+function evaluateConditionExpression(condition, code, langId) {
+  const clean = String(condition || '').trim().replace(/^\(([\s\S]+)\)$/, '$1').trim();
+  const cmp = clean.match(/^(.+?)\s*(==|!=|>=|<=|>|<)\s*(.+)$/);
+  if (cmp) {
+    const leftRaw = resolveExpressionValue(cmp[1], code, langId);
+    const rightRaw = resolveExpressionValue(cmp[3], code, langId);
+    const leftNum = Number(leftRaw);
+    const rightNum = Number(rightRaw);
+    const bothNums = Number.isFinite(leftNum) && Number.isFinite(rightNum);
+    const left = bothNums ? leftNum : String(leftRaw);
+    const right = bothNums ? rightNum : String(rightRaw);
+    const op = cmp[2];
+    if (op === '==') return left === right;
+    if (op === '!=') return left !== right;
+    if (op === '>=') return left >= right;
+    if (op === '<=') return left <= right;
+    if (op === '>') return left > right;
+    if (op === '<') return left < right;
+  }
+
+  const resolved = String(resolveExpressionValue(clean, code, langId)).trim().toLowerCase();
+  if (resolved === 'true') return true;
+  if (resolved === 'false') return false;
+  if (resolved === '0' || resolved === '' || resolved === 'null' || resolved === 'undefined') return false;
+  return true;
+}
+
+function extractPrintExpressionFromBody(body, langId) {
+  const source = String(body || '');
+  let match;
+
+  if (langId === 'go') {
+    match = source.match(/fmt\.Println\s*\(\s*([^)]+)\s*\)/);
+    return match ? match[1].trim() : null;
+  }
+
+  if (langId === 'cpp') {
+    match = source.match(/cout\s*<<\s*([^;\n]+?)(?:\s*<<\s*endl)?\s*;/);
+    return match ? match[1].trim() : null;
+  }
+
+  if (langId === 'java') {
+    match = source.match(/System\.out\.println\s*\(\s*([^)]+)\s*\)/);
+    return match ? match[1].trim() : null;
+  }
+
+  if (langId === 'csharp') {
+    match = source.match(/Console\.WriteLine\s*\(\s*([^)]+)\s*\)/);
+    return match ? match[1].trim() : null;
+  }
+
+  if (langId === 'swift') {
+    match = source.match(/print\s*\(\s*([^)]+)\s*\)/);
+    return match ? match[1].trim() : null;
+  }
+
+  if (langId === 'kotlin') {
+    match = source.match(/println\s*\(\s*([^)]+)\s*\)/);
+    return match ? match[1].trim() : null;
+  }
+
+  if (langId === 'php') {
+    match = source.match(/echo\s+(.+?)\s*;/);
+    return match ? match[1].trim() : null;
+  }
+
+  if (langId === 'ruby') {
+    match = source.match(/puts\s+(.+)/);
+    return match ? match[1].trim() : null;
+  }
+
+  if (langId === 'rust') {
+    match = source.match(/println!\s*\(\s*"([^"]*)"\s*(?:,\s*([^)]+))?\s*\)/);
+    if (!match) return null;
+    if (match[2]) return match[2].trim();
+    return `"${match[1]}"`;
+  }
+
+  return null;
+}
+
+function buildAssignmentSnippet(langId, name, value) {
+  const rendered = typeof value === 'number' ? String(value) : `"${escapeForDoubleQuotedString(value)}"`;
+  if (langId === 'php') return `$${name} = ${rendered};`;
+  if (langId === 'ruby' || langId === 'python') return `${name} = ${rendered}`;
+  if (langId === 'go') return `${name} = ${rendered}`;
+  if (langId === 'swift') return `let ${name} = ${rendered}`;
+  if (langId === 'kotlin') return `val ${name} = ${rendered}`;
+  if (langId === 'rust') return `let ${name} = ${rendered};`;
+  if (langId === 'cpp') return `int ${name} = ${rendered};`;
+  if (langId === 'java') return `int ${name} = ${rendered};`;
+  if (langId === 'csharp') return `int ${name} = ${rendered};`;
+  return `const ${name} = ${rendered};`;
+}
+
+function extractCallArguments(code, callName) {
+  const args = [];
+  const regex = new RegExp(`${escapeRegExp(callName)}\\s*\\(`, 'g');
+  let match;
+
+  while ((match = regex.exec(code)) !== null) {
+    let index = regex.lastIndex;
+    let depth = 1;
+    let quote = null;
+    let arg = '';
+
+    while (index < code.length && depth > 0) {
+      const char = code[index];
+      const prev = code[index - 1];
+
+      if (quote) {
+        arg += char;
+        if (char === quote && prev !== '\\') quote = null;
+        index += 1;
+        continue;
+      }
+
+      if (char === '"' || char === "'") {
+        quote = char;
+        arg += char;
+        index += 1;
+        continue;
+      }
+
+      if (char === '(') {
+        depth += 1;
+        arg += char;
+        index += 1;
+        continue;
+      }
+
+      if (char === ')') {
+        depth -= 1;
+        if (depth === 0) {
+          index += 1;
+          break;
+        }
+        arg += char;
+        index += 1;
+        continue;
+      }
+
+      arg += char;
+      index += 1;
+    }
+
+    if (depth === 0) {
+      args.push(arg.trim());
+      regex.lastIndex = index;
+    } else {
+      break;
+    }
+  }
+
+  return args;
 }
 
 async function simulateJavaScriptOutput(code) {
@@ -1251,6 +2022,16 @@ function resolvePythonExpressionValue(expression, code, depth = 0) {
           // ignore
         }
       }
+    }
+  }
+
+  const listAccess = raw.match(/^([A-Za-z_]\w*)\s*\[\s*(\d+)\s*\]$/);
+  if (listAccess) {
+    const values = parseSimplePythonList(listAccess[1], code);
+    const index = Number(listAccess[2]);
+    if (index >= 0 && index < values.length) {
+      const value = values[index];
+      return typeof value === 'string' ? value : String(value);
     }
   }
 
@@ -1679,6 +2460,12 @@ function resolveExpressionValue(expression, code, langId) {
     }
   }
 
+  const genericFunctionValue = evaluateGenericFunctionCall(raw, code, langId);
+  if (genericFunctionValue !== null && genericFunctionValue !== undefined) return genericFunctionValue;
+
+  const indexedValue = evaluateIndexedAccess(raw, code, langId);
+  if (indexedValue !== null && indexedValue !== undefined) return indexedValue;
+
   if (langId === 'php' && /^\$[A-Za-z_]\w*$/.test(raw)) {
     return findVarValue(raw.slice(1), code, 'php');
   }
@@ -1712,6 +2499,178 @@ function resolveExpressionValue(expression, code, langId) {
   }
 
   return replaced;
+}
+
+function evaluateIndexedAccess(expression, code, langId) {
+  const match = String(expression || '').trim().match(/^(\$?[A-Za-z_]\w*)\s*\[\s*(\d+)\s*\]$/);
+  if (!match) return null;
+
+  const name = match[1].replace(/^\$/, '');
+  const index = Number(match[2]);
+  if (!Number.isInteger(index)) return null;
+
+  const values = parseSimpleCollectionValues(name, code, langId);
+  if (!values.length || index < 0 || index >= values.length) return null;
+  const value = values[index];
+  return typeof value === 'string' ? value : String(value);
+}
+
+function parseSimpleCollectionValues(name, code, langId) {
+  const safeName = escapeRegExp(name.replace(/^\$/, ''));
+  let match = null;
+
+  if (langId === 'go') {
+    match = code.match(new RegExp(`\\b${safeName}\\b\\s*:?=\\s*\\[\\][^\\{\\n]*\\{([^}]*)\\}`, 'm'));
+  } else if (langId === 'rust') {
+    match = code.match(new RegExp(`\\b${safeName}\\b\\s*=\\s*vec!\\s*\\[([^\\]]*)\\]`, 'm'));
+  } else if (langId === 'kotlin') {
+    match = code.match(new RegExp(`\\b${safeName}\\b\\s*=\\s*listOf\\(([^)]*)\\)`, 'm'));
+  } else if (langId === 'cpp' || langId === 'java' || langId === 'csharp') {
+    match = code.match(new RegExp(`\\b${safeName}\\b\\s*=\\s*\\{([^}]*)\\}`, 'm'));
+  } else if (langId === 'php') {
+    match = code.match(new RegExp(`\\$${safeName}\\s*=\\s*\\[([^\\]]*)\\]`, 'm'));
+  } else {
+    match = code.match(new RegExp(`\\b${safeName}\\b\\s*=\\s*\\[([^\\]]*)\\]`, 'm'));
+  }
+
+  if (!match) return [];
+  return parseLiteralItems(match[1] || '');
+}
+
+function parseLiteralItems(rawItems) {
+  return splitTopLevelArgs(rawItems)
+    .map(item => item.trim())
+    .filter(Boolean)
+    .map(item => {
+      if (/^-?\d+(\.\d+)?$/.test(item)) return Number(item);
+      if ((item.startsWith('"') && item.endsWith('"')) || (item.startsWith("'") && item.endsWith("'"))) {
+        return stripQuotes(item);
+      }
+      return item;
+    });
+}
+
+function evaluateGenericFunctionCall(expression, code, langId) {
+  if (langId === 'python') return null;
+  const match = String(expression || '').trim().match(/^([A-Za-z_]\w*)\s*\((.*)\)$/);
+  if (!match) return null;
+
+  const functionName = match[1];
+  const argString = (match[2] || '').trim();
+  const args = argString
+    ? splitTopLevelArgs(argString).map(arg => resolveExpressionValue(arg.trim(), code, langId))
+    : [];
+
+  const definition = findSimpleFunctionDefinition(functionName, code, langId);
+  if (!definition || !definition.returnExpr) return null;
+
+  let replaced = definition.returnExpr;
+  definition.params.forEach((param, index) => {
+    const replacement = args[index] ?? '0';
+    replaced = replaced.replace(new RegExp(`\\$?${escapeRegExp(param)}\\b`, 'g'), replacement);
+  });
+
+  if ((replaced.startsWith('"') && replaced.endsWith('"')) || (replaced.startsWith("'") && replaced.endsWith("'"))) {
+    return stripQuotes(replaced);
+  }
+
+  if (/^[\d+\-*/().\s]+$/.test(replaced)) {
+    try {
+      return String(Function(`"use strict"; return (${replaced})`)());
+    } catch {
+      return replaced;
+    }
+  }
+
+  const resolved = resolveExpressionValue(replaced, code, langId);
+  return resolved === replaced ? null : resolved;
+}
+
+function findSimpleFunctionDefinition(functionName, code, langId) {
+  const safe = escapeRegExp(functionName);
+  let match = null;
+
+  if (langId === 'javascript' || langId === 'typescript') {
+    match = code.match(new RegExp(`function\\s+${safe}\\s*\\(([^)]*)\\)\\s*\\{([\\s\\S]*?)\\}`, 'm'));
+  } else if (langId === 'go') {
+    match = code.match(new RegExp(`func\\s+${safe}\\s*\\(([^)]*)\\)\\s*[^\\{]*\\{([\\s\\S]*?)\\}`, 'm'));
+  } else if (langId === 'rust') {
+    match = code.match(new RegExp(`fn\\s+${safe}\\s*\\(([^)]*)\\)\\s*(?:->\\s*[^\\{]+)?\\s*\\{([\\s\\S]*?)\\}`, 'm'));
+  } else if (langId === 'swift') {
+    match = code.match(new RegExp(`func\\s+${safe}\\s*\\(([^)]*)\\)\\s*(?:->\\s*[^\\{]+)?\\s*\\{([\\s\\S]*?)\\}`, 'm'));
+  } else if (langId === 'kotlin') {
+    match = code.match(new RegExp(`fun\\s+${safe}\\s*\\(([^)]*)\\)\\s*(?::\\s*[^\\{]+)?\\s*\\{([\\s\\S]*?)\\}`, 'm'));
+  } else if (langId === 'php') {
+    match = code.match(new RegExp(`function\\s+${safe}\\s*\\(([^)]*)\\)\\s*\\{([\\s\\S]*?)\\}`, 'm'));
+  } else if (langId === 'ruby') {
+    match = code.match(new RegExp(`def\\s+${safe}\\s*\\(([^)]*)\\)\\s*\\n([\\s\\S]*?)\\nend`, 'm'));
+  } else if (langId === 'cpp' || langId === 'java' || langId === 'csharp') {
+    match = code.match(new RegExp(`[A-Za-z_][\\w<>,:\\[\\]\\s\\*]*\\s+${safe}\\s*\\(([^)]*)\\)\\s*\\{([\\s\\S]*?)\\}`, 'm'));
+  }
+
+  if (!match) return null;
+
+  const params = parseFunctionParamNames(match[1] || '', langId);
+  const body = match[2] || '';
+  let returnExpr = '';
+
+  if (langId === 'rust') {
+    const returnMatch = body.match(/return\s+([^;\n}]+)/);
+    if (returnMatch) {
+      returnExpr = returnMatch[1].trim();
+    } else {
+      const lines = body.split('\n').map(line => line.trim()).filter(Boolean);
+      returnExpr = lines.length ? lines[lines.length - 1].replace(/;$/, '').trim() : '';
+    }
+  } else if (langId === 'ruby') {
+    const returnMatch = body.match(/return\s+([^\n]+)/);
+    returnExpr = returnMatch ? returnMatch[1].trim() : '';
+  } else {
+    const returnMatch = body.match(/return\s+([^;\n}]+)/);
+    returnExpr = returnMatch ? returnMatch[1].trim() : '';
+  }
+
+  if (!returnExpr) return null;
+  return { params, returnExpr };
+}
+
+function parseFunctionParamNames(paramString, langId) {
+  return splitTopLevelArgs(paramString)
+    .map(part => extractParamName(part.trim(), langId))
+    .filter(Boolean);
+}
+
+function extractParamName(part, langId) {
+  if (!part) return null;
+  if (langId === 'php') {
+    const match = part.match(/\$([A-Za-z_]\w*)/);
+    return match ? match[1] : null;
+  }
+
+  if (langId === 'swift') {
+    const underscored = part.match(/^_\s*([A-Za-z_]\w*)/);
+    if (underscored) return underscored[1];
+    const typed = part.match(/^([A-Za-z_]\w*)\s*:/);
+    return typed ? typed[1] : null;
+  }
+
+  if (langId === 'kotlin' || langId === 'typescript' || langId === 'rust') {
+    const typed = part.match(/^([A-Za-z_]\w*)\s*:/);
+    if (typed) return typed[1];
+  }
+
+  if (langId === 'go') {
+    const first = part.match(/^([A-Za-z_]\w*)\b/);
+    return first ? first[1] : null;
+  }
+
+  if (langId === 'cpp' || langId === 'java' || langId === 'csharp') {
+    const identifiers = part.match(/[A-Za-z_]\w*/g);
+    return identifiers && identifiers.length ? identifiers[identifiers.length - 1] : null;
+  }
+
+  const defaultMatch = part.match(/^([A-Za-z_]\w*)/);
+  return defaultMatch ? defaultMatch[1] : null;
 }
 
 function findVarValue(name, code, lang) {
@@ -1762,16 +2721,17 @@ function findVarValue(name, code, lang) {
 }
 
 function resolveRustVar(argName, code) {
-  const assignRegex = new RegExp(`let\\s+(?:mut\\s+)?${argName}\\s*=\\s*(?:["'](.+?)["']|(\\d+\\.?\\d*))`, 'm');
-  const match = code.match(assignRegex);
-  if (match) return match[1] || match[2] || argName;
-
   const funcCallMatch = argName.match(/(\w+)\s*\((.+)\)/);
   if (funcCallMatch) {
     const funcName = funcCallMatch[1];
     const funcArgs = funcCallMatch[2].split(',').map(a => a.trim());
     return evaluateSimpleFunc(funcName, funcArgs, code);
   }
+
+  const safeArgName = escapeRegExp(argName);
+  const assignRegex = new RegExp(`let\\s+(?:mut\\s+)?${safeArgName}\\s*=\\s*(?:["'](.+?)["']|(\\d+\\.?\\d*))`, 'm');
+  const match = code.match(assignRegex);
+  if (match) return match[1] || match[2] || argName;
 
   return argName;
 }
