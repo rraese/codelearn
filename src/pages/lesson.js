@@ -15,6 +15,8 @@ import { markLessonComplete, isLessonComplete } from '../progress.js';
 import { isLessonAccessible } from '../lib/tiers.js';
 import { renderNavbar, bindNavbar } from '../components/navbar.js';
 import { EditorView, basicSetup } from 'codemirror';
+import { keymap } from '@codemirror/view';
+import { indentWithTab } from '@codemirror/commands';
 import { javascript } from '@codemirror/lang-javascript';
 import { python } from '@codemirror/lang-python';
 import { rust } from '@codemirror/lang-rust';
@@ -58,7 +60,8 @@ export function renderLesson(container, params) {
   const lessonId = parseInt(params.id);
   const lang = getLanguage(langId);
   const lessons = lessonData[langId];
-  const lesson = lessons?.find(l => l.id === lessonId);
+  const rawLesson = lessons?.find(l => l.id === lessonId);
+  const lesson = rawLesson ? prepareLessonForRender(rawLesson, langId) : null;
 
   if (!lang || !lesson) {
     container.innerHTML = '<div class="container page-content"><h1>Lektion nicht gefunden</h1></div>';
@@ -499,6 +502,94 @@ ${languageFocus ? `\n<h3>Sprach-Fokus (${escapeHtml(langName)})</h3>\n<p>${escap
   `;
 }
 
+function prepareLessonForRender(lesson, langId) {
+  const clonedExercise = { ...(lesson.exercise || {}) };
+  const hasClozeStarter = shouldUseClozeStarter(lesson.id, clonedExercise.starterCode);
+
+  if (hasClozeStarter) {
+    clonedExercise.starterCode = buildClozeStarterCode(langId, clonedExercise.expectedOutput);
+  }
+
+  clonedExercise.instructions = buildExerciseGoalText(
+    clonedExercise.instructions,
+    lesson.id,
+    hasClozeStarter
+  );
+
+  return {
+    ...lesson,
+    exercise: clonedExercise,
+  };
+}
+
+function shouldUseClozeStarter(lessonId, starterCode) {
+  if (lessonId > 5) return false;
+  return isTemplateOnlyStarter(starterCode);
+}
+
+function isTemplateOnlyStarter(starterCode) {
+  const lines = String(starterCode || '')
+    .split('\n')
+    .map(line => line.trim())
+    .filter(Boolean);
+
+  if (!lines.length) return true;
+
+  const hasRealCode = lines.some(line => !/^(\/\/|#|--)/.test(line));
+  return !hasRealCode;
+}
+
+function buildExerciseGoalText(rawInstructions, lessonId, hasClozeStarter) {
+  if (hasClozeStarter) {
+    return 'Lueckentext-Aufgabe: Ersetze die Stelle mit ___ im Starter-Code und erzeuge exakt die Zielausgabe.';
+  }
+
+  if (!isGenericInstructionText(rawInstructions)) {
+    return rawInstructions;
+  }
+
+  const variants = [
+    'Vervollstaendige den Starter-Code und erzeuge exakt die Zielausgabe.',
+    'Ergaenze nur die fehlende Stelle im Code. Die Ausgabe muss exakt passen.',
+    'Baue den fehlenden Schritt ein und pruefe die Zielausgabe unten.',
+    'Loese die Aufgabe mit einer kleinen Aenderung im Starter-Code.',
+  ];
+
+  return variants[(Math.max(1, lessonId) - 1) % variants.length];
+}
+
+function isGenericInstructionText(value) {
+  const text = String(value || '').toLowerCase();
+  return text.includes('nutze den starter-code und wende das thema dieser lektion an');
+}
+
+function buildClozeStarterCode(langId, expectedOutput) {
+  const expected = escapeForDoubleQuotedString(expectedOutput);
+
+  const templates = {
+    python: `# Lueckentext: Ersetze ___ mit der richtigen Variable\nziel_text = "${expected}"\nprint(___)\n`,
+    javascript: `// Lueckentext: Ersetze ___ mit der richtigen Variable\nconst zielText = "${expected}";\nconsole.log(___);\n`,
+    typescript: `// Lueckentext: Ersetze ___ mit der richtigen Variable\nconst zielText: string = "${expected}";\nconsole.log(___);\n`,
+    go: `// Lueckentext: Ersetze ___ mit der richtigen Variable\nzielText := "${expected}"\nfmt.Println(___)\n`,
+    rust: `// Lueckentext: Ersetze ___ mit der richtigen Variable\nlet ziel_text = "${expected}";\nprintln!("{}", ___);\n`,
+    cpp: `// Lueckentext: Ersetze ___ mit der richtigen Variable\nstring zielText = "${expected}";\ncout << ___ << endl;\n`,
+    java: `// Lueckentext: Ersetze ___ mit der richtigen Variable\nString zielText = "${expected}";\nSystem.out.println(___);\n`,
+    csharp: `// Lueckentext: Ersetze ___ mit der richtigen Variable\nstring zielText = "${expected}";\nConsole.WriteLine(___);\n`,
+    swift: `// Lueckentext: Ersetze ___ mit der richtigen Variable\nlet zielText = "${expected}"\nprint(___)\n`,
+    kotlin: `// Lueckentext: Ersetze ___ mit der richtigen Variable\nval zielText = "${expected}"\nprintln(___)\n`,
+    php: `// Lueckentext: Ersetze ___ mit der richtigen Variable\n$zielText = "${expected}";\necho ___;\n`,
+    ruby: `# Lueckentext: Ersetze ___ mit der richtigen Variable\nziel_text = "${expected}"\nputs ___\n`,
+  };
+
+  return templates[langId] || `// Lueckentext\nprint("${expected}")\n`;
+}
+
+function escapeForDoubleQuotedString(value) {
+  return String(value ?? '')
+    .replace(/\\/g, '\\\\')
+    .replace(/"/g, '\\"');
+}
+
 function getHintLevel(lessonId) {
   if (lessonId <= 10) return { key: 'beginner', label: 'Anfaenger' };
   if (lessonId <= 20) return { key: 'intermediate', label: 'Aufbau' };
@@ -545,33 +636,40 @@ function getAdaptiveHint(lessonId, instructions) {
 
 function renderExerciseInstructions(exercise, lessonId) {
   const adaptiveHint = getAdaptiveHint(lessonId, exercise.instructions);
+  const isClozeTask = /lueckentext-aufgabe/i.test(exercise.instructions);
   const steps = [
-    'Lies den Starter-Code und ergänze die fehlende Stelle.',
+    'Lies den Starter-Code und ergaenze die fehlende Stelle.',
     'Nutze das passende Muster aus dem Theorie-Teil links.',
-    'Führe den Code aus und vergleiche die Ausgabe exakt mit dem Ziel.'
+    'Fuehre den Code aus und vergleiche die Ausgabe exakt mit dem Ziel.'
   ];
 
   return `
     <div class="exercise-instructions">
-      <h3>Aufgabe</h3>
-      <p class="exercise-goal">${escapeHtml(exercise.instructions)}</p>
-
-      <div class="exercise-section">
-        <h4>So gehst du vor</h4>
-        <ol class="exercise-steps">
-          ${steps.map(step => `<li>${escapeHtml(step)}</li>`).join('')}
-        </ol>
+      <div class="exercise-header-row">
+        <h3>Aufgabe</h3>
+        ${isClozeTask ? '<span class="exercise-badge">Lueckentext</span>' : ''}
       </div>
+      <p class="exercise-goal">${escapeHtml(exercise.instructions)}</p>
 
       <div class="exercise-section">
         <h4>Zielausgabe</h4>
         <pre class="exercise-expected">${escapeHtml(exercise.expectedOutput)}</pre>
       </div>
 
-      <div class="exercise-section">
-        <h4>Lernhinweis (${escapeHtml(adaptiveHint.levelLabel)})</h4>
-        <pre class="exercise-hint">${escapeHtml(adaptiveHint.text)}</pre>
-      </div>
+      <details class="exercise-details">
+        <summary>Schritte und Lernhinweis anzeigen</summary>
+        <div class="exercise-section">
+          <h4>So gehst du vor</h4>
+          <ol class="exercise-steps">
+            ${steps.map(step => `<li>${escapeHtml(step)}</li>`).join('')}
+          </ol>
+        </div>
+
+        <div class="exercise-section">
+          <h4>Lernhinweis (${escapeHtml(adaptiveHint.levelLabel)})</h4>
+          <pre class="exercise-hint">${escapeHtml(adaptiveHint.text)}</pre>
+        </div>
+      </details>
     </div>
   `;
 }
@@ -590,6 +688,7 @@ function initEditor(langId, lesson) {
     doc: lesson.exercise.starterCode,
     extensions: [
       basicSetup,
+      keymap.of([indentWithTab]),
       langExt ? langExt() : [],
       oneDark,
       EditorView.theme({
@@ -1772,3 +1871,4 @@ function escapeHtml(text) {
   div.textContent = text;
   return div.innerHTML;
 }
+

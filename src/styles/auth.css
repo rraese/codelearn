@@ -297,18 +297,23 @@
     backdrop-filter: blur(10px);
     z-index: 200;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    overflow-y: auto;
+    padding: calc(var(--navbar-height) + var(--space-md)) var(--space-md) var(--space-md);
     animation: fadeIn 0.3s ease-out;
 }
 
 .paywall-card {
     max-width: 480px;
+    width: 100%;
+    max-height: calc(100vh - var(--navbar-height) - var(--space-xl));
+    overflow-y: auto;
     text-align: center;
     background: var(--bg-card);
     border: 1px solid var(--bg-glass-border);
     border-radius: var(--radius-xl);
-    padding: var(--space-3xl);
+    padding: var(--space-2xl);
 }
 
 .paywall-card .paywall-icon {
